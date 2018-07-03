@@ -1,0 +1,4 @@
+%h1= current_page.title
+%ul
+  - Spina::Page.live.where(ancestry: current_page.id)&.sorted&.in_menu&.each do |page|
+    %li{class: ('active' if page == current_page)}= link_to page.menu_title, page.materialized_path

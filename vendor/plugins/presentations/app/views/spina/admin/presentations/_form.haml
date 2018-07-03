@@ -1,0 +1,69 @@
+- if @presentation.errors.any?
+  - content_for :notifications do
+    .notification.notification-danger.animated.fadeInRight
+      = icon('exclamation')
+      .notification-message
+        =t 'spina.notifications.alert'
+        %small= @presentation.errors.full_messages.join('<br />').html_safe
+      = link_to '#', data: {close_notification: true} do
+        = icon('cross')
+
+= form_for [:admin, @presentation], html: {autocomplete: "off"} do |f|
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      %button.button.button-primary{type: 'submit'}
+        = icon('check')
+        =t 'spina.presentations.save'
+
+      = link_to t('spina.cancel'), spina.admin_presentations_path, class: 'button', style: 'margin-right: 0'
+
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :title
+        .horizontal-form-content
+          = f.text_field :title, placeholder: Spina::Presentation.human_attribute_name(:title)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :date
+        .horizontal-form-content
+          = f.date_field :start_time, value: (@presentation.start_time.strftime("%Y-%m-%d") unless @presentation.start_time.blank?), class: 'datepicker', placeholder: Spina::Presentation.human_attribute_name(:date)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :start_time
+          %small= Spina::User.human_attribute_name :start_time_description
+        .horizontal-form-content
+          = f.time_field :start_time, value: (@presentation.start_time.strftime("%H:%M") unless @presentation.start_time.blank?), placeholder: Spina::Presentation.human_attribute_name(:start_time)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :name
+          %small= Spina::User.human_attribute_name :name_description
+        .horizontal-form-content
+          = f.text_field :name, placeholder: Spina::Presentation.human_attribute_name(:name)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :institution
+        .horizontal-form-content
+          = f.text_field :institution, placeholder: Spina::Presentation.human_attribute_name(:institution)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :email_address
+        .horizontal-form-content
+          = f.email_field :email_address, placeholder: Spina::Presentation.human_attribute_name(:email_address)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Presentation.human_attribute_name :abstract
+        .horizontal-form-content
+          = f.text_area :abstract, placeholder: Spina::Presentation.human_attribute_name(:abstract)
+
+  - unless @presentation.new_record?
+    .pull-right= link_to t('spina.permanently_delete'), admin_presentation_path(@presentation), method: :delete, data: {confirm: t('spina.presentations.delete_confirmation', presentation: @presentation.title)}, class: 'button button-link button-danger'

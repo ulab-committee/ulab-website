@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title= "#{current_page.seo_title} — #{current_account.name}"
+    %meta{charset: 'utf-8'}
+    %meta{name: 'description', content: current_page.description}
+    %meta{name: 'viewport', content: 'initial-scale=1.0, user-scalable=no, width=device-width'}
+    = stylesheet_link_tag    'ulab/application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'ulab/application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'spina/shared/admin_bar'
+    %main
+      .sidebar
+        %h2= current_account.name
+        = render 'ulab/shared/navigation'
+      .content
+        = yield
+    = spina_link

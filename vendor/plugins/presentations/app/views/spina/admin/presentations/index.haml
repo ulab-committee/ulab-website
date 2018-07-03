@@ -1,0 +1,34 @@
+%header#header
+  = render partial: 'spina/admin/shared/breadcrumbs'
+
+  #header_actions
+    = link_to spina.new_admin_presentation_path, class: 'button button-primary', style: 'margin-right: 0' do
+      = icon('plus')
+      = t('spina.presentations.new')
+
+.well
+  .table-container
+    %table.table
+      %thead
+        %tr
+          %th= Spina::Presentation.human_attribute_name :title
+          %th= Spina::Presentation.human_attribute_name :start_time
+          %th= Spina::Presentation.human_attribute_name :name
+          %th
+
+      %tbody
+        - if @presentations.any?
+          - @presentations.each do |presentation|
+            %tr
+              %td= presentation.title
+              %td= l(presentation.start_time.to_time, format: :short) unless presentation.start_time.blank?
+              %td= presentation.name
+              %td.align-right
+                = link_to spina.edit_admin_presentation_path(presentation), class: 'button button-small button-link' do
+                  = icon('pencil-outline')
+                  = t('spina.edit')
+
+        - else
+          %tr
+            %td.align-center{colspan: 100}
+              %em= t('spina.presentations.no_presentations')

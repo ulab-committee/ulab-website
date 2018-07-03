@@ -1,0 +1,9 @@
+- if has_content? :alert
+  .alert
+    = content(:alert)
+- if has_content? :gallery
+  .gallery
+    - content(:gallery)&.images&.each do |image|
+      = image_tag main_app.url_for(image.variant(resize: '800x533'))
+%h1= current_page.title
+= content(:text).try(:html_safe)
