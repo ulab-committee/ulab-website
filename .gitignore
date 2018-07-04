@@ -27,3 +27,6 @@
 
 # Ignore .env file
 .env
+
+# Ignore GCS keyfile
+/config/gcs.json
