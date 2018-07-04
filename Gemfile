@@ -69,6 +69,3 @@ gem 'presentations', path: 'vendor/plugins'
 
 # For Heroku
 gem 'rack-timeout'
-
-# GCS
-gem "google-cloud-storage", "~> 1.8", require: false
