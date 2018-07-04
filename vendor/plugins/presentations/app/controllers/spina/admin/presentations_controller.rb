@@ -50,7 +50,7 @@ module Spina
         end
 
         def presentation_params
-          params.require(:presentation).permit(:title, :start_time, :finish_time, :name, :institution, :email, :abstract)
+          params.require(:presentation).permit(:title, :start_time, :finish_time, :name, :institution, :email_address, :abstract)
         end
 
     end
