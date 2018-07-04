@@ -66,3 +66,6 @@ gem 'spina'
 
 # Presentations plugin
 gem 'presentations', path: 'vendor/plugins'
+
+# For Heroku
+gem 'rack-timeout'
