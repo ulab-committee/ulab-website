@@ -16,5 +16,12 @@
         %h2= current_account.name
         = render 'ulab/shared/navigation'
       .content
+        %ol.breadcrumb
+          - current_page.ancestors.each do |ancestor|
+            %li
+              = link_to ancestor.menu_title, ancestor.materialized_path
+          %li.active
+            %a= current_page.menu_title
+        %h1= current_page.title
         = yield
     = spina_link
