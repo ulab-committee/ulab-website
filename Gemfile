@@ -69,3 +69,6 @@ gem 'presentations', path: 'vendor/plugins'
 
 # For Heroku
 gem 'rack-timeout'
+
+# S3
+gem 'aws-sdk-s3', require: false
