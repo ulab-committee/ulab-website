@@ -1,0 +1,14 @@
+%li{ class: ('active' if %w[presentations].include? controller_name) }
+  = link_to spina.admin_presentations_path do
+    = icon('comment')
+    = t("spina.#{plugin.name.downcase}.title")
+    = icon('caret-right')
+
+    %ul
+      %li{ class: ('active' if current_admin_path.start_with?(spina.admin_presentations_path)) }
+        = link_to t("spina.#{plugin.name.downcase}.presentations"), spina.admin_presentations_path
+
+      %li
+        = link_to '#', class: 'back-to-main-menu' do
+          = icon('caret-left')
+          =t 'spina.main_menu'

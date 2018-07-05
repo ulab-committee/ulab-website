@@ -31,6 +31,9 @@
 
 en:
   spina:
+    collect:
+      title: Conferences
+      presentations: Presentations
     presentations:
       new: New presentation
       save: Save presentation
