@@ -5,6 +5,7 @@
     %meta{charset: 'utf-8'}
     %meta{name: 'description', content: current_page.description}
     %meta{name: 'viewport', content: 'initial-scale=1.0, user-scalable=no, width=device-width'}
+    = render 'spina/shared/google_site_verification'
     = stylesheet_link_tag    'ulab/application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'ulab/application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -25,3 +26,4 @@
         %h1= current_page.title
         = yield
     = spina_link
+    = render 'spina/shared/social'
