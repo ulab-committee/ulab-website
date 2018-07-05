@@ -41,6 +41,8 @@ en:
       no_presentations: There are no presentations
     website:
       presentations: Presentations
+    media_library:
+      images: Images # This translation is apparently not provided by Spina for some reason
   activerecord:
     attributes:
       spina/user:
