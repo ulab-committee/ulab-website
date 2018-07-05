@@ -9,6 +9,9 @@
       </configuration>
     </facet>
   </component>
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../../vendor/plugins/collect">
       <sourceFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/test" isTestSource="true" />
