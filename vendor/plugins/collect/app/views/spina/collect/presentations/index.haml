@@ -1,2 +1,12 @@
-%h1 Spina::Presentations#index
-%p Find me in app/views/spina/collect/index.haml
+%h1= t('spina.website.presentations')
+- if @presentations.any?
+  - @presentations.each do |presentation|
+    %article
+      %h2= presentation.title
+      = time_tag presentation.start_time, l(presentation.start_time.to_time, format: :short) unless presentation.start_time.blank?
+      %address
+        = succeed(presentation.institution.blank? ? "" : ",") do
+          = presentation.name unless presentation.name.blank?
+        = presentation.institution unless presentation.institution.blank?
+        = mail_to presentation.email_address unless presentation.email_address.blank?
+      = presentation.abstract unless presentation.abstract.blank?
