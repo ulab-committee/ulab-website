@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "presentations"
+require "collect"
 
 module Dummy
   class Application < Rails::Application
