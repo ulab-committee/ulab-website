@@ -3,15 +3,15 @@
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "presentations/version"
+require "collect/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "presentations"
-  s.version     = Presentations::VERSION
+  s.name        = "collect"
+  s.version     = Collect::VERSION
   s.authors     = ["Justin Malčić"]
   s.email       = ["j.malcic@me.com"]
-  s.homepage    = "https://jmalcic.gitlab.io/gems/presentations"
+  s.homepage    = "https://jmalcic.gitlab.io/gems/collect"
   s.summary     = "Conference management plugin for Spina."
   s.description = "Presentations is a Spina plugin which allows you to keep track of conference attendees and presentations."
   s.license     = "MIT"

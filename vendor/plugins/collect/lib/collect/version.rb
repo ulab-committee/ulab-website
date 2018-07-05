@@ -1,3 +1,3 @@
-module Presentations
+module Collect
   VERSION = '0.1.0'
 end

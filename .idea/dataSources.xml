@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Rails ulab-website: development" uuid="80d0613a-9a25-492d-b4f5-d107735cacc6">
+    <data-source source="LOCAL" name="Rails ulab-website: development" uuid="ef3e7918-eb27-4ef5-9e71-d649c761d7e6">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -9,7 +9,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:ulab-website_development</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="Rails ulab-website: test" uuid="4fd3b6d4-05ce-43c4-82b5-9e30b18eb86e">
+    <data-source source="LOCAL" name="Rails ulab-website: test" uuid="deb9028a-006d-41d6-9c05-d5f6a1824604">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

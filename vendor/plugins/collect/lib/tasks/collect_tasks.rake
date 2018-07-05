@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :presentations do
+# task :collect do
 #   # Task goes here
 # end

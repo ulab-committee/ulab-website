@@ -8,7 +8,7 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'presentations'
+gem 'collect'
 ```
 
 And then execute:

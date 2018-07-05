@@ -5,23 +5,20 @@
       <configuration>
         <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
         <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
-        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$/../../vendor/plugins/presentations" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$/../../vendor/plugins/collect" />
       </configuration>
     </facet>
   </component>
-  <component name="ModuleRunConfigurationManager">
-    <shared />
-  </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$/../../vendor/plugins/presentations">
-      <sourceFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/spec" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/.bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/components" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/public/system" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/vendor/bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/presentations/vendor/cache" />
+    <content url="file://$MODULE_DIR$/../../vendor/plugins/collect">
+      <sourceFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/spec" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/.bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/components" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/public/system" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/vendor/bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/plugins/collect/vendor/cache" />
     </content>
     <orderEntry type="jdk" jdkName="ruby-2.5.1-p57" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -48,7 +45,7 @@
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.7.1, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.7.0, ruby-2.5.1-p57) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.23, ruby-2.5.1-p57) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.25, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.1, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v5.0.4, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml-rails (v1.0.0, ruby-2.5.1-p57) [gem]" level="application" />
@@ -69,9 +66,9 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.0.0, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.3.0, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.11.3, ruby-2.5.1-p57) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mobility (v0.7.1, ruby-2.5.1-p57) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mobility (v0.7.5, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.3.1, ruby-2.5.1-p57) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.8.2, ruby-2.5.1-p57) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.8.3, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.0.0, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.0.5, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-rewrite (v1.5.1, ruby-2.5.1-p57) [gem]" level="application" />
@@ -90,7 +87,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.7, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.11.0, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spina (v1.0.3, ruby-2.5.1-p57) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.1, ruby-2.5.1-p57) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.13, ruby-2.5.1-p57) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.8.0, ruby-2.5.1-p57) [gem]" level="application" />
@@ -105,7 +102,7 @@
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
-    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../vendor/plugins/presentations/config/locales" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../vendor/plugins/collect/config/locales" />
   </component>
   <component name="RubyModuleProperties">
     <option name="autoCreated" value="true" />
