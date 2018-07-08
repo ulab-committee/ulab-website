@@ -13,16 +13,18 @@
         %tr
           %th= Spina::Presentation.human_attribute_name :title
           %th= Spina::Presentation.human_attribute_name :start_time
-          %th= Spina::Presentation.human_attribute_name :name
+          -#%th= Spina::Presentation.human_attribute_name :name
+          %th= Spina::Presentation.human_attribute_name :conference
           %th
 
       %tbody
         - if @presentations.any?
           - @presentations.each do |presentation|
             %tr
-              %td= presentation.title
+              %td= link_to presentation.title, spina.edit_admin_presentation_path(presentation)
               %td= l(presentation.start_time.to_time, format: :short) unless presentation.start_time.blank?
-              %td= presentation.name
+              -#%td= presentation.name
+              %td= presentation.spina_conference.institution_and_year
               %td.align-right
                 = link_to spina.edit_admin_presentation_path(presentation), class: 'button button-small button-link' do
                   = icon('pencil-outline')

@@ -1,6 +1,6 @@
 # jQuery
 
-#= require jquery
+#= require jquery.js
 #= require jquery_ujs
 
 # Turbolinks

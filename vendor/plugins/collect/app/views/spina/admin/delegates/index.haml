@@ -1,0 +1,39 @@
+%header#header
+  = render partial: 'spina/admin/shared/breadcrumbs'
+
+  #header_actions
+    = link_to spina.new_admin_delegate_path, class: 'button button-primary', style: 'margin-right: 0' do
+      = icon('plus')
+      = t('spina.delegates.new')
+
+.well
+  .table-container
+    %table.table
+      %thead
+        %tr
+          %th= Spina::Delegate.human_attribute_name :name
+          %th= Spina::Delegate.human_attribute_name :email_address
+          %th= Spina::Delegate.human_attribute_name :institution
+          %th
+
+      %tbody
+        - if @delegates.any?
+          - @delegates.each do |delegate|
+            %tr
+              %td= link_to delegate.full_name, spina.edit_admin_delegate_path(delegate)
+              %td
+                = delegate.email_address
+                - unless delegate.email_address.blank?
+                  = mail_to delegate.email_address, class: 'button button-small button-link' do
+                    = icon('mail')
+                    = t('spina.email')
+              %td= delegate.institution
+              %td.align-right
+                = link_to spina.edit_admin_delegate_path(delegate), class: 'button button-small button-link' do
+                  = icon('pencil-outline')
+                  = t('spina.edit')
+
+        - else
+          %tr
+            %td.align-center{colspan: 100}
+              %em= t('spina.delegates.no_delegates')

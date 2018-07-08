@@ -1,0 +1,34 @@
+%header#header
+  = render partial: 'spina/admin/shared/breadcrumbs'
+
+  #header_actions
+    = link_to spina.new_admin_conference_path, class: 'button button-primary', style: 'margin-right: 0' do
+      = icon('plus')
+      = t('spina.conferences.new')
+
+.well
+  .table-container
+    %table.table
+      %thead
+        %tr
+          %th= Spina::Conference.human_attribute_name :institution_and_year
+          %th= Spina::Conference.human_attribute_name :start_date
+          %th= Spina::Conference.human_attribute_name :finish_date
+          %th
+
+      %tbody
+        - if @conferences.any?
+          - @conferences.each do |conference|
+            %tr
+              %td= link_to conference.institution_and_year, spina.edit_admin_conference_path(conference)
+              %td= l(conference.start_date, format: :long) unless conference.start_date.blank?
+              %td= l(conference.finish_date, format: :long) unless conference.finish_date.blank?
+              %td.align-right
+                = link_to spina.edit_admin_conference_path(conference), class: 'button button-small button-link' do
+                  = icon('pencil-outline')
+                  = t('spina.edit')
+
+        - else
+          %tr
+            %td.align-center{colspan: 100}
+              %em= t('spina.conferences.no_conferences')

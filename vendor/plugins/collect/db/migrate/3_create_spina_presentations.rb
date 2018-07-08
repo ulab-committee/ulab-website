@@ -4,10 +4,8 @@ class CreateSpinaPresentations < ActiveRecord::Migration[5.2]
       t.string :title
       t.datetime :start_time
       t.datetime :finish_time
-      t.string :name
-      t.string :institution
-      t.string :email_address
       t.text :abstract
+      t.references :spina_conference, foreign_key: true
 
       t.timestamps null: false
     end

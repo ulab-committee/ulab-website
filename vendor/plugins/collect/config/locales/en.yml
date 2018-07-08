@@ -31,9 +31,22 @@
 
 en:
   spina:
+    email: Email
     collect:
       title: Conferences
+      conferences: Conferences
+      delegates: Delegates
       presentations: Presentations
+    conferences:
+      new: New conference
+      save: Save conference
+      delete_confirmation: "Are you sure you want to delete the conference <strong>%{conference}</strong>?"
+      no_conferences: There are no conferences
+    delegates:
+      new: New delegate
+      save: Save delegate
+      delete_confirmation: "Are you sure you want to delete the delegate <strong>%{delegate}</strong>?"
+      no_delegates: There are no delegates
     presentations:
       new: New presentation
       save: Save presentation
@@ -41,18 +54,29 @@ en:
       no_presentations: There are no presentations
     website:
       presentations: Presentations
+      delegates: Delegates
+      conferences: Conferences
     media_library:
       images: Images # This translation is apparently not provided by Spina for some reason
   activerecord:
     attributes:
-      spina/user:
+      spina/conference:
+        institution: Institution
+        institution_and_year: Institution and year
+        city: City
+        start_date: Start date
+        finish_date: Finish date
+      spina/delegate:
+        first_name: First name
+        last_name: Last name
+        name: Name
+        institution: Institution
+        email_address: Email address
+        conference: Conference
+        presenter: Presenters
+      spina/presentation:
         title: Title
-        title_placeholder: Title
         date: Date
         start_time: Start time
         start_time_description: Enter in the format hh:mm
-        name: Name
-        name_description: Name of the presenter
-        institution: Institution
-        email_address: Email
         abstract: Abstract

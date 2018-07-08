@@ -1,0 +1,56 @@
+- if @delegate.errors.any?
+  - content_for :notifications do
+    .notification.notification-danger.animated.fadeInRight
+      = icon('exclamation')
+      .notification-message
+        =t 'spina.notifications.alert'
+        %small= @delegate.errors.full_messages.join('<br />').html_safe
+      = link_to '#', data: { close_notification: true } do
+        = icon('cross')
+
+= form_for [:admin, @delegate], html: { autocomplete: "off" } do |f|
+  %header#header
+    = render partial: 'spina/admin/shared/breadcrumbs'
+
+    #header_actions
+      %button.button.button-primary{type: 'submit'}
+        = icon('check')
+        =t 'spina.delegates.save'
+
+      = link_to t('spina.cancel'), spina.admin_delegates_path, class: 'button', style: 'margin-right: 0'
+
+  .well
+    .horizontal-form
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :first_name
+        .horizontal-form-content
+          = f.text_field :first_name, placeholder: Spina::Delegate.human_attribute_name(:first_name)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :last_name
+        .horizontal-form-content
+          = f.text_field :last_name, placeholder: Spina::Delegate.human_attribute_name(:last_name)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :institution
+        .horizontal-form-content
+          = f.text_field :institution, placeholder: Spina::Delegate.human_attribute_name(:institution)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :email_address
+        .horizontal-form-content
+          = f.email_field :email_address, placeholder: Spina::Delegate.human_attribute_name(:email_address)
+
+      .horizontal-form-group
+        .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :conferences
+        .horizontal-form-content
+          .select-dropdown
+            = f.collection_select :spina_conference_ids, Spina::Conference.order(:start_date), :id, :institution_and_year, {}, { multiple: true }
+
+  - unless @delegate.new_record?
+    .pull-right= link_to t('spina.permanently_delete'), admin_delegate_path(@delegate), method: :delete, data: { confirm: t('spina.delegates.delete_confirmation', delegate: @delegate.full_name) }, class: 'button button-link button-danger'

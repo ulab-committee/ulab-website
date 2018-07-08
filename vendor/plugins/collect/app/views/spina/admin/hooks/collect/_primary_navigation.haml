@@ -1,11 +1,15 @@
-%li{ class: ('active' if %w[presentations].include? controller_name) }
+%li{ class: ('active' if %w[conferences delegates presentations].include? controller_name) }
   = link_to spina.admin_presentations_path do
     = icon('comment')
     = t("spina.#{plugin.name.downcase}.title")
     = icon('caret-right')
 
     %ul
-      %li{ class: ('active' if current_admin_path.start_with?(spina.admin_presentations_path)) }
+      %li{ class: ('active' if current_admin_path.start_with?('/conferences')) }
+        = link_to t("spina.#{plugin.name.downcase}.conferences"), spina.admin_conferences_path
+      %li{ class: ('active' if current_admin_path.start_with?('/delegates')) }
+        = link_to t("spina.#{plugin.name.downcase}.delegates"), spina.admin_delegates_path
+      %li{ class: ('active' if current_admin_path.start_with?('/presentations')) }
         = link_to t("spina.#{plugin.name.downcase}.presentations"), spina.admin_presentations_path
 
       %li
