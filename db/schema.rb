@@ -10,31 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_03_153515) do
+ActiveRecord::Schema.define(version: 2018_07_07_230926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
 
   create_table "spina_accounts", id: :serial, force: :cascade do |t|
     t.string "name"
@@ -65,16 +44,32 @@ ActiveRecord::Schema.define(version: 2018_07_03_153515) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_dates", force: :cascade do |t|
-    t.date "content"
+  create_table "spina_conferences", force: :cascade do |t|
+    t.date "start_date"
+    t.date "finish_date"
+    t.string "city"
+    t.string "institution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_email_addresses", force: :cascade do |t|
-    t.string "content"
+  create_table "spina_conferences_delegates", id: false, force: :cascade do |t|
+    t.bigint "conference_id", null: false
+    t.bigint "delegate_id", null: false
+  end
+
+  create_table "spina_delegates", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email_address"
+    t.string "institution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_delegates_presentations", id: false, force: :cascade do |t|
+    t.bigint "delegate_id", null: false
+    t.bigint "presentation_id", null: false
   end
 
   create_table "spina_image_collections", force: :cascade do |t|
@@ -201,12 +196,11 @@ ActiveRecord::Schema.define(version: 2018_07_03_153515) do
     t.string "title"
     t.datetime "start_time"
     t.datetime "finish_time"
-    t.string "name"
-    t.string "institution"
-    t.string "email_address"
     t.text "abstract"
+    t.bigint "spina_conference_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["spina_conference_id"], name: "index_spina_presentations_on_spina_conference_id"
   end
 
   create_table "spina_resources", force: :cascade do |t|
@@ -275,12 +269,6 @@ ActiveRecord::Schema.define(version: 2018_07_03_153515) do
     t.datetime "updated_at"
   end
 
-  create_table "spina_urls", force: :cascade do |t|
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "spina_users", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -293,4 +281,5 @@ ActiveRecord::Schema.define(version: 2018_07_03_153515) do
     t.datetime "password_reset_sent_at"
   end
 
+  add_foreign_key "spina_presentations", "spina_conferences"
 end
