@@ -48,14 +48,15 @@
 
       .horizontal-form-group
         .horizontal-form-label
-          = Spina::Delegate.human_attribute_name :conference
+          = Spina::Presentation.human_attribute_name :conferences
         .horizontal-form-content
           .select-dropdown
             = f.collection_select :spina_conference_id, Spina::Conference.order(:start_date).reverse_order, :id, :institution_and_year
 
       .horizontal-form-group
         .horizontal-form-label
-          = Spina::Delegate.human_attribute_name :presenters
+          = Spina::Presentation.human_attribute_name :presenters
+          %small= (Spina::Presentation.human_attribute_name :presenters_description).try(:html_safe)
         .horizontal-form-content
           .multiple.select-dropdown
             = f.collection_select :spina_delegate_ids, Spina::Delegate.order(:last_name), :id, :full_name_and_institution, {}, {multiple: true}

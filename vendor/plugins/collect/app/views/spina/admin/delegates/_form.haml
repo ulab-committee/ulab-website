@@ -48,6 +48,7 @@
       .horizontal-form-group
         .horizontal-form-label
           = Spina::Delegate.human_attribute_name :conferences
+          %small= (Spina::Delegate.human_attribute_name :conferences_description).try(:html_safe)
         .horizontal-form-content
           .multiple.select-dropdown
             = f.collection_select :spina_conference_ids, Spina::Conference.order(:start_date), :id, :institution_and_year, {}, { multiple: true }
