@@ -57,7 +57,7 @@
         .horizontal-form-label
           = Spina::Delegate.human_attribute_name :presenters
         .horizontal-form-content
-          .select-dropdown
+          .multiple.select-dropdown
             = f.collection_select :spina_delegate_ids, Spina::Delegate.order(:last_name), :id, :full_name_and_institution, {}, {multiple: true}
 
   - unless @presentation.new_record?
