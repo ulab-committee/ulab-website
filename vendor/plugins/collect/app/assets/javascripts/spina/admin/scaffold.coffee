@@ -9,7 +9,7 @@ $(document).on 'click', '.table-clickable tr', (e) ->
 
     if checkbox.length > 0
 
-      # Get shifty
+# Get shifty
       if !checkbox.prop("checked") && e.shiftKey
         $firstRow = $('.table-clickable tr input[type="checkbox"]:checked:first').closest('tr')
 
@@ -61,7 +61,7 @@ $(document).on 'change', '.dd', ->
 
 ready = ->
 
-  # Set paddingTop for section#main
+# Set paddingTop for section#main
   if header = document.getElementById('header')
     headerHeight = header.getBoundingClientRect().height
     $('section#main').css({paddingTop: headerHeight})
