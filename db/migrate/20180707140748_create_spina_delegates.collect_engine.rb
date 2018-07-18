@@ -5,6 +5,7 @@ class CreateSpinaDelegates < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :email_address
+      t.string :url
       t.string :institution
 
       t.timestamps null: false

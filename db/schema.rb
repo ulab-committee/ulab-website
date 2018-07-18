@@ -54,22 +54,23 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
   end
 
   create_table "spina_conferences_delegates", id: false, force: :cascade do |t|
-    t.bigint "conference_id", null: false
-    t.bigint "delegate_id", null: false
+    t.bigint "spina_conference_id", null: false
+    t.bigint "spina_delegate_id", null: false
   end
 
   create_table "spina_delegates", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email_address"
+    t.string "url"
     t.string "institution"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "spina_delegates_presentations", id: false, force: :cascade do |t|
-    t.bigint "delegate_id", null: false
-    t.bigint "presentation_id", null: false
+    t.bigint "spina_delegate_id", null: false
+    t.bigint "spina_presentation_id", null: false
   end
 
   create_table "spina_image_collections", force: :cascade do |t|
@@ -194,9 +195,10 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
 
   create_table "spina_presentations", force: :cascade do |t|
     t.string "title"
-    t.datetime "start_time"
-    t.datetime "finish_time"
+    t.date "date"
+    t.time "start_time"
     t.text "abstract"
+    t.string "type"
     t.bigint "spina_conference_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -281,5 +283,4 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
     t.datetime "password_reset_sent_at"
   end
 
-  add_foreign_key "spina_presentations", "spina_conferences"
 end
