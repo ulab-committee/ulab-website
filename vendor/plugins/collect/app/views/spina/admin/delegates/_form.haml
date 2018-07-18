@@ -13,7 +13,7 @@
     = render partial: 'spina/admin/shared/breadcrumbs'
 
     #header_actions
-      %button.button.button-primary{type: 'submit'}
+      %button.button.button-primary{ type: 'submit' }
         = icon('check')
         =t 'spina.delegates.save'
 
@@ -47,11 +47,17 @@
 
       .horizontal-form-group
         .horizontal-form-label
+          = Spina::Delegate.human_attribute_name :url
+        .horizontal-form-content
+          = f.url_field :url, placeholder: Spina::Delegate.human_attribute_name(:url)
+
+      .horizontal-form-group
+        .horizontal-form-label
           = Spina::Delegate.human_attribute_name :conferences
           %small= (Spina::Delegate.human_attribute_name :conferences_description).try(:html_safe)
         .horizontal-form-content
           .multiple.select-dropdown
-            = f.collection_select :spina_conference_ids, Spina::Conference.order(:start_date), :id, :institution_and_year, {}, { multiple: true }
+            = f.collection_select :conference_ids, Spina::Conference.order(:start_date), :id, :institution_and_year, {}, { multiple: true, required: true }
 
   - unless @delegate.new_record?
     .pull-right= link_to t('spina.permanently_delete'), admin_delegate_path(@delegate), method: :delete, data: { confirm: t('spina.delegates.delete_confirmation', delegate: @delegate.full_name) }, class: 'button button-link button-danger'

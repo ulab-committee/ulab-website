@@ -5,15 +5,15 @@
       .notification-message
         =t 'spina.notifications.alert'
         %small= @presentation.errors.full_messages.join('<br />').html_safe
-      = link_to '#', data: {close_notification: true} do
+      = link_to '#', data: { close_notification: true } do
         = icon('cross')
 
-= form_for [:admin, @presentation], html: {autocomplete: "off"} do |f|
+= form_for [:admin, @presentation], html: { autocomplete: "off" } do |f|
   %header#header
     = render partial: 'spina/admin/shared/breadcrumbs'
 
     #header_actions
-      %button.button.button-primary{type: 'submit'}
+      %button.button.button-primary{ type: 'submit' }
         = icon('check')
         =t 'spina.presentations.save'
 
@@ -31,7 +31,11 @@
         .horizontal-form-label
           = Spina::Presentation.human_attribute_name :date
         .horizontal-form-content
-          = f.date_field :start_time, value: (@presentation.start_time.strftime("%Y-%m-%d") unless @presentation.start_time.blank?), class: 'datepicker', placeholder: Spina::Presentation.human_attribute_name(:date), required: true
+          - if @presentation.conference
+            .select-dropdown
+              = f.select :date, @presentation.conference.dates.collect { |d| [l(d, format: :short), d.strftime("%Y-%m-%d")] }, required: true
+          - else
+            = f.date_field :date, value: (@presentation.date.strftime("%Y-%m-%d") unless @presentation.date.blank?), class: 'datepicker', placeholder: Spina::Presentation.human_attribute_name(:date), required: true
 
       .horizontal-form-group
         .horizontal-form-label
@@ -51,7 +55,7 @@
           = Spina::Presentation.human_attribute_name :conferences
         .horizontal-form-content
           .select-dropdown
-            = f.collection_select :spina_conference_id, Spina::Conference.order(:start_date).reverse_order, :id, :institution_and_year
+            = f.collection_select :spina_conference_id, Spina::Conference.order(:start_date).reverse_order, :id, :institution_and_year, { required: true }
 
       .horizontal-form-group
         .horizontal-form-label
@@ -59,7 +63,7 @@
           %small= (Spina::Presentation.human_attribute_name :presenters_description).try(:html_safe)
         .horizontal-form-content
           .multiple.select-dropdown
-            = f.collection_select :spina_delegate_ids, Spina::Delegate.order(:last_name), :id, :full_name_and_institution, {}, {multiple: true}
+            = f.collection_select :delegate_ids, Spina::Delegate.order(:last_name), :id, :full_name_and_institution, { }, { multiple: true, required: true }
 
   - unless @presentation.new_record?
-    .pull-right= link_to t('spina.permanently_delete'), admin_presentation_path(@presentation), method: :delete, data: {confirm: t('spina.presentations.delete_confirmation', presentation: @presentation.title)}, class: 'button button-link button-danger'
+    .pull-right= link_to t('spina.permanently_delete'), admin_presentation_path(@presentation), method: :delete, data: { confirm: t('spina.presentations.delete_confirmation', presentation: @presentation.title) }, class: 'button button-link button-danger'

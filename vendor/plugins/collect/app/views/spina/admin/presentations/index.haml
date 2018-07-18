@@ -13,7 +13,7 @@
         %tr
           %th= Spina::Presentation.human_attribute_name :title
           %th= Spina::Presentation.human_attribute_name :start_time
-          -#%th= Spina::Presentation.human_attribute_name :name
+          %th= Spina::Presentation.human_attribute_name :presenters
           %th= Spina::Presentation.human_attribute_name :conference
           %th
 
@@ -22,9 +22,12 @@
           - @presentations.each do |presentation|
             %tr
               %td= link_to presentation.title, spina.edit_admin_presentation_path(presentation)
-              %td= l(presentation.start_time.to_time, format: :short) unless presentation.start_time.blank?
-              -#%td= presentation.name
-              %td= presentation.spina_conference.institution_and_year
+              %td= l(presentation.start_datetime, format: :short) unless presentation.start_datetime.blank?
+              %td
+                - presentation.delegates.each do |delegate|
+                  = link_to delegate.full_name_and_institution, spina.edit_admin_delegate_path(delegate)
+                  %br
+              %td= link_to presentation.conference.institution_and_year, spina.edit_admin_conference_path(presentation.conference)
               %td.align-right
                 = link_to spina.edit_admin_presentation_path(presentation), class: 'button button-small button-link' do
                   = icon('pencil-outline')
@@ -32,5 +35,5 @@
 
         - else
           %tr
-            %td.align-center{colspan: 100}
+            %td.align-center{ colspan: 100 }
               %em= t('spina.presentations.no_presentations')
