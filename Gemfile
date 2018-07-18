@@ -75,3 +75,6 @@ gem 'rack-timeout'
 
 # S3
 gem 'aws-sdk-s3', require: false
+
+# Opal
+gem 'opal-rails'

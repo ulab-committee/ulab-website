@@ -1,2 +1,0 @@
-#= require activestorage
-#= require turbolinks
