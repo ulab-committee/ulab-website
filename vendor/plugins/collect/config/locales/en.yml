@@ -72,14 +72,15 @@ en:
         name: Name
         institution: Institution
         email_address: Email address
+        url: Website
         conferences: Conferences
         conferences_description: Select multiple conferences with <kbd>⌘</kbd> and <kbd>⇧</kbd> on Mac, or <kbd>⌃</kbd> and <kbd>⇧</kbd> on Windows and Linux
       spina/presentation:
         title: Title
         date: Date
         start_time: Start time
-        start_time_description: Enter in the format hh:mm
+        start_time_description: Enter in 24-hour format using a colon as the divider
         abstract: Abstract
+        type: Type
         presenters: Presenters
-        presenters_description: Select multiple presenters with <kbd>⌘</kbd> and <kbd>⇧</kbd> on Mac, or <kbd>⌃</kbd> and <kbd>⇧</kbd> on Windows and Linux
-        presenters_description: Select multiple presenters with <kbd>⌘</kbd> and <kbd>⇧</kbd> on Mac, or <kbd>⌃</kbd> and <kbd>⇧</kbd> on Windows and Linux
+        presenters_description: Select multiple presenters by holding <kbd>⌘</kbd> or <kbd>⇧</kbd> on Mac, or <kbd>⌃</kbd> or <kbd>⇧</kbd> on Windows and Linux
