@@ -9,5 +9,9 @@ module Spina
     def institution_and_year
       "#{institution} #{start_date.year}"
     end
+
+    def dates
+      (start_date..finish_date).to_a
+    end
   end
 end
