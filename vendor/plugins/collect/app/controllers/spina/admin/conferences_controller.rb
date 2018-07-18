@@ -50,7 +50,7 @@ module Spina
       end
 
       def conference_params
-        params.require(:conference).permit(:start_date, :finish_date, :city, :institution, :spina_delegate_ids, :spina_presentation_ids)
+        params.require(:conference).permit(:start_date, :finish_date, :city, :institution, delegate_ids: [], presentation_ids: [])
       end
 
     end
