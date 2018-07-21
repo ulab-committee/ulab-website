@@ -1,7 +1,7 @@
 # Opal
 
 require 'opal'
-require 'opal_ujs'
+require 'rails_ujs'
 
 # Turbolinks
 
