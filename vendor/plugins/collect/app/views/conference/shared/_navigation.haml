@@ -1,9 +1,0 @@
-%nav
-  %ul
-    - Spina::Page.live.roots.sorted.in_menu.each do |page|
-      %li{class: ('active' if page == current_page)}
-        = link_to page.menu_title, page.materialized_path
-        - unless Spina::Page.live.where(ancestry: page.id).blank?
-          %ul
-            - Spina::Page.live.where(ancestry: page.id).sorted.in_menu.each do |subpage|
-              %li{class: ('active' if subpage == current_page)}= link_to subpage.menu_title, subpage.materialized_path
