@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Spina CMS
 gem 'spina'
 
-# Presentations plugin
+# Collect plugin
 gem 'collect', path: '..'
 
 # For Heroku
