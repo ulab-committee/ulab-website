@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spina'
 
 # Collect plugin
-gem 'collect', path: '..'
+gem 'collect'
 
 # For Heroku
 gem 'rack-timeout'
