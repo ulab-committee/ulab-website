@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_07_230926) do
+ActiveRecord::Schema.define(version: 2018_08_18_120960) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
   end
 
   create_table "spina_conferences", force: :cascade do |t|
-    t.date "start_date"
-    t.date "finish_date"
+    t.daterange "dates"
     t.string "city"
     t.string "institution"
     t.datetime "created_at", null: false
@@ -56,6 +55,12 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
   create_table "spina_conferences_delegates", id: false, force: :cascade do |t|
     t.bigint "spina_conference_id", null: false
     t.bigint "spina_delegate_id", null: false
+  end
+
+  create_table "spina_dates", force: :cascade do |t|
+    t.date "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spina_delegates", force: :cascade do |t|
@@ -68,9 +73,26 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spina_delegates_dietary_requirements", id: false, force: :cascade do |t|
+    t.bigint "spina_delegate_id", null: false
+    t.bigint "spina_dietary_requirement_id", null: false
+  end
+
   create_table "spina_delegates_presentations", id: false, force: :cascade do |t|
     t.bigint "spina_delegate_id", null: false
     t.bigint "spina_presentation_id", null: false
+  end
+
+  create_table "spina_dietary_requirements", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_email_addresses", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spina_image_collections", force: :cascade do |t|
@@ -193,16 +215,24 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
   end
 
+  create_table "spina_presentation_types", force: :cascade do |t|
+    t.string "name"
+    t.interval "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "spina_presentations", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.time "start_time"
     t.text "abstract"
-    t.string "type"
     t.bigint "spina_conference_id"
+    t.bigint "spina_presentation_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spina_conference_id"], name: "index_spina_presentations_on_spina_conference_id"
+    t.index ["spina_presentation_type_id"], name: "index_spina_presentations_on_spina_presentation_type_id"
   end
 
   create_table "spina_resources", force: :cascade do |t|
@@ -269,6 +299,12 @@ ActiveRecord::Schema.define(version: 2018_07_07_230926) do
   create_table "spina_texts", id: :serial, force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spina_urls", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spina_users", id: :serial, force: :cascade do |t|
