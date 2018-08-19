@@ -90,7 +90,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    collect (0.1.4)
+    collect (0.1.5)
       opal-rails (~> 0.9)
       rails (~> 5.2)
       spina (~> 1.0)
