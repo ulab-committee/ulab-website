@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/jmalcic/collect.git
+  revision: 7159646da093542b3a159e39729ffe842e50c6e9
+  specs:
+    collect (0.0.1)
+      opal-rails (~> 0.9)
+      pg (>= 0.18, < 2.0)
+      rails (~> 5.2)
+      spina (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,6 +59,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    ast (2.4.0)
     aws-eventstream (1.0.1)
     aws-partitions (1.100.0)
     aws-sdk-core (3.24.1)
@@ -90,10 +101,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    collect (0.1.5)
-      opal-rails (~> 0.9)
-      rails (~> 5.2)
-      spina (~> 1.0)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     dotenv (2.5.0)
@@ -176,27 +183,29 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    opal (0.10.6)
+    opal (0.11.3)
+      ast (>= 2.3.0)
       hike (~> 1.2)
+      parser (= 2.3.3.1)
       sourcemap (~> 0.1.0)
-      sprockets (~> 3.1)
-      tilt (>= 1.4)
     opal-activesupport (0.3.1)
       opal (>= 0.5.0, < 1.0.0)
-    opal-jquery (0.4.2)
-      opal (>= 0.7.0, < 0.11.0)
-    opal-rails (0.9.4)
+    opal-jquery (0.4.3)
+      opal (>= 0.10.0, < 0.12.0)
+    opal-rails (0.9.5)
       jquery-rails
-      opal (>= 0.10.0, < 0.12)
+      opal (>= 0.11.0, < 0.12)
       opal-activesupport (>= 0.0.5)
       opal-jquery (~> 0.4.0)
-      opal-sprockets (~> 0.4.1)
+      opal-sprockets (~> 0.4.2)
       rails (>= 4.1, < 6.0)
       sprockets-rails (>= 2.3.3, < 4.0)
-    opal-sprockets (0.4.1.0.10.4.3.1.0)
-      opal (~> 0.10.4)
+    opal-sprockets (0.4.2.0.11.0.3.1)
+      opal (~> 0.11.0)
       sprockets (~> 3.1)
       tilt (>= 1.4)
+    parser (2.3.3.1)
+      ast (~> 2.2)
     pg (1.0.0)
     public_suffix (3.0.3)
     puma (3.12.0)
@@ -314,7 +323,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  collect
+  collect!
   dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -337,4 +346,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
