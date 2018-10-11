@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'spina'
 
 # Collect plugin
-gem 'collect', github: 'jmalcic/collect'
+gem 'spina-conferences', github: 'jmalcic/spina-conferences'
 
 # For Heroku
 gem 'rack-timeout'

@@ -1,0 +1,229 @@
+                   Prefix Verb URI Pattern                                                                              Controller#Action
+                    spina      /                                                                                        Spina::Engine
+       rails_service_blob GET  /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET  /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET  /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT  /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+
+Routes for Spina::Engine:
+                            conferences_presentations GET    /calendars/presentations(.:format)                                                           spina/conferences/presentations#index
+                 conferences_conference_presentations GET    /calendars/conferences/:conference_id/presentations(.:format)                                spina/conferences/presentations#index
+                              conferences_conferences GET    /calendars/conferences(.:format)                                                             spina/conferences/conferences#index
+                               conferences_conference GET    /calendars/conferences/:id(.:format)                                                         spina/conferences/conferences#show
+                               admin_conference_pages GET    /admin/conference_pages(.:format)                                                            spina/admin/conferences/conference_pages#index
+                                                      POST   /admin/conference_pages(.:format)                                                            spina/admin/conferences/conference_pages#create
+                            new_admin_conference_page GET    /admin/conference_pages/new(.:format)                                                        spina/admin/conferences/conference_pages#new
+                           edit_admin_conference_page GET    /admin/conference_pages/:id/edit(.:format)                                                   spina/admin/conferences/conference_pages#edit
+                                admin_conference_page GET    /admin/conference_pages/:id(.:format)                                                        spina/admin/conferences/conference_pages#show
+                                                      PATCH  /admin/conference_pages/:id(.:format)                                                        spina/admin/conferences/conference_pages#update
+                                                      PUT    /admin/conference_pages/:id(.:format)                                                        spina/admin/conferences/conference_pages#update
+                                                      DELETE /admin/conference_pages/:id(.:format)                                                        spina/admin/conferences/conference_pages#destroy
+                               admin_conferences_root GET    /admin/conferences(.:format)                                                                 spina/admin/conferences/conferences#index
+      admin_conferences_conference_presentation_types GET    /admin/conferences/conferences/:conference_id/presentation_types(.:format)                   spina/admin/conferences/presentation_types#index
+                                                      POST   /admin/conferences/conferences/:conference_id/presentation_types(.:format)                   spina/admin/conferences/presentation_types#create
+   new_admin_conferences_conference_presentation_type GET    /admin/conferences/conferences/:conference_id/presentation_types/new(.:format)               spina/admin/conferences/presentation_types#new
+  edit_admin_conferences_conference_presentation_type GET    /admin/conferences/conferences/:conference_id/presentation_types/:id/edit(.:format)          spina/admin/conferences/presentation_types#edit
+       admin_conferences_conference_presentation_type PATCH  /admin/conferences/conferences/:conference_id/presentation_types/:id(.:format)               spina/admin/conferences/presentation_types#update
+                                                      PUT    /admin/conferences/conferences/:conference_id/presentation_types/:id(.:format)               spina/admin/conferences/presentation_types#update
+                                                      DELETE /admin/conferences/conferences/:conference_id/presentation_types/:id(.:format)               spina/admin/conferences/presentation_types#destroy
+                   admin_conferences_conference_rooms GET    /admin/conferences/conferences/:conference_id/rooms(.:format)                                spina/admin/conferences/rooms#index
+                                                      POST   /admin/conferences/conferences/:conference_id/rooms(.:format)                                spina/admin/conferences/rooms#create
+                new_admin_conferences_conference_room GET    /admin/conferences/conferences/:conference_id/rooms/new(.:format)                            spina/admin/conferences/rooms#new
+               edit_admin_conferences_conference_room GET    /admin/conferences/conferences/:conference_id/rooms/:id/edit(.:format)                       spina/admin/conferences/rooms#edit
+                    admin_conferences_conference_room PATCH  /admin/conferences/conferences/:conference_id/rooms/:id(.:format)                            spina/admin/conferences/rooms#update
+                                                      PUT    /admin/conferences/conferences/:conference_id/rooms/:id(.:format)                            spina/admin/conferences/rooms#update
+                                                      DELETE /admin/conferences/conferences/:conference_id/rooms/:id(.:format)                            spina/admin/conferences/rooms#destroy
+                        admin_conferences_conferences GET    /admin/conferences/conferences(.:format)                                                     spina/admin/conferences/conferences#index
+                                                      POST   /admin/conferences/conferences(.:format)                                                     spina/admin/conferences/conferences#create
+                     new_admin_conferences_conference GET    /admin/conferences/conferences/new(.:format)                                                 spina/admin/conferences/conferences#new
+                    edit_admin_conferences_conference GET    /admin/conferences/conferences/:id/edit(.:format)                                            spina/admin/conferences/conferences#edit
+                         admin_conferences_conference GET    /admin/conferences/conferences/:id(.:format)                                                 spina/admin/conferences/conferences#show
+                                                      PATCH  /admin/conferences/conferences/:id(.:format)                                                 spina/admin/conferences/conferences#update
+                                                      PUT    /admin/conferences/conferences/:id(.:format)                                                 spina/admin/conferences/conferences#update
+                                                      DELETE /admin/conferences/conferences/:id(.:format)                                                 spina/admin/conferences/conferences#destroy
+                  admin_conferences_institution_rooms GET    /admin/conferences/institutions/:institution_id/rooms(.:format)                              spina/admin/conferences/rooms#index
+                                                      POST   /admin/conferences/institutions/:institution_id/rooms(.:format)                              spina/admin/conferences/rooms#create
+               new_admin_conferences_institution_room GET    /admin/conferences/institutions/:institution_id/rooms/new(.:format)                          spina/admin/conferences/rooms#new
+              edit_admin_conferences_institution_room GET    /admin/conferences/institutions/:institution_id/rooms/:id/edit(.:format)                     spina/admin/conferences/rooms#edit
+                   admin_conferences_institution_room PATCH  /admin/conferences/institutions/:institution_id/rooms/:id(.:format)                          spina/admin/conferences/rooms#update
+                                                      PUT    /admin/conferences/institutions/:institution_id/rooms/:id(.:format)                          spina/admin/conferences/rooms#update
+                                                      DELETE /admin/conferences/institutions/:institution_id/rooms/:id(.:format)                          spina/admin/conferences/rooms#destroy
+                       admin_conferences_institutions GET    /admin/conferences/institutions(.:format)                                                    spina/admin/conferences/institutions#index
+                                                      POST   /admin/conferences/institutions(.:format)                                                    spina/admin/conferences/institutions#create
+                    new_admin_conferences_institution GET    /admin/conferences/institutions/new(.:format)                                                spina/admin/conferences/institutions#new
+                   edit_admin_conferences_institution GET    /admin/conferences/institutions/:id/edit(.:format)                                           spina/admin/conferences/institutions#edit
+                        admin_conferences_institution PATCH  /admin/conferences/institutions/:id(.:format)                                                spina/admin/conferences/institutions#update
+                                                      PUT    /admin/conferences/institutions/:id(.:format)                                                spina/admin/conferences/institutions#update
+                                                      DELETE /admin/conferences/institutions/:id(.:format)                                                spina/admin/conferences/institutions#destroy
+                 admin_conferences_room_presentations GET    /admin/conferences/rooms/:room_id/presentations(.:format)                                    spina/admin/conferences/presentations#index
+                                                      POST   /admin/conferences/rooms/:room_id/presentations(.:format)                                    spina/admin/conferences/presentations#create
+              new_admin_conferences_room_presentation GET    /admin/conferences/rooms/:room_id/presentations/new(.:format)                                spina/admin/conferences/presentations#new
+             edit_admin_conferences_room_presentation GET    /admin/conferences/rooms/:room_id/presentations/:id/edit(.:format)                           spina/admin/conferences/presentations#edit
+                  admin_conferences_room_presentation PATCH  /admin/conferences/rooms/:room_id/presentations/:id(.:format)                                spina/admin/conferences/presentations#update
+                                                      PUT    /admin/conferences/rooms/:room_id/presentations/:id(.:format)                                spina/admin/conferences/presentations#update
+                                                      DELETE /admin/conferences/rooms/:room_id/presentations/:id(.:format)                                spina/admin/conferences/presentations#destroy
+                              admin_conferences_rooms GET    /admin/conferences/rooms(.:format)                                                           spina/admin/conferences/rooms#index
+                                                      POST   /admin/conferences/rooms(.:format)                                                           spina/admin/conferences/rooms#create
+                           new_admin_conferences_room GET    /admin/conferences/rooms/new(.:format)                                                       spina/admin/conferences/rooms#new
+                          edit_admin_conferences_room GET    /admin/conferences/rooms/:id/edit(.:format)                                                  spina/admin/conferences/rooms#edit
+                               admin_conferences_room PATCH  /admin/conferences/rooms/:id(.:format)                                                       spina/admin/conferences/rooms#update
+                                                      PUT    /admin/conferences/rooms/:id(.:format)                                                       spina/admin/conferences/rooms#update
+                                                      DELETE /admin/conferences/rooms/:id(.:format)                                                       spina/admin/conferences/rooms#destroy
+                          admin_conferences_delegates GET    /admin/conferences/delegates(.:format)                                                       spina/admin/conferences/delegates#index
+                                                      POST   /admin/conferences/delegates(.:format)                                                       spina/admin/conferences/delegates#create
+                       new_admin_conferences_delegate GET    /admin/conferences/delegates/new(.:format)                                                   spina/admin/conferences/delegates#new
+                      edit_admin_conferences_delegate GET    /admin/conferences/delegates/:id/edit(.:format)                                              spina/admin/conferences/delegates#edit
+                           admin_conferences_delegate PATCH  /admin/conferences/delegates/:id(.:format)                                                   spina/admin/conferences/delegates#update
+                                                      PUT    /admin/conferences/delegates/:id(.:format)                                                   spina/admin/conferences/delegates#update
+                                                      DELETE /admin/conferences/delegates/:id(.:format)                                                   spina/admin/conferences/delegates#destroy
+             admin_conferences_presentation_delegates GET    /admin/conferences/presentations/:presentation_id/delegates(.:format)                        spina/admin/conferences/delegates#index
+                                                      POST   /admin/conferences/presentations/:presentation_id/delegates(.:format)                        spina/admin/conferences/delegates#create
+          new_admin_conferences_presentation_delegate GET    /admin/conferences/presentations/:presentation_id/delegates/new(.:format)                    spina/admin/conferences/delegates#new
+         edit_admin_conferences_presentation_delegate GET    /admin/conferences/presentations/:presentation_id/delegates/:id/edit(.:format)               spina/admin/conferences/delegates#edit
+              admin_conferences_presentation_delegate PATCH  /admin/conferences/presentations/:presentation_id/delegates/:id(.:format)                    spina/admin/conferences/delegates#update
+                                                      PUT    /admin/conferences/presentations/:presentation_id/delegates/:id(.:format)                    spina/admin/conferences/delegates#update
+                                                      DELETE /admin/conferences/presentations/:presentation_id/delegates/:id(.:format)                    spina/admin/conferences/delegates#destroy
+                      admin_conferences_presentations GET    /admin/conferences/presentations(.:format)                                                   spina/admin/conferences/presentations#index
+                                                      POST   /admin/conferences/presentations(.:format)                                                   spina/admin/conferences/presentations#create
+                   new_admin_conferences_presentation GET    /admin/conferences/presentations/new(.:format)                                               spina/admin/conferences/presentations#new
+                  edit_admin_conferences_presentation GET    /admin/conferences/presentations/:id/edit(.:format)                                          spina/admin/conferences/presentations#edit
+                       admin_conferences_presentation PATCH  /admin/conferences/presentations/:id(.:format)                                               spina/admin/conferences/presentations#update
+                                                      PUT    /admin/conferences/presentations/:id(.:format)                                               spina/admin/conferences/presentations#update
+                                                      DELETE /admin/conferences/presentations/:id(.:format)                                               spina/admin/conferences/presentations#destroy
+            admin_conferences_presentation_type_rooms GET    /admin/conferences/presentation_types/:presentation_type_id/rooms(.:format)                  spina/admin/conferences/rooms#index
+                                                      POST   /admin/conferences/presentation_types/:presentation_type_id/rooms(.:format)                  spina/admin/conferences/rooms#create
+         new_admin_conferences_presentation_type_room GET    /admin/conferences/presentation_types/:presentation_type_id/rooms/new(.:format)              spina/admin/conferences/rooms#new
+        edit_admin_conferences_presentation_type_room GET    /admin/conferences/presentation_types/:presentation_type_id/rooms/:id/edit(.:format)         spina/admin/conferences/rooms#edit
+             admin_conferences_presentation_type_room PATCH  /admin/conferences/presentation_types/:presentation_type_id/rooms/:id(.:format)              spina/admin/conferences/rooms#update
+                                                      PUT    /admin/conferences/presentation_types/:presentation_type_id/rooms/:id(.:format)              spina/admin/conferences/rooms#update
+                                                      DELETE /admin/conferences/presentation_types/:presentation_type_id/rooms/:id(.:format)              spina/admin/conferences/rooms#destroy
+    admin_conferences_presentation_type_presentations GET    /admin/conferences/presentation_types/:presentation_type_id/presentations(.:format)          spina/admin/conferences/presentations#index
+                                                      POST   /admin/conferences/presentation_types/:presentation_type_id/presentations(.:format)          spina/admin/conferences/presentations#create
+ new_admin_conferences_presentation_type_presentation GET    /admin/conferences/presentation_types/:presentation_type_id/presentations/new(.:format)      spina/admin/conferences/presentations#new
+edit_admin_conferences_presentation_type_presentation GET    /admin/conferences/presentation_types/:presentation_type_id/presentations/:id/edit(.:format) spina/admin/conferences/presentations#edit
+     admin_conferences_presentation_type_presentation PATCH  /admin/conferences/presentation_types/:presentation_type_id/presentations/:id(.:format)      spina/admin/conferences/presentations#update
+                                                      PUT    /admin/conferences/presentation_types/:presentation_type_id/presentations/:id(.:format)      spina/admin/conferences/presentations#update
+                                                      DELETE /admin/conferences/presentation_types/:presentation_type_id/presentations/:id(.:format)      spina/admin/conferences/presentations#destroy
+        admin_conferences_presentation_type_room_uses GET    /admin/conferences/presentation_types/:presentation_type_id/room_uses(.:format)              spina/admin/conferences/room_uses#index
+                 admin_conferences_presentation_types GET    /admin/conferences/presentation_types(.:format)                                              spina/admin/conferences/presentation_types#index
+                                                      POST   /admin/conferences/presentation_types(.:format)                                              spina/admin/conferences/presentation_types#create
+              new_admin_conferences_presentation_type GET    /admin/conferences/presentation_types/new(.:format)                                          spina/admin/conferences/presentation_types#new
+             edit_admin_conferences_presentation_type GET    /admin/conferences/presentation_types/:id/edit(.:format)                                     spina/admin/conferences/presentation_types#edit
+                  admin_conferences_presentation_type GET    /admin/conferences/presentation_types/:id(.:format)                                          spina/admin/conferences/presentation_types#show
+                                                      PATCH  /admin/conferences/presentation_types/:id(.:format)                                          spina/admin/conferences/presentation_types#update
+                                                      PUT    /admin/conferences/presentation_types/:id(.:format)                                          spina/admin/conferences/presentation_types#update
+                                                      DELETE /admin/conferences/presentation_types/:id(.:format)                                          spina/admin/conferences/presentation_types#destroy
+               admin_conferences_dietary_requirements GET    /admin/conferences/dietary_requirements(.:format)                                            spina/admin/conferences/dietary_requirements#index
+                                                      POST   /admin/conferences/dietary_requirements(.:format)                                            spina/admin/conferences/dietary_requirements#create
+            new_admin_conferences_dietary_requirement GET    /admin/conferences/dietary_requirements/new(.:format)                                        spina/admin/conferences/dietary_requirements#new
+           edit_admin_conferences_dietary_requirement GET    /admin/conferences/dietary_requirements/:id/edit(.:format)                                   spina/admin/conferences/dietary_requirements#edit
+                admin_conferences_dietary_requirement PATCH  /admin/conferences/dietary_requirements/:id(.:format)                                        spina/admin/conferences/dietary_requirements#update
+                                                      PUT    /admin/conferences/dietary_requirements/:id(.:format)                                        spina/admin/conferences/dietary_requirements#update
+                                                      DELETE /admin/conferences/dietary_requirements/:id(.:format)                                        spina/admin/conferences/dietary_requirements#destroy
+                                           admin_root GET    /admin(.:format)                                                                             spina/admin/pages#index
+                                  style_admin_account GET    /admin/account/style(.:format)                                                               spina/admin/accounts#style
+                              analytics_admin_account GET    /admin/account/analytics(.:format)                                                           spina/admin/accounts#analytics
+                                 social_admin_account GET    /admin/account/social(.:format)                                                              spina/admin/accounts#social
+                                    new_admin_account GET    /admin/account/new(.:format)                                                                 spina/admin/accounts#new
+                                   edit_admin_account GET    /admin/account/edit(.:format)                                                                spina/admin/accounts#edit
+                                        admin_account GET    /admin/account(.:format)                                                                     spina/admin/accounts#show
+                                                      PATCH  /admin/account(.:format)                                                                     spina/admin/accounts#update
+                                                      PUT    /admin/account(.:format)                                                                     spina/admin/accounts#update
+                                                      DELETE /admin/account(.:format)                                                                     spina/admin/accounts#destroy
+                                                      POST   /admin/account(.:format)                                                                     spina/admin/accounts#create
+                                  admin_edit_settings GET    /admin/settings/:plugin(.:format)                                                            spina/admin/settings#edit
+                                       admin_settings PATCH  /admin/settings/:plugin(.:format)                                                            spina/admin/settings#update
+                                          admin_users GET    /admin/users(.:format)                                                                       spina/admin/users#index
+                                                      POST   /admin/users(.:format)                                                                       spina/admin/users#create
+                                       new_admin_user GET    /admin/users/new(.:format)                                                                   spina/admin/users#new
+                                      edit_admin_user GET    /admin/users/:id/edit(.:format)                                                              spina/admin/users#edit
+                                           admin_user GET    /admin/users/:id(.:format)                                                                   spina/admin/users#show
+                                                      PATCH  /admin/users/:id(.:format)                                                                   spina/admin/users#update
+                                                      PUT    /admin/users/:id(.:format)                                                                   spina/admin/users#update
+                                                      DELETE /admin/users/:id(.:format)                                                                   spina/admin/users#destroy
+                                       admin_sessions GET    /admin/sessions(.:format)                                                                    spina/admin/sessions#index
+                                                      POST   /admin/sessions(.:format)                                                                    spina/admin/sessions#create
+                                    new_admin_session GET    /admin/sessions/new(.:format)                                                                spina/admin/sessions#new
+                                   edit_admin_session GET    /admin/sessions/:id/edit(.:format)                                                           spina/admin/sessions#edit
+                                        admin_session GET    /admin/sessions/:id(.:format)                                                                spina/admin/sessions#show
+                                                      PATCH  /admin/sessions/:id(.:format)                                                                spina/admin/sessions#update
+                                                      PUT    /admin/sessions/:id(.:format)                                                                spina/admin/sessions#update
+                                                      DELETE /admin/sessions/:id(.:format)                                                                spina/admin/sessions#destroy
+                                          admin_login GET    /admin/login(.:format)                                                                       spina/admin/sessions#new
+                                         admin_logout GET    /admin/logout(.:format)                                                                      spina/admin/sessions#destroy
+                                admin_password_resets GET    /admin/password_resets(.:format)                                                             spina/admin/password_resets#index
+                                                      POST   /admin/password_resets(.:format)                                                             spina/admin/password_resets#create
+                             new_admin_password_reset GET    /admin/password_resets/new(.:format)                                                         spina/admin/password_resets#new
+                            edit_admin_password_reset GET    /admin/password_resets/:id/edit(.:format)                                                    spina/admin/password_resets#edit
+                                 admin_password_reset GET    /admin/password_resets/:id(.:format)                                                         spina/admin/password_resets#show
+                                                      PATCH  /admin/password_resets/:id(.:format)                                                         spina/admin/password_resets#update
+                                                      PUT    /admin/password_resets/:id(.:format)                                                         spina/admin/password_resets#update
+                                                      DELETE /admin/password_resets/:id(.:format)                                                         spina/admin/password_resets#destroy
+                                  admin_media_library GET    /admin/media_library(.:format)                                                               spina/admin/images#index
+                                     sort_admin_pages POST   /admin/pages/sort(.:format)                                                                  spina/admin/pages#sort
+                                          admin_pages GET    /admin/pages(.:format)                                                                       spina/admin/pages#index
+                                                      POST   /admin/pages(.:format)                                                                       spina/admin/pages#create
+                                       new_admin_page GET    /admin/pages/new(.:format)                                                                   spina/admin/pages#new
+                                      edit_admin_page GET    /admin/pages/:id/edit(.:format)                                                              spina/admin/pages#edit
+                                           admin_page GET    /admin/pages/:id(.:format)                                                                   spina/admin/pages#show
+                                                      PATCH  /admin/pages/:id(.:format)                                                                   spina/admin/pages#update
+                                                      PUT    /admin/pages/:id(.:format)                                                                   spina/admin/pages#update
+                                                      DELETE /admin/pages/:id(.:format)                                                                   spina/admin/pages#destroy
+                                  edit_admin_resource GET    /admin/resources/:id/edit(.:format)                                                          spina/admin/resources#edit
+                                       admin_resource GET    /admin/resources/:id(.:format)                                                               spina/admin/resources#show
+                                                      PATCH  /admin/resources/:id(.:format)                                                               spina/admin/resources#update
+                                                      PUT    /admin/resources/:id(.:format)                                                               spina/admin/resources#update
+                                sort_admin_navigation POST   /admin/navigations/:id/sort(.:format)                                                        spina/admin/navigations#sort
+                                    admin_navigations GET    /admin/navigations(.:format)                                                                 spina/admin/navigations#index
+                                                      POST   /admin/navigations(.:format)                                                                 spina/admin/navigations#create
+                                 new_admin_navigation GET    /admin/navigations/new(.:format)                                                             spina/admin/navigations#new
+                                edit_admin_navigation GET    /admin/navigations/:id/edit(.:format)                                                        spina/admin/navigations#edit
+                                     admin_navigation GET    /admin/navigations/:id(.:format)                                                             spina/admin/navigations#show
+                                                      PATCH  /admin/navigations/:id(.:format)                                                             spina/admin/navigations#update
+                                                      PUT    /admin/navigations/:id(.:format)                                                             spina/admin/navigations#update
+                                                      DELETE /admin/navigations/:id(.:format)                                                             spina/admin/navigations#destroy
+                             select_admin_attachments GET    /admin/attachments/select/:page_part_id(.:format)                                            spina/admin/attachments#select
+                             insert_admin_attachments POST   /admin/attachments/insert/:page_part_id(.:format)                                            spina/admin/attachments#insert
+                  select_collection_admin_attachments GET    /admin/attachments/select_collection/:page_part_id(.:format)                                 spina/admin/attachments#select_collection
+                  insert_collection_admin_attachments POST   /admin/attachments/insert_collection/:page_part_id(.:format)                                 spina/admin/attachments#insert_collection
+                                    admin_attachments GET    /admin/attachments(.:format)                                                                 spina/admin/attachments#index
+                                                      POST   /admin/attachments(.:format)                                                                 spina/admin/attachments#create
+                                 new_admin_attachment GET    /admin/attachments/new(.:format)                                                             spina/admin/attachments#new
+                                edit_admin_attachment GET    /admin/attachments/:id/edit(.:format)                                                        spina/admin/attachments#edit
+                                     admin_attachment GET    /admin/attachments/:id(.:format)                                                             spina/admin/attachments#show
+                                                      PATCH  /admin/attachments/:id(.:format)                                                             spina/admin/attachments#update
+                                                      PUT    /admin/attachments/:id(.:format)                                                             spina/admin/attachments#update
+                                                      DELETE /admin/attachments/:id(.:format)                                                             spina/admin/attachments#destroy
+                                  admin_media_folders GET    /admin/media_folders(.:format)                                                               spina/admin/media_folders#index
+                                                      POST   /admin/media_folders(.:format)                                                               spina/admin/media_folders#create
+                               new_admin_media_folder GET    /admin/media_folders/new(.:format)                                                           spina/admin/media_folders#new
+                              edit_admin_media_folder GET    /admin/media_folders/:id/edit(.:format)                                                      spina/admin/media_folders#edit
+                                   admin_media_folder GET    /admin/media_folders/:id(.:format)                                                           spina/admin/media_folders#show
+                                                      PATCH  /admin/media_folders/:id(.:format)                                                           spina/admin/media_folders#update
+                                                      PUT    /admin/media_folders/:id(.:format)                                                           spina/admin/media_folders#update
+                                                      DELETE /admin/media_folders/:id(.:format)                                                           spina/admin/media_folders#destroy
+                            media_folder_admin_images GET    /admin/images/folder/:id(.:format)                                                           spina/admin/images#media_folder
+                     add_to_media_folder_admin_images PUT    /admin/images/folder/:id(.:format)                                                           spina/admin/images#add_to_media_folder
+                                         admin_images GET    /admin/images(.:format)                                                                      spina/admin/images#index
+                                                      POST   /admin/images(.:format)                                                                      spina/admin/images#create
+                                      new_admin_image GET    /admin/images/new(.:format)                                                                  spina/admin/images#new
+                                     edit_admin_image GET    /admin/images/:id/edit(.:format)                                                             spina/admin/images#edit
+                                          admin_image GET    /admin/images/:id(.:format)                                                                  spina/admin/images#show
+                                                      PATCH  /admin/images/:id(.:format)                                                                  spina/admin/images#update
+                                                      PUT    /admin/images/:id(.:format)                                                                  spina/admin/images#update
+                                                      DELETE /admin/images/:id(.:format)                                                                  spina/admin/images#destroy
+                                   admin_media_picker GET    /admin/media_picker(.:format)                                                                spina/admin/media_picker#show
+                                                      POST   /admin/media_picker(.:format)                                                                spina/admin/media_picker#select
+                                          new_sitemap GET    /sitemap/new(.:format)                                                                       spina/sitemaps#new
+                                         edit_sitemap GET    /sitemap/edit(.:format)                                                                      spina/sitemaps#edit
+                                              sitemap GET    /sitemap(.:format)                                                                           spina/sitemaps#show
+                                                      PATCH  /sitemap(.:format)                                                                           spina/sitemaps#update
+                                                      PUT    /sitemap(.:format)                                                                           spina/sitemaps#update
+                                                      DELETE /sitemap(.:format)                                                                           spina/sitemaps#destroy
+                                                      POST   /sitemap(.:format)                                                                           spina/sitemaps#create
+                                               robots GET    /robots(.:format)                                                                            spina/pages#robots {:format=>"txt"}
+                                                 root GET    /                                                                                            spina/pages#homepage
+                                                      GET    /:locale/*id(.:format)                                                                       spina/pages#show {:locale=>/en/}
+                                                      GET    /:locale(.:format)                                                                           spina/pages#homepage {:locale=>/en/}
+                                                 page GET    /*id(.:format)                                                                               spina/pages#show
