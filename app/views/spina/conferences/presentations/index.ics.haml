@@ -1,0 +1,20 @@
+:ruby
+  cal = Icalendar::Calendar.new
+    cal.x_wr_calname = @calendar_name
+    @presentations.each do |presentation|
+      cal.event do |e|
+        e.dtstart = presentation.start_datetime
+        e.dtend = presentation.start_datetime + presentation.presentation_type.duration
+        e.url = spina.page_url id: presentation.conference_page.materialized_path.delete_prefix('/')
+        e.location = presentation.room_use.room_name
+        presentation.presenters.each do |presenter|
+          e.contact = presentation.presenter.full_name_and_institution
+        end
+        e.class = presentation.class.name.upcase
+        e.categories = presentation.class.name.demodulize.upcase
+        e.summary = presentation.name
+        e.description = strip_tags(presentation.abstract)
+      end
+    end
+  cal.publish
+= render plain: cal.to_ical

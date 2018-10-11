@@ -75,3 +75,9 @@ gem 'rack-timeout'
 
 # S3
 gem 'aws-sdk-s3', require: false
+
+# Email obfuscation
+gem 'actionview-encoded_mail_to'
+
+# iCal events
+gem 'icalendar'
