@@ -1,0 +1,48 @@
+@import "spina/fonts"
+@import "spina/ics_spina"
+
+nav
+  ol
+    list-style: none
+    padding: unset
+    li
+      display: inline
+      box-sizing: border-box
+      & a
+        display: inline-block
+        box-shadow: 0 0 0 1px #eeeeee
+        border-radius: 4px
+        padding: 8px
+        &:hover
+          box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
+  .buttons
+    list-style: none
+    padding: unset
+    li
+      display: inline
+      box-sizing: border-box
+      & a
+        display: inline-block
+      &:not(:first-child)
+        margin-left: 8px
+  ul:not(footer *):not(.buttons):not(:empty)
+    list-style: none
+    padding: unset
+    border-radius: 4px
+    overflow: hidden
+    box-shadow: 0 0 6px 2px #e6e6e6
+    background-color: #e6e6e6
+    li
+      background: #f6f6f6
+      &:not(:first-child)
+        margin-top: 1px
+      a
+        display: block
+        padding: 12px
+        color: #333333
+        &:hover
+          background: #fcfcfc
+          color: black
+    &:hover
+      box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
+      background-color: rgba($shadow_colour, .2)

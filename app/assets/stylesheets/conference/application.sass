@@ -1,0 +1,96 @@
+// Admin editing
+@import spina/application
+@import spina_front_end
+@import spina/configuration
+@import spina/fonts
+
+$shadow_colour: $primary-color
+
+@import fonts
+@import nav
+@import article
+@import summary
+@import figure
+@import button
+@import slideshow
+
+#admin_bar
+  position: static
+.spina-link, #admin_bar
+  font-family: $font-family
+
+body
+  .grid
+    font-family: 'Molde', Helvetica, Arial, sans-serif
+    text-shadow: #d0d0d0 0 1px 1px
+    width: 1024px
+    max-width: 90vw
+    margin: 5vw auto
+    display: grid
+    grid-template-columns: repeat(auto-fill, 48px)
+    grid-column-gap: 64px
+    grid-auto-flow: row
+    header
+      grid-column: 1 / 3
+      h1
+        font-weight: 600
+      & :first-child
+        margin-top: 0
+    main
+      grid-column: 3 / -1
+      h1
+        font:
+          size: 350%
+          kerning: auto
+          stretch: semi-expanded
+        line-height: 100%
+      & header + *
+        margin-top: 16px
+      ul.content-list
+        list-style: none
+        padding: unset
+        li:not(:first-child)
+          margin-top: 16px
+        a:not(:first-child)
+          margin-left: 8px
+      .alert
+        font-size: x-large
+        color: white
+        background-color: #ee2800
+        display: block
+        text-shadow: #444444 0 1px 1px
+        box-shadow: 0 0 6px 2px #e6e6e6
+        border-radius: 4px
+        padding: 8px
+        & :first-child
+          margin-right: 2px
+    footer
+      grid-column: 1 / -1
+    a
+      text-decoration: unset
+      color: unset
+    & *
+      transition-property: background-color, color, box-shadow, text-shadow, opacity
+      transition-duration: 0.25s
+      transition-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1)
+    details summary::before
+      content: '\f107'
+    details[open] summary::before
+      content: '\f105'
+    summary
+      &::-webkit-details-marker
+        display: none
+      &::before
+        display: inline-block
+        vertical-align: middle
+        font-size: inherit
+        line-height: inherit // NOTE: should be 1
+        font-family: "ics_spina" !important
+        font-style: normal !important
+        font-variant: normal !important
+        font-weight: normal !important
+        text-transform: none !important
+        speak: none
+        text-rendering: auto
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
