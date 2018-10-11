@@ -1,0 +1,89 @@
+- content_for(:header) do
+  = render "#{current_theme.name}/shared/title"
+  - if conference.institution.logo
+    %figure
+      = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
+  %div
+    = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
+    to
+    = time_tag conference.dates.end, l(conference.dates.end, format: :long)
+  %address<
+    = "#{conference.institution.name}"
+    = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+
+- if has_content? :gallery
+  = render "#{current_theme.name}/shared/gallery"
+
+= content(:text).try(:html_safe)
+
+- if has_content?(:submission_date) && Date.today <= content(:submission_date)
+  .alert
+    %strong
+      = icon('exclamation')
+      Submit abstracts by
+      = time_tag content(:submission_date), l(content(:submission_date), format: :short)
+    - if has_content? :submission_text
+      = content(:submission_text).try :html_safe
+    - if has_content? :submission_email_address
+      = mail_to content(:submission_email_address), 'Submit an abstract', class: :button
+
+= link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
+  Subscribe to presentations calendar
+
+- conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
+  - unless presentation_type.presentations.empty?
+    %h2= presentation_type.name.pluralize
+    - presentation_type.presentations.each do |presentation|
+      %article
+        %header
+          %h3= presentation.title
+          %address
+            - presentation.presenters.each do |presenter|
+              = "#{presenter.full_name}, #{presenter.institution.name}"
+          = time_tag presentation.start_time, l(presentation.start_time, format: :short)
+          = presentation.room_use.room_name
+        = presentation.abstract.try(:html_safe)
+
+- conference.presentation_types.where.not('name LIKE ?', '%Plenary%').each do |presentation_type|
+  - unless presentation_type.presentations.empty?
+    %details
+      %summary= "#{presentation_type.name} #{t('spina.conferences.website.presentations').downcase}"
+      - presentation_type.presentations.each do |presentation|
+        %a{ href: presentation.conference_page.materialized_path }
+          %article
+            %h3
+              = presentation.title
+              = icon('chevron-right')
+            %address
+              - presentation.presenters.each do |presenter|
+                = "#{presenter.full_name}, #{presenter.institution.name}"
+
+- if has_content? :socials
+  - unless content(:socials).structure_items.empty?
+    %h2 Socials
+    - content(:socials).structure_items.each do |social|
+      %article
+        %header
+          - if social.has_content? :name
+            %h3= social.content(:name)
+          - if social.has_content? :start_time
+            = time_tag social.content(:start_time), l(social.content(:start_time), format: :short)
+          - if social.has_content? :location
+            %address= social.content(:location)
+        - if social.has_content? :description
+          = social.content(:description).try(:html_safe)
+
+- if has_content? :meetings
+  - unless content(:meetings).structure_items.empty?
+    %h2 Meetings
+    - content(:meetings).structure_items.each do |meeting|
+      %article
+        %header
+          - if meeting.has_content? :name
+            %h3= meeting.content(:name)
+          - if meeting.has_content? :start_time
+            = time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short)
+          - if meeting.has_content? :location
+            %address= meeting.content(:location)
+        - if meeting.has_content? :description
+          = meeting.content(:description).try(:html_safe)
