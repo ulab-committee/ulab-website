@@ -65,7 +65,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Spina CMS
-gem 'spina'
+gem 'spina', github: 'SpinaCMS/Spina'
 
 # Collect plugin
 gem 'spina-conferences', github: 'jmalcic/spina-conferences'
