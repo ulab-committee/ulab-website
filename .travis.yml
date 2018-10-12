@@ -1,9 +1,5 @@
 addons:
   postgresql: 9.6
-  code_climate:
-    repo_token: 597297b31ccbd95a18f77f2ff015da5e1a91d2eff63f4aff39e78d80d79e8aac
-after_success:
-- bundle exec codeclimate-test-reporter
 before_script:
 - bundle exec rails db:setup
 language: ruby
@@ -12,7 +8,7 @@ rvm:
 deploy:
   provider: heroku
   api_key:
-    secure: dHT0x7PCs1PUNK8cd8jJw2510S8r2uYlyZESybVHzf/eYceCvkmMm4xQsqw+FpHD6tROzEW6rCeZhtGgphco3uoAVyXr0Z9m8EWLjvJJSb/pUQBfrk6NiAgwI2TY98o7macFrZE5KX+7eotmgXKcin89EJaoQ4gRY2MIaERjc1y2Y89CT4OqjwLgi8FstKJDydsR0GU55nO9/bmXpY2KznCcaV6ixtHKD0qJ28aZtH+T5jBq///tl6G4+yc+8sU55rd4Kwwx5JYK3uUk2nn2rEJmgyF+QTsqYgeAj0GsHc/1nzhd1AT87y3wVnWGkBoEjCZdVhRPkmWTjXeOMio0GSMZgWAf2VASRIntGVTXy7Q6pd61Pkn4yDQg93IpuqBIBwzJNyc53UR3WbGvGUN6A0IsUlQar6ZqukqMdirJF3n+DYot0+pKQTggK8gMxX8S1Z819ICoaTXskN52yqy4rr3UHMpueOw+H6uEmMU1Ei0zpzTJVNOQdBtLb6Y9b8w8AYlE+ktAHvl75yXlA/ZK8m5In422X62SLMM5Tk/iKLCsIgwe1DtcHb+4tr+E132fK4MmZv/apcRicRTnhHGoCKyfX8doCEaePMyCW+Nlv3PnAw6KfEUwIk+krao8aQD6yw5GsJ48iT2Zp/nOppxDV6/fwJfoHWm43PKhNofZBY8=
+    secure: "Zr4IrZSAAHWEIL115ZETed/n8YjB37c4QSZZpFqBwzoueSRqjeLVTVsS1grPpgMuPVkwcpfl5XfipY19h2g57wLaCznlYlZ+TgsrUcUNKqXnyOJuqNBu8b3Z0qmSQJJ+IdP0rmWOrwZfZ8L9OaB+PU05gPEq7lSBEuQchjgo1WumiEGj7zPP/dbKg3Ni6wUOxIZF/0+0qd5P5ob6CHB0z2OqqJctyym0M7P3VDfbLHAUoHLAxmF+kSl66T5NFmnz6W8/+9M6e2duf7FWQL2ygs4i8jnq0hSMel9Aa/avS2TtraFnpzp7/7axmoJ4JvzrcoTWAn9+k6PpoR/sxp5YpV/wksCE+ONMZG1WWNhB4bQXhoO3Kfg1bjPdnsoerkBqKYlITF8cn2ZB7WvQS8c/lSgNgIh6/EUV9ir1jvxdDF9LFQVwGawDZJzRMqtiTNFcD4zWMZHBBBJdtLE8kOGp9JqMzl1TtlNwEHj1ZJFz15wVJQiKRVZeb2y7Sx/0HyzDRPK/Ijc4rq7DNpQJrViUiRHxR+Npepw0w6kN8sJztc/FsZY2lXACmh9YiQUcQOD9fgNOOHYZYMHUmjM9eJn1dAMLjoRRX38DkEeXDJu/+rrsgIpGkBGBYTtPtgTCU65YNwb+Tg+duJnuDCSHDQEe3jlePRGeJcijsO7qCTciS9o="
   app: ulab-website-staging
   on:
     repo: ulab-committee/ulab-website
