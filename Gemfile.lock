@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: cd331a9a2a0f3a0494211feb6fdcfcc96c4cf798
+  revision: d74c2477e1ea16115a95e0c5b5d6f9579a1a85b4
   specs:
     spina-conferences (0.0.1)
       opal-activesupport (~> 0.3)

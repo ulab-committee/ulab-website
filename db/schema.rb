@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_131209) do
+ActiveRecord::Schema.define(version: 2018_10_12_191210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_131209) do
     t.bigint "spina_conferences_delegate_id", null: false
   end
 
-  create_table "spina_conferences_dates", force: :cascade do |t|
+  create_table "spina_conferences_date_parts", force: :cascade do |t|
     t.date "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_131209) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_conferences_email_addresses", force: :cascade do |t|
+  create_table "spina_conferences_email_address_parts", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -179,13 +179,13 @@ ActiveRecord::Schema.define(version: 2018_10_09_131209) do
     t.index ["institution_id"], name: "index_spina_conferences_rooms_on_institution_id"
   end
 
-  create_table "spina_conferences_times", force: :cascade do |t|
+  create_table "spina_conferences_time_parts", force: :cascade do |t|
     t.datetime "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "spina_conferences_urls", force: :cascade do |t|
+  create_table "spina_conferences_url_parts", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
