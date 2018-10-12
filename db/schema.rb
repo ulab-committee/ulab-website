@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_191210) do
+ActiveRecord::Schema.define(version: 2018_10_12_223242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,12 +147,11 @@ ActiveRecord::Schema.define(version: 2018_10_12_191210) do
 
   create_table "spina_conferences_presentations", force: :cascade do |t|
     t.string "title"
-    t.date "date"
-    t.time "start_time"
     t.text "abstract"
     t.bigint "room_use_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_datetime"
     t.index ["room_use_id"], name: "index_spina_conferences_presentations_on_room_use_id"
   end
 
