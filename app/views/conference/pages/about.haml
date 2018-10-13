@@ -1,6 +1,7 @@
 - content_for(:header) do
   = render "#{current_theme.name}/shared/title"
 
+= content(:text).try(:html_safe)
 - if has_content? :constitution
   %h2 Constitution
   = link_to main_app.rails_blob_path(content(:constitution), disposition: :attachment), class: :button do
