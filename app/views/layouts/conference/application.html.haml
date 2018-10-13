@@ -16,7 +16,7 @@
     .grid
       %header
         = link_to root_path do
-          %h1= current_account.name
+          - image_tag 'logo.svg', class: :logo, draggable: false
         = render "#{current_theme.name}/shared/navigation"
       %main
         %header
