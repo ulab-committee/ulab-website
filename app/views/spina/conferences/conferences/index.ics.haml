@@ -17,7 +17,7 @@
           e.url = spina.page_url id: presentation.conference_page.materialized_path.delete_prefix('/')
           e.location = presentation.room_use.room_name
           presentation.presenters.each do |presenter|
-            e.contact = presentation.presenter.full_name_and_institution
+            e.contact = presenter.full_name_and_institution
           end
           e.categories = presentation.class.name.demodulize.upcase
           e.summary = presentation.name
