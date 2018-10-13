@@ -11,6 +11,9 @@
     = "#{conference.institution.name}"
     = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
 
+= link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
+  Subscribe to conference calendar
+
 - if has_content? :gallery
   = render "#{current_theme.name}/shared/gallery"
 
