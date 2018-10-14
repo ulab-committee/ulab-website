@@ -104,6 +104,8 @@ GEM
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     breadcrumbs_on_rails (3.0.1)
+    bugsnag (6.8.0)
+      concurrent-ruby (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (3.9.0)
@@ -336,6 +338,7 @@ DEPENDENCIES
   actionview-encoded_mail_to
   aws-sdk-s3
   bootsnap (>= 1.1.0)
+  bugsnag (~> 6.8)
   byebug
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
