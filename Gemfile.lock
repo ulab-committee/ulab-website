@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: 7fb2ad45fb1cdabc246b36a7dd9f6264c655fe8c
+  revision: 5ec3e4d5c514c427f52856c5d674cd29b1c2ee12
   specs:
     spina-conferences (0.0.1)
       opal-activesupport (~> 0.3)
@@ -86,7 +86,7 @@ GEM
     ast (2.4.0)
     aws-eventstream (1.0.1)
     aws-partitions (1.105.0)
-    aws-sdk-core (3.30.0)
+    aws-sdk-core (3.32.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
@@ -154,7 +154,7 @@ GEM
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
-    i18n (1.1.0)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     icalendar (2.5.0)
       ice_cube (~> 0.16)
@@ -192,7 +192,7 @@ GEM
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
@@ -204,7 +204,7 @@ GEM
     mini_racer (0.2.3)
       libv8 (>= 6.3)
     minitest (5.11.3)
-    mobility (0.8.3)
+    mobility (0.8.4)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
     msgpack (1.2.4)
@@ -328,7 +328,7 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    xpath (3.1.0)
+    xpath (3.2.0)
       nokogiri (~> 1.8)
 
 PLATFORMS
