@@ -6,4 +6,4 @@
       %button{ data: { action: :'slideshow#next' } }
         = icon('chevron-right')
     - content(:gallery)&.images&.each do |image|
-      = image_tag main_app.url_for(image.variant(resize: '2160x2160')), data: { target: :'slideshow.slide' }, width: 720, height: 400
+      = image_tag main_app.url_for(image.variant(resize: '4500x4500')), data: { target: :'slideshow.slide' }, height: 400, width: '100%'
