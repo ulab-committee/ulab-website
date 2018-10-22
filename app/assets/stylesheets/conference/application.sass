@@ -15,38 +15,42 @@ $shadow_colour: $primary-color
 @import slideshow
 
 #admin_bar
-  position: static
+  position: relative
+  z-index: 2
 .spina-link, #admin_bar
   font-family: $font-family
 
+html, body
+  height: 100%
 body
-  .grid
-    font-family: 'Molde', Helvetica, Arial, sans-serif
-    text-shadow: #d0d0d0 0 1px 1px
-    width: 1024px
-    max-width: 90vw
-    margin: 5vw auto
+  display: flex
+  flex-direction: column
+  .content
+    flex-grow: 1
     display: flex
-    flex-wrap: wrap
-    header
+    font-family: 'Molde', Helvetica, Arial, sans-serif
+    & > header
+      flex-basis: 300px
+      flex-grow: 0
+      flex-shrink: 1
+      box-shadow: 0 0 6px 2px #e6e6e6
+      &:hover
+        box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
       h1
         font-weight: 600
       .logo
-        width: 100%
-        max-width: 192px
-        margin-bottom: 2em
+        margin: calc(4 / 15 * 100%) calc(4 / 15 * 100%) 40px calc(4 / 15 * 100%)
+    header
       & > :first-child
         margin-top: 0
-    & > header
-      margin: 32px
-      flex-basis: 190px
-      flex-grow: 1
-      flex-shrink: 1
+      h1
+        font-weight: 600
     main
-      margin: 32px
-      flex-basis: 384px
-      flex-grow: 1000
-      flex-shrink: 1
+      padding: 80px
+      overflow: scroll
+      flex-basis: 50%
+      flex-grow: 1
+      flex-shrink: 0
       section
         margin: 16px 0
       h1
@@ -75,13 +79,11 @@ body
         padding: 8px
         & :first-child
           margin-right: 2px
-    footer
-      grid-column: 1 / -1
     a
       text-decoration: unset
       color: unset
     & *
-      transition-property: background-color, color, box-shadow, text-shadow, opacity
+      transition-property: background-color, color, box-shadow, text-shadow, opacity, border, z-index
       transition-duration: 0.25s
       transition-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1)
     details summary::before

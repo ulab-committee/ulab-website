@@ -26,24 +26,23 @@ nav
       &:not(:first-child)
         margin-left: 8px
   ul:not(.buttons):not(:empty)
-    margin: 0
+    width: 100%
     list-style: none
     padding: unset
-    border-radius: 4px
-    overflow: hidden
-    box-shadow: 0 0 6px 2px #e6e6e6
-    background-color: #e6e6e6
     li
-      background: #f6f6f6
+      font-weight: 500
+      font-size: 20px
+      position: relative
       &:not(:first-child)
-        margin-top: 1px
+        margin-top: -1px
+      &:hover
+        z-index: 2
       a
         display: block
-        padding: 12px
-        color: #333333
+        padding: 12px calc(4 / 15 * 100%)
+        border-top: 1px solid #eee
+        border-bottom: 1px solid #eee
         &:hover
-          background: #fcfcfc
-          color: black
-    &:hover
-      box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
-      background-color: rgba($shadow_colour, .2)
+          color: $primary-color
+          border-top: 1px solid $primary-color
+          border-bottom: 1px solid $primary-color

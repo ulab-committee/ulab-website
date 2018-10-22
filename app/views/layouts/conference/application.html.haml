@@ -13,7 +13,7 @@
     = javascript_include_tag 'conference/application', data: {turbolinks_track: true}
   %body
     = render 'spina/shared/admin_bar'
-    .grid
+    .content
       %header
         = link_to root_path do
           - image_tag 'logo.svg', class: :logo, draggable: false
@@ -33,8 +33,8 @@
               = render "#{current_theme.name}/shared/alert"
           = yield(:header)
         = yield
-      %footer
-        = render "#{current_theme.name}/shared/footer"
+        %footer
+          = render "#{current_theme.name}/shared/footer"
 
     = spina_link
     = render 'spina/shared/social'
