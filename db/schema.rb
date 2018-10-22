@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_223242) do
+ActiveRecord::Schema.define(version: 2018_10_22_152941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -390,14 +390,14 @@ ActiveRecord::Schema.define(version: 2018_10_12_223242) do
   end
 
   add_foreign_key "spina_conferences_conference_page_parts", "spina_pages", column: "conference_page_id", on_delete: :cascade
-  add_foreign_key "spina_conferences_conferences", "spina_conferences_institutions", column: "institution_id"
-  add_foreign_key "spina_conferences_delegates", "spina_conferences_institutions", column: "institution_id"
-  add_foreign_key "spina_conferences_institutions", "spina_images", column: "logo_id"
-  add_foreign_key "spina_conferences_presentation_types", "spina_conferences_conferences", column: "conference_id"
-  add_foreign_key "spina_conferences_presentations", "spina_conferences_room_uses", column: "room_use_id"
-  add_foreign_key "spina_conferences_room_possessions", "spina_conferences_conferences", column: "conference_id"
-  add_foreign_key "spina_conferences_room_possessions", "spina_conferences_rooms", column: "room_id"
-  add_foreign_key "spina_conferences_room_uses", "spina_conferences_presentation_types", column: "presentation_type_id"
-  add_foreign_key "spina_conferences_room_uses", "spina_conferences_room_possessions", column: "room_possession_id"
-  add_foreign_key "spina_conferences_rooms", "spina_conferences_institutions", column: "institution_id"
+  add_foreign_key "spina_conferences_conferences", "spina_conferences_institutions", column: "institution_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_delegates", "spina_conferences_institutions", column: "institution_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_institutions", "spina_images", column: "logo_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_presentation_types", "spina_conferences_conferences", column: "conference_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_presentations", "spina_conferences_room_uses", column: "room_use_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_room_possessions", "spina_conferences_conferences", column: "conference_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_room_possessions", "spina_conferences_rooms", column: "room_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_room_uses", "spina_conferences_presentation_types", column: "presentation_type_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_room_uses", "spina_conferences_room_possessions", column: "room_possession_id", on_delete: :cascade
+  add_foreign_key "spina_conferences_rooms", "spina_conferences_institutions", column: "institution_id", on_delete: :cascade
 end
