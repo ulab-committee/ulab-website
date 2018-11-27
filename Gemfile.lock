@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: d8d8bc7fb60e6c62a754552d5e449ed840b07e84
+  revision: 0f3f695a7cf0c25c5fa40b923ffefdb7a8d4aad5
   specs:
     spina-conferences (0.0.1)
       opal-activesupport (~> 0.3)
@@ -85,7 +85,7 @@ GEM
     arel (9.0.0)
     ast (2.4.0)
     aws-eventstream (1.0.1)
-    aws-partitions (1.115.0)
+    aws-partitions (1.116.0)
     aws-sdk-core (3.39.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
@@ -94,7 +94,7 @@ GEM
     aws-sdk-kms (1.12.0)
       aws-sdk-core (~> 3, >= 3.39.0)
       aws-sigv4 (~> 1.0)
-    aws-sdk-s3 (1.25.0)
+    aws-sdk-s3 (1.26.0)
       aws-sdk-core (~> 3, >= 3.39.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
@@ -205,7 +205,7 @@ GEM
     mini_racer (0.2.4)
       libv8 (>= 6.3)
     minitest (5.11.3)
-    mobility (0.8.5)
+    mobility (0.8.6)
       i18n (>= 0.6.10, < 2)
       request_store (~> 1.0)
     msgpack (1.2.4)
