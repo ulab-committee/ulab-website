@@ -1,13 +1,40 @@
-main a.button
+a.button, button
   display: inline-block
-  padding: 8px 17.5px
-  border-radius: 35px
-  box-shadow: 0 0 6px 2px #e6e6e6
-  background: #f6f6f6
-  color: #333333
-  &:hover
-    background: #fcfcfc
+  padding: 10px 15px
+  border-radius: 23px
+  font-size: 20px
+  font-weight: 500
+  line-height: 1
+  & *
     color: black
-    box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
-  .icon
-    vertical-align: text-bottom
+  &:not(.solid):not(.hud)
+    border: 1px solid #ccc
+    &:hover
+      color: $primary-color
+      border-color: $primary-color
+      & *
+        color: $primary-color
+    &:active
+      background: $primary-color
+      color: #fff
+  &.solid
+    background: #fff
+    box-shadow: $shadow
+    &:hover
+      color: $primary-color
+      & *
+        color: $primary-color
+    &:active
+      box-shadow: none
+  &.hud
+    border: 1px solid #fff
+    background: transparent
+    color: #fff
+    & *
+      color: #fff
+    &:active
+      box-shadow: none
+      background: #fff
+      color: #000
+      & *
+        color: #000

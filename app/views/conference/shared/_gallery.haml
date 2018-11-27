@@ -1,9 +1,12 @@
 - unless content(:gallery)&.images&.empty?
-  %figure{ class: :gallery, data: { controller: :slideshow, slideshow: { incrementer: 0 } } }
-    .controls
-      %button{ data: { action: :'slideshow#previous' } }
-        = icon('chevron-left')
-      %button{ data: { action: :'slideshow#next' } }
-        = icon('chevron-right')
-    - content(:gallery)&.images&.each do |image|
-      = image_tag main_app.url_for(image.variant(resize: '4500x4500')), data: { target: :'slideshow.slide' }, height: 400, width: '100%'
+  %section
+    %figure{ class: :gallery, data: { controller: :slideshow, slideshow: { incrementer: 0 } } }
+      .controls
+        %button.hud{ data: { action: :'slideshow#previous' } }
+          = icon('chevron-left')
+          Previous
+        %button.hud{ data: { action: :'slideshow#next' } }
+          Next
+          = icon('chevron-right')
+      - content(:gallery)&.images&.each do |image|
+        = image_tag main_app.url_for(image.variant(resize: '4500x4500')), data: { target: :'slideshow.slide' }, height: 400, width: '100%'

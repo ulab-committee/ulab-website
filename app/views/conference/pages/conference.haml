@@ -12,6 +12,7 @@
     = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
 
 = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
+  = icon('plus')
   Subscribe to conference calendar
 
 - if has_content? :gallery
@@ -34,13 +35,14 @@
   %h2 Presentations
 
   = link_to conferences_conference_presentations_url(conference, protocol: :webcal, format: :ics), class: :button do
+    = icon('plus')
     Subscribe to conference presentations calendar
 
   - conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
     - unless presentation_type.presentations.empty?
       %h3= presentation_type.name.pluralize
       - presentation_type.presentations.each do |presentation|
-        %article
+        %article.no-link
           %header
             %h3= presentation.title
             %address
@@ -55,8 +57,8 @@
       %details
         %summary= "#{presentation_type.name} #{t('spina.conferences.website.presentations').downcase}"
         - presentation_type.presentations.each do |presentation|
-          %a{ href: presentation.conference_page.materialized_path }
-            %article
+          %article
+            %a{ href: presentation.conference_page.materialized_path }
               %h3
                 = presentation.title
                 = icon('chevron-right')
@@ -68,7 +70,7 @@
   - unless content(:socials).structure_items.empty?
     %h2 Socials
     - content(:socials).structure_items.each do |social|
-      %article
+      %article.no-link
         %header
           - if social.has_content? :name
             %h3= social.content(:name)
@@ -83,7 +85,7 @@
   - unless content(:meetings).structure_items.empty?
     %h2 Meetings
     - content(:meetings).structure_items.each do |meeting|
-      %article
+      %article.no-link
         %header
           - if meeting.has_content? :name
             %h3= meeting.content(:name)

@@ -1,0 +1,30 @@
+& > header
+  $padding: 80px
+  flex:
+    basis: 180px
+    grow: 0
+    shrink: 1
+  overflow: scroll
+  padding: $padding
+  display: grid
+  grid:
+    template-rows: min-content
+    auto-rows: min-content
+    row-gap: 16px
+  box-shadow: $shadow
+  z-index: 1
+  position: relative
+  & :first-child
+    grid-row: 1
+  address
+    grid-row: 2
+    font:
+      style: normal
+      weight: 300
+  nav
+    grid-row: 3
+    @import nav
+  small
+    grid-row: 4
+    font-weight: 200
+    color: #ccc

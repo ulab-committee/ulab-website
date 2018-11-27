@@ -16,28 +16,12 @@
     .content
       %header
         = link_to root_path do
-          - image_tag 'logo.svg', draggable: false
+          - image_tag 'logo.svg', class: :logo, draggable: false
         %address Undergraduate Linguistics Association of Britain
         = render "#{current_theme.name}/shared/navigation"
         %small
           = "© ULAB #{Date.today.year}"
-      %main
-        %header
-          - unless current_page.ancestors.blank?
-            %nav
-              %ol<
-                - current_page.ancestors.each do |ancestor|
-                  %li
-                    = link_to ancestor.menu_title, ancestor.materialized_path
-                  .divider
-                %li= current_page.menu_title
-          - if current_account.has_content? :current_conference_alert
-            = link_to_unless_current (render "#{current_theme.name}/shared/alert"), Spina::Conferences::Conference.sorted.first.conference_page.materialized_path do
-              = render "#{current_theme.name}/shared/alert"
-          = yield(:header)
-        = yield
-        %footer
-          = render "#{current_theme.name}/shared/footer"
+      = yield
 
     = spina_link
     = render 'spina/shared/social'

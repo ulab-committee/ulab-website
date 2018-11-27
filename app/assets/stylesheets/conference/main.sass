@@ -1,0 +1,56 @@
+main
+  @import article
+  @import summary
+  @import figure
+  @import button
+  @import slideshow
+  @import breadcrumbs
+  padding: 80px
+  overflow: scroll
+  flex-basis: 50%
+  flex-grow: 1
+  flex-shrink: 0
+  &.sunk
+    background-color: $primary-color
+    .display
+      color: white
+      font-stretch: expanded
+      font-weight: 900
+      margin: 0
+      margin-bottom: 30px
+      max-width: 600pt
+      address
+        font-weight: 600
+        font-style: normal
+      time
+        font-weight: 200
+  section
+    margin: 16px 0
+    position: relative
+    z-index: 0
+  h1
+    font:
+      size: calc(22pt + 3vw)
+      kerning: auto
+      stretch: semi-expanded
+    line-height: 100%
+  & header + *
+    margin-top: 16px
+  ul.content-list
+    list-style: none
+    padding: unset
+    li:not(:first-child)
+      margin-top: 16px
+    a:not(:first-child)
+      margin-left: 8px
+  .alert
+    font-size: x-large
+    color: white
+    background-color: #ee2800
+    display: block
+    text-shadow: #444444 0 1px 1px
+    box-shadow: 0 0 6px 2px #e6e6e6
+    border-radius: 4px
+    padding: 8px
+    & :first-child
+      margin-right: 2px

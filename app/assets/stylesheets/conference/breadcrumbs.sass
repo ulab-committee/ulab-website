@@ -1,0 +1,28 @@
+nav
+  ol
+    list-style: none
+    padding: unset
+    font:
+      size: 20px
+      weight: 300
+    li
+      display: inline
+      box-sizing: border-box
+      & a
+        display: inline-block
+        padding: 10px 15px
+        border: 1px solid #ccc
+        border-radius: 23px
+        &:hover
+          color: $primary-color
+          border-color: $primary-color
+        &:active
+          background: $primary-color
+          color: #fff
+    .divider
+      background: url(asset-path('spina/divider.svg'))
+      color: $primary-color
+      display: inline-block
+      height: 17px
+      margin: 0 16px
+      width: 6px

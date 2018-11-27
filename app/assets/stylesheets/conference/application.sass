@@ -5,14 +5,10 @@
 @import spina/fonts
 
 $shadow_colour: $primary-color
+$shadow: 0 0 8px 0px rgba(#000, .5)
+$font-family: 'Molde', Helvetica, Arial, sans-serif
 
 @import fonts
-@import nav
-@import article
-@import summary
-@import figure
-@import button
-@import slideshow
 
 #admin_bar
   position: relative
@@ -20,90 +16,22 @@ $shadow_colour: $primary-color
 .spina-link, #admin_bar
   font-family: $font-family
 
-html, body
+html
+  & :first-child
+    margin-top: unset
   height: 100%
-body
-  display: flex
-  flex-direction: column
-  .content
-    flex-grow: 1
+  a
+    text-decoration: unset
+    color: unset
+  body
+    height: 100%
     display: flex
-    font-family: 'Molde', Helvetica, Arial, sans-serif
-    & > header
-      flex-basis: 300px
-      flex-grow: 0
-      flex-shrink: 1
-      box-shadow: 0 0 6px 2px #e6e6e6
-      &:hover
-        box-shadow: 0 0 6px 2px rgba($shadow_colour, .2)
-      h1
-        font-weight: 600
-      .logo
-        margin: calc(4 / 15 * 100%) calc(4 / 15 * 100%) 40px calc(4 / 15 * 100%)
-    header
-      & > :first-child
-        margin-top: 0
-      h1
-        font-weight: 600
-    main
-      padding: 80px
-      overflow: scroll
-      flex-basis: 50%
+    flex-direction: column
+    overflow: scroll
+    .content
       flex-grow: 1
-      flex-shrink: 0
-      section
-        margin: 16px 0
-      h1
-        font:
-          size: calc(22pt + 3vw)
-          kerning: auto
-          stretch: semi-expanded
-        line-height: 100%
-      & header + *
-        margin-top: 16px
-      ul.content-list
-        list-style: none
-        padding: unset
-        li:not(:first-child)
-          margin-top: 16px
-        a:not(:first-child)
-          margin-left: 8px
-      .alert
-        font-size: x-large
-        color: white
-        background-color: #ee2800
-        display: block
-        text-shadow: #444444 0 1px 1px
-        box-shadow: 0 0 6px 2px #e6e6e6
-        border-radius: 4px
-        padding: 8px
-        & :first-child
-          margin-right: 2px
-    a
-      text-decoration: unset
-      color: unset
-    & *
-      transition-property: background-color, color, box-shadow, text-shadow, opacity, border, z-index
-      transition-duration: 0.25s
-      transition-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1)
-    details summary::before
-      content: '\f107'
-    details[open] summary::before
-      content: '\f105'
-    summary
-      &::-webkit-details-marker
-        display: none
-      &::before
-        display: inline-block
-        vertical-align: middle
-        font-size: inherit
-        line-height: inherit // NOTE: should be 1
-        font-family: "ics_spina" !important
-        font-style: normal !important
-        font-variant: normal !important
-        font-weight: normal !important
-        text-transform: none !important
-        speak: none
-        text-rendering: auto
-        -webkit-font-smoothing: antialiased
-        -moz-osx-font-smoothing: grayscale
+      display: flex
+      font-family: $font-family
+      @import sidebar
+      @import main
+      @import transitions

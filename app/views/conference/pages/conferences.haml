@@ -2,22 +2,24 @@
   = render "#{current_theme.name}/shared/title"
 
 = link_to conferences_conferences_url(protocol: :webcal, format: :ics), class: :button do
+  = icon('plus')
   Subscribe to conferences calendar
 
 %section
-- current_page&.children&.reverse&.each do |child|
-  = link_to child.materialized_path do
+  - current_page&.children&.reverse&.each do |child|
     %article
-      - conference = child.conference
-      - if conference.institution.logo
-        %figure
-          = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
-      %h2
-        = conference.conference_page.title
-        = icon('chevron-right')
-      = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
-      to
-      = time_tag conference.dates.end, l(conference.dates.end, format: :long)
-      %address<
-        = "#{conference.institution.name}"
-        = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+      = link_to child.materialized_path do
+        - conference = child.conference
+        - if conference.institution.logo
+          %figure
+            = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
+        %h2
+          = conference.conference_page.title
+          = icon('chevron-right')
+        %div
+          = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
+          to
+          = time_tag conference.dates.end, l(conference.dates.end, format: :long)
+        %address<
+          = "#{conference.institution.name}"
+          = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
