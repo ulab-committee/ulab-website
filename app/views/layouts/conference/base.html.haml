@@ -1,0 +1,26 @@
+!!!
+%html{lang: I18n.locale}
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'description', content: current_page.description}
+    %meta{name: 'viewport', content: 'initial-scale=1.0'}
+    = csrf_meta_tags
+    %meta{name: 'turbolinks-cache-control', content: 'no-preview'}
+    %title= "#{current_page.seo_title} — #{current_account.name}"
+    = render 'spina/shared/google_site_verification'
+    = render 'spina/shared/analytics'
+    = stylesheet_link_tag "#{current_theme.name}/application", media: 'all', data: {turbolinks_track: true}
+    = javascript_include_tag "#{current_theme.name}/application", data: {turbolinks_track: true}
+  %body
+    = render 'spina/shared/admin_bar'
+    .content
+      %header
+        = link_to root_path do
+          - image_tag 'logo.svg', class: :logo, draggable: false
+        %address Undergraduate Linguistics Association of Britain
+        = render "#{current_theme.name}/shared/navigation"
+        %small
+          = "© ULAB #{Date.today.year}"
+      = content_for?(:content) ? yield(:content) :yield
+    = spina_link
+    = render 'spina/shared/social'

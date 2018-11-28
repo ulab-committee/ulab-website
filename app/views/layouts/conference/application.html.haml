@@ -1,43 +1,20 @@
-!!!
-%html{lang: I18n.locale}
-  %head
-    %meta{charset: 'utf-8'}
-    %meta{name: 'description', content: current_page.description}
-    %meta{name: 'viewport', content: 'initial-scale=1.0'}
-    = csrf_meta_tags
-    %meta{name: 'turbolinks-cache-control', content: 'no-preview'}
-    %title= "#{current_page.seo_title} — #{current_account.name}"
-    = render 'spina/shared/google_site_verification'
-    = render 'spina/shared/analytics'
-    = stylesheet_link_tag 'conference/application', media: 'all', data: {turbolinks_track: true}
-    = javascript_include_tag 'conference/application', data: {turbolinks_track: true}
-  %body
-    = render 'spina/shared/admin_bar'
-    .content
-      %header
-        = link_to root_path do
-          - image_tag 'logo.svg', draggable: false
-        %address Undergraduate Linguistics Association of Britain
-        = render "#{current_theme.name}/shared/navigation"
-        %small
-          = "© ULAB #{Date.today.year}"
-      %main
-        %header
-          - unless current_page.ancestors.blank?
-            %nav
-              %ol<
-                - current_page.ancestors.each do |ancestor|
-                  %li
-                    = link_to ancestor.menu_title, ancestor.materialized_path
-                  .divider
-                %li= current_page.menu_title
-          - if current_account.has_content? :current_conference_alert
-            = link_to_unless_current (render "#{current_theme.name}/shared/alert"), Spina::Conferences::Conference.sorted.first.conference_page.materialized_path do
-              = render "#{current_theme.name}/shared/alert"
-          = yield(:header)
-        = yield
-        %footer
-          = render "#{current_theme.name}/shared/footer"
+- content_for :content do
+  %main
+    %header
+      - unless current_page.ancestors.blank?
+        %nav
+          %ol<
+            - current_page.ancestors.each do |ancestor|
+              %li
+                = link_to ancestor.menu_title, ancestor.materialized_path
+              .divider
+            %li= current_page.menu_title
+      - if current_account.has_content? :current_conference_alert
+        = link_to_unless_current (render "#{current_theme.name}/shared/alert"), Spina::Conferences::Conference.sorted.first.conference_page.materialized_path do
+          = render "#{current_theme.name}/shared/alert"
+      = yield(:header)
+    = yield
+    %footer
+      = render "#{current_theme.name}/shared/footer"
 
-    = spina_link
-    = render 'spina/shared/social'
+= render template: "layouts/#{current_theme.name}/base"
