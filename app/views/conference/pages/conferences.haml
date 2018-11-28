@@ -2,7 +2,6 @@
   = render "#{current_theme.name}/shared/title"
 
 = link_to conferences_conferences_url(protocol: :webcal, format: :ics), class: :button do
-  = icon('plus')
   Subscribe to conferences calendar
 
 %section
@@ -15,7 +14,6 @@
             = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
         %h2
           = conference.conference_page.title
-          = icon('chevron-right')
         %div
           = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
           to

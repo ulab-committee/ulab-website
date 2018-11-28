@@ -1,5 +1,2 @@
 %strong.alert
-  = icon('megaphone')
   = current_account.content(:current_conference_alert)
-  - unless current_page? Spina::Conferences::Conference.sorted.first.conference_page.materialized_path
-    = icon('chevron-right')

@@ -12,7 +12,6 @@
     = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
 
 = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
-  = icon('plus')
   Subscribe to conference calendar
 
 - if has_content? :gallery
@@ -23,7 +22,6 @@
 - if has_content?(:submission_date) && Date.today <= content(:submission_date)
   .alert
     %strong
-      = icon('exclamation')
       Submit abstracts by
       = time_tag content(:submission_date), l(content(:submission_date), format: :short)
     - if has_content? :submission_text
@@ -35,7 +33,6 @@
   %h2 Presentations
 
   = link_to conferences_conference_presentations_url(conference, protocol: :webcal, format: :ics), class: :button do
-    = icon('plus')
     Subscribe to conference presentations calendar
 
   - conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
@@ -61,7 +58,6 @@
             %a{ href: presentation.conference_page.materialized_path }
               %h3
                 = presentation.title
-                = icon('chevron-right')
               %address
                 - presentation.presenters.each do |presenter|
                   = "#{presenter.full_name}, #{presenter.institution.name}"

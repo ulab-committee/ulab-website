@@ -5,7 +5,6 @@
 - if has_content? :constitution
   %h2 Constitution
   = link_to main_app.rails_blob_path(content(:constitution), disposition: :attachment), class: :button do
-    = icon('document')
     Download PDF
     = "(#{number_to_human_size content(:constitution).blob.byte_size})"
 
@@ -19,7 +18,6 @@
             = time_tag minutes.content(:date) do
               = l(minutes.content(:date), format: :long)
             = link_to file_url(minutes.content(:attachment)), class: :button do
-              = icon('document')
               Download PDF
               = "(#{number_to_human_size content(:constitution).blob.byte_size})"
 
@@ -37,12 +35,10 @@
             - if society.has_content? :website
               %li
                 = link_to society.content(:website), class: :button do
-                  = icon('link')
                   Website
             - if society.has_content? :email_address
               %li
                 = mail_to society.content(:email_address), encode: "javascript", class: :button do
-                  = icon('mail')
                   Email
         - if society.has_content? :description
           = society.content(:description).try(:html_safe)
