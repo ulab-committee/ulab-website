@@ -1,6 +1,6 @@
 %main.sunk
-  - if Spina::Conferences::Conference.last
-    - @conference = Spina::Conferences::Conference.last
+  - if Spina::Conferences::Conference.sorted.first
+    - @conference = Spina::Conferences::Conference.sorted.first
     %h1.display
       = current_account.name
       = "’#{@conference.dates.begin.strftime('%y')}"
