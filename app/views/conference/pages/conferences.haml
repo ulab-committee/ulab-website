@@ -10,7 +10,7 @@
       %article
         = link_to child.materialized_path do
           - conference = child.conference
-          - if conference?.institution?.logo
+          - if conference&.institution&.logo
             %figure
               = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
           %h2
