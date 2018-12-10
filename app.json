@@ -1,37 +1,59 @@
 {
   "name": "ulab-website",
-  "description": "",
+  "description": "Website for ULAB.",
   "scripts": {
+    "postdeploy": "bundle exec rake db:seed"
   },
   "env": {
+    "BUGSNAG_API_KEY": {
+      "description": "API key for Bugsnag",
+      "required": true
+    },
     "LANG": {
       "required": true
     },
+    "LIBRATO_PASSWORD": {
+      "description": "Librato password",
+      "required": true
+    },
+    "LIBRATO_TOKEN": {
+      "description": "Librato token",
+      "required": true
+    },
+    "LIBRATO_USER": {
+      "description": "Librato username",
+      "required": true
+    },
+    "LOGDNA_KEY": {
+      "description": "Key to log to LogDNA",
+      "required": true
+    },
     "RACK_ENV": {
+      "description": "Rack environment",
       "required": true
     },
     "RAILS_ENV": {
+      "description": "Rails environment",
       "required": true
     },
     "RAILS_LOG_TO_STDOUT": {
+      "description": "Whether Rails logs to standard output",
+      "required": true
+    },
+    "RAILS_MASTER_KEY": {
+      "description": "Key used to decrypt YAML with credentials",
       "required": true
     },
     "RAILS_MASTER_KEY": {
       "required": true
     },
     "RAILS_SERVE_STATIC_FILES": {
+      "description": "Whether the app should serve static files (as opposed to leaving it to S3 etc.)",
       "required": true
     },
     "SECRET_KEY_BASE": {
+      "description": "Key used to verify integrity of signed cookies",
       "required": true
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1
-    },
-    "worker": {
-      "quantity": 1
     }
   },
   "addons": [
@@ -41,5 +63,14 @@
     {
       "url": "heroku/ruby"
     }
-  ]
+  ],
+  "keywords": [
+    "conference",
+    "linguistics",
+    "Rails",
+    "Ruby"
+  ],
+  "logo": "https://s3.eu-west-2.amazonaws.com/ulab-website/icon.svg",
+  "repository": "https://www.github.com/ulab-committee/ulab-website",
+  "website": "https://www.ulab.org"
 }
