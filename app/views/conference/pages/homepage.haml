@@ -10,5 +10,5 @@
         = time_tag @conference.dates.begin, @conference.dates.begin.strftime('%d/%m')
         –
         %br
-        = time_tag @conference.dates.end, @conference.dates.end.strftime('%d/%m')
+        = time_tag @conference.dates.end.prev_day, @conference.dates.end.prev_day.strftime('%d/%m')
     = link_to 'More info', @conference.conference_page.materialized_path, class: [:button, :solid]

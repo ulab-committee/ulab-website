@@ -48,6 +48,9 @@
       "description": "Key used to decrypt YAML with credentials",
       "required": true
     },
+    "RAILS_MASTER_KEY": {
+      "required": true
+    },
     "RAILS_SERVE_STATIC_FILES": {
       "description": "Whether the app should serve static files (as opposed to leaving it to S3 etc.)",
       "required": true
