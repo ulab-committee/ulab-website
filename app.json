@@ -2,7 +2,7 @@
   "name": "ulab-website",
   "description": "Website for ULAB.",
   "scripts": {
-    "postdeploy": "bundle exec rake db:schema:load db:seed"
+    "postdeploy": "bundle exec rake db:seed"
   },
   "env": {
     "BUGSNAG_API_KEY": {
