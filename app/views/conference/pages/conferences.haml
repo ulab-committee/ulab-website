@@ -17,7 +17,7 @@
           %div
             = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
             to
-            = time_tag conference.dates.end, l(conference.dates.end, format: :long)
+            = time_tag conference.dates.end.prev_day, l(conference.dates.end.prev_day, format: :long)
           %address<
             = "#{conference.institution.name}"
             = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
