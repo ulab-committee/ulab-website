@@ -6,10 +6,6 @@
       "description": "API key for Bugsnag",
       "required": true
     },
-    "DATABASE_URL": {
-      "description": "URL to connect to database (note that this overrides anything in database.yml)",
-      "required": true
-    },
     "LANG": {
       "required": true
     },
