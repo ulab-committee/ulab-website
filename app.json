@@ -1,9 +1,6 @@
 {
   "name": "ulab-website",
   "description": "Website for ULAB.",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:schema:load db:seed"
-  },
   "env": {
     "BUGSNAG_API_KEY": {
       "description": "API key for Bugsnag",
@@ -54,16 +51,6 @@
     "SECRET_KEY_BASE": {
       "description": "Key used to verify integrity of signed cookies",
       "required": true
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "free"
-    },
-    "worker": {
-      "quantity": 1,
-      "size": "free"
     }
   },
   "addons": [
