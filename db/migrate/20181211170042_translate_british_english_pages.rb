@@ -2,6 +2,7 @@
 
 class TranslateBritishEnglishPages < ActiveRecord::Migration[5.2] # :nodoc:
   def up
+    I18n.default_locale = :en
     Rake::Task[:'ulab_website:create_translations'].invoke
   end
 
