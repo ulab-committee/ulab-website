@@ -57,7 +57,10 @@
     }
   },
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "logdna",
+    "librato",
+    "bugsnag"
   ],
   "buildpacks": [
     {
