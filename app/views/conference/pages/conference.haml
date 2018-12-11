@@ -4,9 +4,9 @@
     %figure
       = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
   %div
-    = time_tag conference.dates.begin, l(conference.dates.begin, format: :long)
+    = time_tag conference.dates.min, l(conference.dates.min, format: :long)
     to
-    = time_tag conference.dates.end, l(conference.dates.end, format: :long)
+    = time_tag conference.dates.max, l(conference.dates.max, format: :long)
   %address<
     = "#{conference.institution.name}"
     = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
