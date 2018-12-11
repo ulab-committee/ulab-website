@@ -57,10 +57,10 @@
     }
   },
   "addons": [
-    "heroku-postgresql",
-    "logdna",
-    "librato",
-    "bugsnag"
+    "heroku-postgresql:hobby-dev",
+    "logdna:quaco",
+    "librato:development",
+    "bugsnag:tauron"
   ],
   "buildpacks": [
     {
