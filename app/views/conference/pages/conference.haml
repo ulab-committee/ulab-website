@@ -26,8 +26,8 @@
       = time_tag content(:submission_date), l(content(:submission_date), format: :short)
     - if has_content? :submission_text
       = content(:submission_text).try :html_safe
-    - if has_content? :submission_email_address
-      = mail_to content(:submission_email_address), 'Submit an abstract', class: :button
+    - if has_content? :submission_url
+      = link_to 'Submit an abstract', content(:submission_url), class: :button
 
 - if conference.presentations.any?
   %h2 Presentations
