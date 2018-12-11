@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 namespace :ulab_website do
-  desc "Create translations for pages"
+  desc 'Create translations for pages'
   task create_translations: :environment do
     Spina.locales.each do |locale|
       I18n.locale = locale
