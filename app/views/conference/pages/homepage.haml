@@ -3,12 +3,12 @@
     - @conference = Spina::Conferences::Conference.sorted.first
     %h1.display
       = current_account.name
-      = "’#{@conference.dates.begin.strftime('%y')}"
+      = "’#{@conference.dates.min.strftime('%y')}"
       %address
         = @conference.institution.name
       %time<
-        = time_tag @conference.dates.begin, @conference.dates.begin.strftime('%d/%m')
+        = time_tag @conference.dates.min, @conference.dates.min.strftime('%d/%m')
         –
         %br
-        = time_tag @conference.dates.end.prev_day, @conference.dates.end.prev_day.strftime('%d/%m')
+        = time_tag @conference.dates.max, @conference.dates.max.strftime('%d/%m')
     = link_to 'More info', @conference.conference_page.materialized_path, class: [:button, :solid]

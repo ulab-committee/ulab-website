@@ -25,32 +25,32 @@
     </content>
     <orderEntry type="jdk" jdkName="rbenv: 2.5.3" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="actioncable (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionpack (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actioncable (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview-encoded_mail_to (v1.0.9, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activejob (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activestorage (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activestorage (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.5.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ancestry (v3.0.5, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="archive-zip (v0.11.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v9.0.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-eventstream (v1.0.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.121.0, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.42.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-partitions (v1.122.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-core (v3.44.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sdk-kms (v1.13.0, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.29.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="aws-sdk-s3 (v1.30.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws-sigv4 (v1.0.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.12, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.3.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v3.0.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bugsnag (v6.9.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bugsnag (v6.10.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.1, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v10.0.2, rbenv: 2.5.3) [gem]" level="application" />
@@ -73,8 +73,8 @@
     <orderEntry type="library" scope="PROVIDED" name="haml-rails (v1.0.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.2.0, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="icalendar (v2.5.1, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.2.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="icalendar (v2.5.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ice_cube (v0.16.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="io-like (v0.3.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.8.0, rbenv: 2.5.3) [gem]" level="application" />
@@ -116,17 +116,17 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-rewrite (v1.5.1, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v1.1.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-timeout (v0.5.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rails (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.4, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="railties (v5.2.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.1, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v5.2.2, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.3, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.10, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v1.3.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="request_store (v1.4.1, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.11.0, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.12.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.2.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.7.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-listen (v4.0.0, rbenv: 2.5.3) [gem]" level="application" />
@@ -134,8 +134,8 @@
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v3.141.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sexp_processor (v4.11.0, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sourcemap (v0.1.1, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="spina (v1.0.3@bd693e, rbenv: 2.5.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="spina-conferences (v0.0.1@56b503, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="spina (v1.0.3@a23fed, rbenv: 2.5.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="spina-conferences (v0.0.1@fd8605, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v2.0.2, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring-watcher-listen (v2.0.1, rbenv: 2.5.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v3.7.2, rbenv: 2.5.3) [gem]" level="application" />
