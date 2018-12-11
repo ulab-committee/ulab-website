@@ -88,3 +88,5 @@ gem 'actionview-encoded_mail_to'
 gem 'icalendar'
 
 gem 'bugsnag', '~> 6.8'
+
+gem 'rails-i18n', '~> 5.1'
