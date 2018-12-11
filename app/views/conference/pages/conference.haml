@@ -27,7 +27,7 @@
     - if has_content? :submission_text
       = content(:submission_text).try :html_safe
     - if has_content? :submission_url
-      = link_to 'Submit an abstract', content(:submission_url), class: :button
+      = link_to 'Submit an abstract', content(:submission_url), class: [:button, :solid]
 
 - if conference.presentations.any?
   %h2 Presentations
