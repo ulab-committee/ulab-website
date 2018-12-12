@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-module ApplicationCable # :nodoc:
+module ApplicationCable
+  # Base channel class for app
   class Channel < ActionCable::Channel::Base
   end
 end

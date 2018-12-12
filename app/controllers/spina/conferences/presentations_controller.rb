@@ -10,7 +10,7 @@ module Spina
         else
           set_presentations
         end
-        respond_to { |format| format.ics }
+        respond_to(&:ics)
       end
 
       private
