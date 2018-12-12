@@ -9,6 +9,7 @@ module Spina
         @calendar_name = "#{current_account.name} Conferences"
         respond_to { |format| format.ics }
       end
+
       def show
         @conference = Spina::Conferences::Conference.find(params[:id])
         @calendar_name = "#{current_account.name} #{@conference.name}"
