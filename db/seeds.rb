@@ -12,7 +12,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 module Spina
-  Account.first_or_create name: 'Conferences', theme: 'conference'
+  Account.first_or_create name: 'Conferences', theme: 'ulab_conference'
   User.first_or_create name: 'Joe',
                        email: Rails.application.credentials.dig(:spina, :email),
                        password: Rails.application.credentials.dig(:spina,
