@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-# :nodoc:
+# Base job class for app
 class ApplicationJob < ActiveJob::Base
 end

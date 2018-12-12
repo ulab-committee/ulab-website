@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module ApplicationHelper # :nodoc:
+module ApplicationHelper # Helpers for app
 end
