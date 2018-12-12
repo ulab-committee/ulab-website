@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Opal
 require 'opal'
 require 'rails-ujs'
