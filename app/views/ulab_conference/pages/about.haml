@@ -25,7 +25,7 @@
   - unless content(:partner_societies).structure_items.empty?
     %h2 Partner societies
     - content(:partner_societies).structure_items.each do |society|
-      %article
+      %article.no-link
         - if society.has_content? :logo
           %figure
             = image_tag variant(society.content(:logo).file, resize: "600x600"), width: 200, draggable: false
