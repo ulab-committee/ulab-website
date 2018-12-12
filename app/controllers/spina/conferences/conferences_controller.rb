@@ -7,13 +7,13 @@ module Spina
       def index
         @conferences = Spina::Conferences::Conference.sorted
         @calendar_name = "#{current_account.name} Conferences"
-        respond_to { |format| format.ics }
+        respond_to(&:ics)
       end
 
       def show
         @conference = Spina::Conferences::Conference.find(params[:id])
         @calendar_name = "#{current_account.name} #{@conference.name}"
-        respond_to { |format| format.ics }
+        respond_to(&:ics)
       end
     end
   end
