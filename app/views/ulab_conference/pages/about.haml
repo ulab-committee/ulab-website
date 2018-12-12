@@ -28,7 +28,7 @@
       %article.no-link
         - if society.has_content? :logo
           %figure
-            = image_tag variant(society.content(:logo).file, resize: "600x600"), width: 200, draggable: false
+            = image_tag variant(society.content(:logo).file, resize: "600x600"), width: 150, draggable: false
         %h3= society.content(:name)
         %nav
           %ul{class: :buttons}
