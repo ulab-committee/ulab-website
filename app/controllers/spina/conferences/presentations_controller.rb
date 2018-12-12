@@ -6,16 +6,26 @@ module Spina
     class PresentationsController < ApplicationController
       def index
         if params[:conference_id]
-          @conference =
-            Spina::Conferences::Conference.find(params[:conference_id])
-          @presentations = @conference.presentations
-          @calendar_name =
-            "#{current_account.name} #{@conference.name} Presentations"
+          set_conference_presentations
         else
-          @presentations = Spina::Conferences::Presentation.sorted
-          @calendar_name = "#{current_account.name} Presentations"
+          set_presentations
         end
         respond_to { |format| format.ics }
+      end
+
+      private
+
+      def set_conference_presentations
+        @conference =
+          Spina::Conferences::Conference.find(params[:conference_id])
+        @presentations = @conference.presentations
+        @calendar_name =
+          "#{current_account.name} #{@conference.name} Presentations"
+      end
+
+      def set_presentations
+        @presentations = Spina::Conferences::Presentation.sorted
+        @calendar_name = "#{current_account.name} Presentations"
       end
     end
   end
