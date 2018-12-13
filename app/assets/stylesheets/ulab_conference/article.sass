@@ -1,4 +1,4 @@
-article
+article:not(.no-link)
   &:not(:first-child)
     margin-top: -1px
   & > a
@@ -51,3 +51,10 @@ article.no-link
     margin-top: 0
   & *
     color: black
+  ul.links
+    list-style: none
+    padding-left: unset
+    & > *
+      display: inline-block
+      &:not(:first-child)
+        margin-left: 12px
