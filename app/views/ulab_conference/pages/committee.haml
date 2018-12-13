@@ -17,7 +17,7 @@
             %h4= member.content(:role)
         - if member.has_content? :bio
           = member.content(:bio).try(:html_safe)
-        - if member.has_content? :twitter_profile || :facebook_profile
+        - if member.has_content?(:twitter_profile) || member.has_content?(:facebook_profile)
           %ul{class: :links}
             - if member.has_content? :twitter_profile
               %li= link_to 'Twitter', member.content(:twitter_profile), class: :button
