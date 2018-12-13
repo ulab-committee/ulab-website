@@ -4,7 +4,7 @@
 = content(:text).try(:html_safe)
 - if has_content? :committee_bios
   - unless content(:committee_bios).structure_items.empty?
-    %h2 Committee members
+    %h2 Role-holding committee members
     - content(:committee_bios).structure_items.each do |member|
       %article.no-link
         %header
@@ -13,5 +13,13 @@
               = image_tag variant(member.content(:profile_picture).file, resize: '600x600'), width: 200, draggable: false, class: :profile_picture
           - if member.has_content? :name
             %h3= member.content(:name)
+          - if member.has_content? :role
+            %h4= member.content(:role)
         - if member.has_content? :bio
           = member.content(:bio).try(:html_safe)
+        - if member.has_content? :twitter_profile || :facebook_profile
+          %ul{class: :links}
+            - if member.has_content? :twitter_profile
+              %li= link_to 'Twitter', member.content(:twitter_profile), class: :button
+            - if member.has_content? :facebook_profile
+              %li= link_to 'Facebook', member.content(:facebook_profile), class: :button
