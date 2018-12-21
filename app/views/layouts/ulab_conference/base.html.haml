@@ -2,8 +2,13 @@
 %html{lang: I18n.locale}
   %head
     %meta{charset: 'utf-8'}
+    %meta{name: 'author', content: 'ULAB committee'}
     %meta{name: 'description', content: current_page.description}
     %meta{name: 'viewport', content: 'initial-scale=1.0'}
+    %meta{name: 'keywords', content: 'linguistics, conference, undergraduate, UK, Britain'}
+    %meta{name: 'og:title', content: current_page.seo_title}
+    %meta{name: 'og:description', content: current_page.description}
+    %base{target: '_blank'}
     = csrf_meta_tags
     %meta{name: 'turbolinks-cache-control', content: 'no-preview'}
     %title= "#{current_page.seo_title} — #{current_account.name}"
@@ -14,13 +19,17 @@
   %body
     = render 'spina/shared/admin_bar'
     .content
-      %header
-        = link_to root_path do
-          - image_tag 'logo.svg', class: :logo, draggable: false
-        %address Undergraduate Linguistics Association of Britain
-        = render "#{current_theme.name}/shared/navigation"
-        %small
-          = "© ULAB #{Date.today.year}"
+      %div
+        %header
+          = link_to root_path do
+            - image_tag 'logo.svg', class: :logo, draggable: false
+          %address Undergraduate Linguistics Association of Britain
+          = render "#{current_theme.name}/shared/navigation"
+        %footer
+          = render "#{current_theme.name}/shared/footer"
+          = render 'ulab_conference/shared/cookies'
+          %small
+            = "© ULAB #{Date.today.year}"
       = content_for?(:content) ? yield(:content) :yield
     = spina_link
     = render 'spina/shared/social'
