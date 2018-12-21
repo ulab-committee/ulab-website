@@ -14,13 +14,17 @@
   %body
     = render 'spina/shared/admin_bar'
     .content
-      %header
-        = link_to root_path do
-          - image_tag 'logo.svg', class: :logo, draggable: false
-        %address Undergraduate Linguistics Association of Britain
-        = render "#{current_theme.name}/shared/navigation"
-        %small
-          = "© ULAB #{Date.today.year}"
+      %div
+        %header
+          = link_to root_path do
+            - image_tag 'logo.svg', class: :logo, draggable: false
+          %address Undergraduate Linguistics Association of Britain
+          = render "#{current_theme.name}/shared/navigation"
+        %footer
+          = render "#{current_theme.name}/shared/footer"
+          = render 'ulab_conference/shared/cookies'
+          %small
+            = "© ULAB #{Date.today.year}"
       = content_for?(:content) ? yield(:content) :yield
     = spina_link
     = render 'spina/shared/social'

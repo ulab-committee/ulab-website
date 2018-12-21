@@ -1,4 +1,4 @@
-& > header
+& > div:first-child
   $padding: 80px
   flex:
     basis: 180px
@@ -6,25 +6,43 @@
     shrink: 1
   overflow: scroll
   padding: $padding
-  display: grid
-  grid:
-    template-rows: min-content
-    auto-rows: min-content
-    row-gap: 16px
   box-shadow: $shadow
-  z-index: 1
-  position: relative
-  & :first-child
-    grid-row: 1
-  address
-    grid-row: 2
-    font:
-      style: normal
-      weight: 300
-  nav
-    grid-row: 3
-    @import nav
-  small
+  header
+    display: grid
+    grid:
+      template-rows: min-content
+      auto-rows: min-content
+      row-gap: 16px
+    z-index: 1
+    position: relative
+    & :first-child
+      grid-row: 1
+    address
+      grid-row: 2
+      font:
+        style: normal
+        weight: 300
+    nav
+      grid-row: 3
+      @import nav
+  footer
     grid-row: 4
     font-weight: 200
     color: #ccc
+    & > *
+      margin-top: 1em
+      &:not(:last-child)
+        margin-bottom: 1em
+    nav ul
+      list-style: none
+      padding-left: unset
+    small
+      display: block
+    details
+      summary:focus
+        outline: unset
+      ul
+        list-style: none
+        padding-left: unset
+        li:not(:first-child)
+          margin-top: 1em
