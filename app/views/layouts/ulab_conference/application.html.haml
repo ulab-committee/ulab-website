@@ -6,7 +6,7 @@
           %ol<
             - current_page.ancestors.each do |ancestor|
               %li
-                = link_to ancestor.menu_title, ancestor.materialized_path
+                = link_to ancestor.menu_title, ancestor.materialized_path, class: 'button'
               .divider
             %li= current_page.menu_title
       - if current_account.has_content? :current_conference_alert
