@@ -35,8 +35,9 @@ main
       kerning: auto
       stretch: semi-expanded
     line-height: 100%
-  & header + *
-    margin-top: 16px
+  &, header
+    *:not(:first-child)
+      margin-top: 16px
   ul.content-list
     list-style: none
     padding: unset

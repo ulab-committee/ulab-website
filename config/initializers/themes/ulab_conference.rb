@@ -52,6 +52,10 @@
     name: 'committee_bios',
     title: 'Committee bios',
     partable_type: 'Spina::Structure'
+  }, {
+    name: 'sponsors',
+    title: 'Sponsors',
+    partable_type: 'Spina::Structure'
   }]
 
   theme.layout_parts = [{
@@ -159,6 +163,21 @@
       title: 'Twitter profile',
       partable_type: 'Spina::Conferences::UrlPart'
     }]
+  }, {
+    name: 'sponsors',
+    structure_parts: [{
+      name: 'name',
+      title: 'Name',
+      partable_type: 'Spina::Line'
+    }, {
+      name: 'logo',
+      title: 'Logo',
+      partable_type: 'Spina::Image'
+    }, {
+      name: 'website',
+      title: 'Website',
+      partable_type: 'Spina::Conferences::UrlPart'
+    }]
   }]
 
   theme.view_templates = [{
@@ -180,7 +199,7 @@
     title: 'Conference',
     description: 'Contains information and content for a conference',
     page_parts: %w[text submission_url submission_date submission_text
-                   gallery socials meetings]
+                   gallery socials meetings sponsors]
   }, {
     name: 'presentation',
     title: 'Presentation',
