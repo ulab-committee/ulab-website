@@ -14,6 +14,16 @@
 = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
   Subscribe to conference calendar
 
+- if has_content? :sponsors
+  - unless content(:sponsors).structure_items.empty?
+    %h2 Sponsors
+    %ul.content-list
+      - content(:sponsors).structure_items.each do |sponsor|
+        %li
+          - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
+            = link_to sponsor.content(:website) do
+              = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 150, draggable: false, alt: sponsor.content(:name)
+
 - if has_content? :gallery
   = render "#{current_theme.name}/shared/gallery"
 
