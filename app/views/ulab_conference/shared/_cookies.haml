@@ -1,0 +1,22 @@
+%details
+  %summary How we use cookies
+  %p We use cookies for security, functionality, and analytics purposes.
+  %ul
+    %li
+      We use the
+      %code _ulab_website_session
+      cookie to track sessions.
+    %li
+      Cloudflare sets the
+      = link_to 'https://support.cloudflare.com/hc/en-us/articles/200170156-What-does-the-CloudFlare-cfduid-cookie-do' do
+        %code _cfduid
+      cookie to identify trusted web traffic.
+    %li
+      Google Analytics sets the
+      = link_to 'https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage' do
+        = succeed ',' do
+          %code _ga
+        = succeed ', and' do
+          %code _gat
+        %code _gid
+      cookies for analytics purposes. We do not use Google Analytics Advertising features.
