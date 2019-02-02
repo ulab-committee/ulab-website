@@ -61,16 +61,8 @@
 
   - conference.presentation_types.where.not('name LIKE ?', '%Plenary%').each do |presentation_type|
     - unless presentation_type.presentations.empty?
-      %details
-        %summary= "#{presentation_type.name} #{t('spina.conferences.website.presentations').downcase}"
-        - presentation_type.presentations.each do |presentation|
-          %article
-            %a{ href: presentation.conference_page.materialized_path }
-              %h3
-                = presentation.title
-              %address
-                - presentation.presenters.each do |presenter|
-                  = "#{presenter.full_name}, #{presenter.institution.name}"
+      - cache presentation_type do
+        = render presentation_type
 
 - if has_content? :socials
   - unless content(:socials).structure_items.empty?
