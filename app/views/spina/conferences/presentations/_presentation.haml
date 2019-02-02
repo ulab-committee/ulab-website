@@ -1,0 +1,7 @@
+%article
+  %a{ href: presentation.conference_page.materialized_path }
+    %h3
+      = presentation.title
+    %address
+      - presentation.presenters.each do |presenter|
+        = "#{presenter.full_name}, #{presenter.institution.name}"

@@ -1,0 +1,4 @@
+%details
+  %summary= "#{presentation_type.name} #{t('spina.conferences.website.presentations').downcase}"
+  - cache presentation_type.presentations do
+    = render presentation_type.presentations
