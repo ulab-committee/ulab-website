@@ -8,9 +8,14 @@ main
   @import alert
   padding: 80px
   overflow: scroll
-  flex-basis: 50%
-  flex-grow: 1
-  flex-shrink: 0
+  flex:
+    basis: 50%
+    grow: 3
+    shrink: 0
+  hyphens: auto
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
   &.sunk
     background-color: $primary-color
     .display
