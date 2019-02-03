@@ -24,7 +24,9 @@
           = link_to root_path do
             - image_tag 'logo.svg', class: :logo, draggable: false
           %address Undergraduate Linguistics Association of Britain
-          = render "#{current_theme.name}/shared/navigation"
+          %details{ open: true }
+            %summary Navigation
+            = render "#{current_theme.name}/shared/navigation"
         %footer
           = render "#{current_theme.name}/shared/footer"
           = render 'ulab_conference/shared/cookies'
