@@ -1,5 +1,14 @@
 {
   "name": "ulab-website",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "activestorage": "^5.2.2",
+    "rails-ujs": "^5.2.2",
+    "stimulus": "^1.1.1",
+    "turbolinks": "^5.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }

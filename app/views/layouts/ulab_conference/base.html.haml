@@ -15,7 +15,7 @@
     = render 'spina/shared/google_site_verification'
     = render 'spina/shared/analytics'
     = stylesheet_link_tag "#{current_theme.name}/application", media: 'all', data: {turbolinks_track: true}
-    = javascript_include_tag "#{current_theme.name}/application", data: {turbolinks_track: true}
+    = javascript_pack_tag 'application'
   %body
     = render 'spina/shared/admin_bar'
     .content
@@ -24,8 +24,10 @@
           = link_to root_path do
             - image_tag 'logo.svg', class: :logo, draggable: false
           %address Undergraduate Linguistics Association of Britain
-          %details{ open: true }
-            %summary Navigation
+          %details{ data: { controller: :navigation, target: :'navigation.details' } }
+            %summary{ data: { target: :'navigation.summary' }, icon: true }
+              %i{ class: [ :icon ] }
+              Navigation
             = render "#{current_theme.name}/shared/navigation"
         %footer
           = render "#{current_theme.name}/shared/footer"
