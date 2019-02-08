@@ -1,4 +1,5 @@
 & > div:first-child
+  @import summary
   $padding: 80px
   flex:
     basis: 180px
@@ -48,6 +49,8 @@
     small
       display: block
     details
+      summary
+        font-size: large
       summary:focus
         outline: unset
       ul
