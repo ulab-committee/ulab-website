@@ -1,10 +1,8 @@
 addons:
   postgresql: 9.6
 before_script:
-- bundle exec rails db:setup
+- bundle exec bin/rails db:setup
 language: ruby
-rvm:
-- 2.5.3
 deploy:
   provider: heroku
   api_key:
