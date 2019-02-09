@@ -94,3 +94,5 @@ gem 'rails-i18n', '~> 5.1'
 gem 'barnes', '~> 0.0.7'
 
 gem 'webpacker', '~> 3.5'
+
+gem 'newrelic_rpm', '~> 6.0'
