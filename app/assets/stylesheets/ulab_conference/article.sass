@@ -7,8 +7,8 @@ article:not(.no-link)
       top: 1px solid #ccc
       bottom: 1px solid #ccc
     display: block
-    padding: 24px 80px
-    margin: 0 -80px
+    padding: 24px $padding
+    margin: 0 (-$padding)
     position: relative
     overflow: auto
     figure
@@ -34,8 +34,8 @@ article.no-link
     top: 1px solid #ccc
     bottom: 1px solid #ccc
   display: block
-  padding: 24px 80px
-  margin: 0 -80px
+  padding: 24px $padding
+  margin: 0 (-$padding)
   position: relative
   overflow: auto
   &:not(:first-child)
