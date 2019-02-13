@@ -7,17 +7,18 @@
 %section
   - if Spina::Conferences::Conference.sorted.any?
     - Spina::Conferences::Conference.sorted.each do |conference|
-      %article
+      %article.figure-left
         = link_to conference.conference_page.materialized_path do
+          %div
+            %h2
+              = conference.conference_page.title
+            %div
+              = time_tag conference.dates.min, l(conference.dates.min, format: :long)
+              to
+              = time_tag conference.dates.max, l(conference.dates.max, format: :long)
+            %address<
+              = "#{conference.institution.name}"
+              = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
           - if conference&.institution&.logo
             %figure
               = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
-          %h2
-            = conference.conference_page.title
-          %div
-            = time_tag conference.dates.min, l(conference.dates.min, format: :long)
-            to
-            = time_tag conference.dates.max, l(conference.dates.max, format: :long)
-          %address<
-            = "#{conference.institution.name}"
-            = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city

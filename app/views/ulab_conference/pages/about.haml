@@ -25,23 +25,24 @@
   - unless content(:partner_societies).structure_items.empty?
     %h2 Partner societies
     - content(:partner_societies).structure_items.each do |society|
-      %article.no-link
+      %article.no-link.figure-left
+        %div
+          %h3= society.content(:name)
+          %nav
+            %ul{class: :buttons}
+              - if society.has_content? :website
+                %li
+                  = link_to society.content(:website), class: :button do
+                    Website
+              - if society.has_content? :email_address
+                %li
+                  = mail_to society.content(:email_address), encode: "javascript", class: :button do
+                    Email
+          - if society.has_content? :description
+            = society.content(:description).try(:html_safe)
         - if society.has_content? :logo
           %figure
             = image_tag variant(society.content(:logo).file, resize: "600x600"), width: 150, draggable: false
-        %h3= society.content(:name)
-        %nav
-          %ul{class: :buttons}
-            - if society.has_content? :website
-              %li
-                = link_to society.content(:website), class: :button do
-                  Website
-            - if society.has_content? :email_address
-              %li
-                = mail_to society.content(:email_address), encode: "javascript", class: :button do
-                  Email
-        - if society.has_content? :description
-          = society.content(:description).try(:html_safe)
 
 - if has_content? :contact
   %h2 Contact
