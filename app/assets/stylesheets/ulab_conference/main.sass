@@ -40,8 +40,6 @@ main
       kerning: auto
       stretch: semi-expanded
     line-height: 100%
-  & > *:not(:first-child)
-    margin-top: 16px
   ul.content-list
     list-style: none
     padding: unset
@@ -49,3 +47,6 @@ main
       margin-top: 16px
     a:not(:first-child)
       margin-left: 8px
+  h1, h2, h3, h4, h5, h6
+    &:first-child
+      margin-top: unset

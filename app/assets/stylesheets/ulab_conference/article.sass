@@ -11,16 +11,9 @@ article:not(.no-link)
     margin: 0 (-$padding)
     position: relative
     overflow: auto
-    figure
-      float: right
-      margin: 0
     h2
       font-weight: 600
       font-size: 180%
-    figure:first-child + *
-      margin-top: 0
-    & :first-child
-      margin-top: 0
     & *
       color: black
     &:hover
@@ -40,22 +33,27 @@ article.no-link
   overflow: auto
   &:not(:first-child)
     margin-top: -1px
-  figure
-    float: right
-    margin: 0
   h2
     font-weight: 600
     font-size: 180%
-  figure:first-child + *
-    margin-top: 0
-  & :first-child
-    margin-top: 0
   & *
     color: black
-  ul.links
-    list-style: none
-    padding-left: unset
+article.no-link.figure-left, article.figure-left > a
+  display: grid
+  grid:
+    template-areas: "content figure"
+    template-columns: 1fr
+    column-gap: $row-gap
+    row-gap: $row-gap
+    auto-flow: row
+  & > div
+    grid-column: content
+    display: grid
+    grid:
+      template-rows: min-content
+      auto-rows: min-content
+      row-gap: $row-gap
     & > *
-      display: inline-block
-      &:not(:first-child)
-        margin-left: 12px
+      grid-row: span 1
+  & > figure
+    grid-area: figure
