@@ -7,7 +7,6 @@
   overflow: scroll
   padding: $padding
   box-shadow: $shadow
-  $row-gap: 16px
   z-index: 1
   header
     display: grid
@@ -30,14 +29,14 @@
         object-fit: contain
         object-position: top
       address
-        flex-basis: 200px
+        flex-basis: 180px
         font:
+          size: larger
           style: normal
-          weight: 300
-    & :first-child
-      grid-row: 1
+          weight: 200
+    & > *
+      grid-row: span 1
     details
-      grid-row: 2
       summary
         font:
           weight: 700
@@ -47,7 +46,6 @@
         margin-top: 16px
         @import nav
   footer
-    grid-row: 3
     font-weight: 200
     color: #ccc
     & > *
