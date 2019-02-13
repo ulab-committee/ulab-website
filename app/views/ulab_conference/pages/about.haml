@@ -19,7 +19,7 @@
               = l(minutes.content(:date), format: :long)
             = link_to file_url(minutes.content(:attachment)), class: :button do
               Download PDF
-              = "(#{number_to_human_size content(:constitution).blob.byte_size})"
+              = "(#{number_to_human_size minutes.content(:attachment).blob.byte_size})"
 
 - if has_content? :partner_societies
   - unless content(:partner_societies).structure_items.empty?
