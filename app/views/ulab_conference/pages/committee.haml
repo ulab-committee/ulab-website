@@ -23,4 +23,4 @@
                 %li= link_to 'Facebook', member.content(:facebook_profile), class: :button
         - if member.has_content? :profile_picture
           %figure
-            = image_tag variant(member.content(:profile_picture).file, resize: '600x600'), width: 200, draggable: false, class: :profile_picture
+            = image_tag variant(member.content(:profile_picture).file, resize: '600x600'), draggable: false, class: :profile_picture

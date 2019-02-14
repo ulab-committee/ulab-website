@@ -18,22 +18,20 @@
     position: relative
     .lockup
       margin: -($row-gap)
+      display: flex
       flex-direction: row
       flex-wrap: wrap
-      display: flex
       & > *
         margin: $row-gap
         align-self: flex-start
-      img.logo
-        max-height: 120px
-        object-fit: contain
-        object-position: top
-      address
-        flex-basis: 180px
-        font:
-          size: larger
-          style: normal
-          weight: 200
+    img.logo
+      max-height: 120px
+    address
+      flex-basis: 180px
+      font:
+        size: larger
+        style: normal
+        weight: 200
     & > *
       grid-row: span 1
     details

@@ -42,7 +42,7 @@
 
         - if society.has_content? :logo
           %figure
-            = image_tag variant(society.content(:logo).file, resize: "600x600"), width: 150, draggable: false
+            = image_tag variant(society.content(:logo).file, resize: "600x600"), draggable: false
 
 - if has_content? :contact
   %h2 Contact

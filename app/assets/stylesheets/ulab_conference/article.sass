@@ -41,13 +41,11 @@ article.no-link
 article.no-link.figure-left, article.figure-left > a
   display: grid
   grid:
-    template-areas: "content figure"
-    template-columns: 1fr
+    template-columns: 3fr 1fr
     column-gap: $row-gap
     row-gap: $row-gap
     auto-flow: row
   & > div
-    grid-column: content
     display: grid
     grid:
       template-rows: min-content
@@ -55,5 +53,3 @@ article.no-link.figure-left, article.figure-left > a
       row-gap: $row-gap
     & > *
       grid-row: span 1
-  & > figure
-    grid-area: figure
