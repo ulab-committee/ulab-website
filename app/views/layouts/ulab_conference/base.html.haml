@@ -21,9 +21,9 @@
     .content
       %div
         %header
-          = link_to root_path do
-            - image_tag 'logo.svg', class: :logo, draggable: false
-          %address Undergraduate Linguistics Association of Britain
+          .lockup
+            = image_tag 'logo.svg', class: :logo, draggable: false
+            %address Undergraduate Linguistics Association of Britain
           %details{ data: { controller: :navigation, target: :'navigation.details' } }
             %summary{ data: { target: :'navigation.summary' }, icon: true }
               %i{ class: [ :icon ] }

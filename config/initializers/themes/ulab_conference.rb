@@ -185,11 +185,6 @@
     title: 'Homepage',
     page_parts: %w[text current_conference_alert gallery]
   }, {
-    name: 'information',
-    title: 'Information',
-    description: 'Contains general information',
-    page_parts: %w[text]
-  }, {
     name: 'about',
     title: 'About',
     description: 'Contains information about the society',

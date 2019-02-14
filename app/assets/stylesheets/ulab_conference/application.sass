@@ -8,6 +8,8 @@
 $shadow_colour: $primary-color
 $shadow: 0 0 8px 0px rgba(#000, .5)
 $font-family: 'Molde', Helvetica, Arial, sans-serif
+$padding: 7vw
+$row-gap: 16px
 
 @import fonts
 
@@ -18,8 +20,6 @@ $font-family: 'Molde', Helvetica, Arial, sans-serif
   font-family: $font-family
 
 html
-  & :first-child
-    margin-top: unset
   height: 100%
   a
     color: unset
@@ -42,3 +42,8 @@ html
 
 .icon
   vertical-align: text-bottom
+img
+  max-width: 100%
+  object-position: top left
+.turbolinks-progress-bar
+  background-color: $primary-color

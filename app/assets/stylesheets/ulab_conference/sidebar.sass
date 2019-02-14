@@ -1,6 +1,5 @@
 & > div:first-child
   @import summary
-  $padding: 80px
   flex:
     basis: 180px
     grow: 1
@@ -8,25 +7,34 @@
   overflow: scroll
   padding: $padding
   box-shadow: $shadow
+  z-index: 1
   header
     display: grid
     grid:
       template-rows: min-content
       auto-rows: min-content
-      row-gap: 16px
+      row-gap: $row-gap
     z-index: 1
     position: relative
-    & :first-child
-      grid-row: 1
-    a img.logo
-      max-width: 180px
+    .lockup
+      margin: -($row-gap)
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      & > *
+        margin: $row-gap
+        align-self: flex-start
+    img.logo
+      max-height: 120px
     address
-      grid-row: 2
+      flex-basis: 180px
       font:
+        size: larger
         style: normal
-        weight: 300
+        weight: 200
+    & > *
+      grid-row: span 1
     details
-      grid-row: 3
       summary
         font:
           weight: 700
@@ -36,7 +44,6 @@
         margin-top: 16px
         @import nav
   footer
-    grid-row: 4
     font-weight: 200
     color: #ccc
     & > *
