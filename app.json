@@ -12,18 +12,6 @@
     "LANG": {
       "required": true
     },
-    "LIBRATO_PASSWORD": {
-      "description": "Librato password",
-      "required": true
-    },
-    "LIBRATO_TOKEN": {
-      "description": "Librato token",
-      "required": true
-    },
-    "LIBRATO_USER": {
-      "description": "Librato username",
-      "required": true
-    },
     "LOGDNA_KEY": {
       "description": "Key to log to LogDNA",
       "required": true

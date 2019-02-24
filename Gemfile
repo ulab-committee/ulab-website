@@ -95,4 +95,4 @@ gem 'barnes', '~> 0.0.7'
 
 gem 'webpacker', '~> 3.5'
 
-gem 'newrelic_rpm', '~> 6.0'
+gem 'skylight', '~> 3.1'
