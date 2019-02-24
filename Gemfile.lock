@@ -310,6 +310,10 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
     sexp_processor (4.11.0)
+    skylight (3.1.4)
+      skylight-core (= 3.1.4)
+    skylight-core (3.1.4)
+      activesupport (>= 4.2.0)
     sourcemap (0.1.1)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -376,6 +380,7 @@ DEPENDENCIES
   rails-i18n (~> 5.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  skylight (~> 3.1)
   spina!
   spina-conferences!
   spring
@@ -390,4 +395,4 @@ RUBY VERSION
    ruby 2.6.0p0
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
