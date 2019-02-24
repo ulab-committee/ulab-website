@@ -12,7 +12,7 @@
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: 7d6db2aac1242a43a8dd1d6a67c9186b3f19a8d1
+  license_key: <%= Rails.application.credentials.dig(:newrelic, :license_key) %>
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
