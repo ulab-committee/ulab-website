@@ -74,6 +74,7 @@
     <orderEntry type="library" scope="PROVIDED" name="haml (v5.0.4, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml-rails (v1.0.0, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.6.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hiredis (v0.6.3, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="html2haml (v2.2.0, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.5.3, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="icalendar (v2.5.2, rbenv: 2.6.0) [gem]" level="application" />
@@ -127,6 +128,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.2, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.3, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.0, rbenv: 2.6.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis (v4.1.0, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v1.3.0, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="request_store (v1.4.1, rbenv: 2.6.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, rbenv: 2.6.0) [gem]" level="application" />

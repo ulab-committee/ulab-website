@@ -96,3 +96,7 @@ gem 'barnes', '~> 0.0.7'
 gem 'webpacker', '~> 3.5'
 
 gem 'skylight', '~> 3.1'
+
+gem 'redis', '~> 4.1'
+
+gem 'hiredis', '~> 0.6.3'
