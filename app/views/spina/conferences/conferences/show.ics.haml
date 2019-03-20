@@ -10,17 +10,19 @@
       e.summary = "#{current_account.name} #{@conference.year}"
     end
     @conference.presentations.each do |presentation|
-      cal.event do |e|
-        e.dtstart = presentation.start_datetime
-        e.dtend = presentation.start_datetime + presentation.presentation_type.duration
-        e.url = spina.page_url id: presentation.conference_page.materialized_path.delete_prefix('/')
-        e.location = presentation.room_use.room_name
-        presentation.presenters.each do |presenter|
-          e.contact = presenter.full_name_and_institution
+      cache presentation do
+        cal.event do |e|
+          e.dtstart = presentation.start_datetime
+          e.dtend = presentation.start_datetime + presentation.presentation_type.duration
+          e.url = spina.page_url id: presentation.conference_page.materialized_path.delete_prefix('/')
+          e.location = presentation.room_use.room_name
+          presentation.presenters.each do |presenter|
+            e.contact = presenter.full_name_and_institution
+          end
+          e.categories = presentation.presentation_type.upcase
+          e.summary = presentation.title
+          e.description = strip_tags(presentation.abstract)
         end
-        e.categories = presentation.presentation_type.upcase
-        e.summary = presentation.title
-        e.description = strip_tags(presentation.abstract)
       end
     end
   cal.publish
