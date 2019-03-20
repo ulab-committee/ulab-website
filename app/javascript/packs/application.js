@@ -16,5 +16,5 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 UJS.start()
 Turbolinks.start()
 const application = Application.start()
-const context = require.context("controllers", true, /.js$/)
+const context = require.context("./controllers", true, /.js$/)
 application.load(definitionsFromContext(context))

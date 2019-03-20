@@ -93,7 +93,7 @@ gem 'rails-i18n', '~> 5.1'
 
 gem 'barnes', '~> 0.0.7'
 
-gem 'webpacker', '~> 3.5'
+gem 'webpacker', '~> 4.0'
 
 gem 'skylight', '~> 3.1'
 
