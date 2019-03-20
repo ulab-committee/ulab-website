@@ -1,21 +1,12 @@
 {
-  "name": "ulab-website",
-  "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.2",
-    "activestorage": "^5.2.2",
-    "caniuse-lite": "^1.0.30000950",
-    "rails-ujs": "^5.2.2",
+    "activestorage": "^5.2.2-1",
+    "rails-ujs": "^5.2.2-1",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.1",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "webpack": "^4.29.6"
+    "webpack-dev-server": "^3.2.1"
   }
 }
