@@ -100,3 +100,5 @@ gem 'skylight', '~> 3.1'
 gem 'redis', '~> 4.1'
 
 gem 'hiredis', '~> 0.6.3'
+
+gem 'scout_apm', '~> 2.4'
