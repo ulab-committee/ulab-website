@@ -1,49 +1,50 @@
 - content_for(:header) do
   = render "#{current_theme.name}/shared/title"
 
-= content(:text).try(:html_safe)
-- if has_content? :constitution
-  %h2 Constitution
-  = link_to main_app.rails_blob_path(content(:constitution), disposition: :attachment), class: :button do
-    Download PDF
-    = "(#{number_to_human_size content(:constitution).blob.byte_size})"
+- cache current_page do
+  = content(:text).try(:html_safe)
+  - if has_content? :constitution
+    %h2 Constitution
+    = link_to main_app.rails_blob_path(content(:constitution), disposition: :attachment), class: :button do
+      Download PDF
+      = "(#{number_to_human_size content(:constitution).blob.byte_size})"
 
-- if has_content? :minutes
-  - unless content(:minutes).structure_items.empty?
-    %h2 Minutes
-    %ul{ class: :'content-list' }
-      - content(:minutes).structure_items.each do |minutes|
-        - if minutes.has_content?(:date) && minutes.has_content?(:attachment)
-          %li
-            = time_tag minutes.content(:date) do
-              = l(minutes.content(:date), format: :long)
-            = link_to file_url(minutes.content(:attachment)), class: :button do
-              Download PDF
-              = "(#{number_to_human_size minutes.content(:attachment).blob.byte_size})"
+  - if has_content? :minutes
+    - unless content(:minutes).structure_items.empty?
+      %h2 Minutes
+      %ul{ class: :'content-list' }
+        - content(:minutes).structure_items.each do |minutes|
+          - if minutes.has_content?(:date) && minutes.has_content?(:attachment)
+            %li
+              = time_tag minutes.content(:date) do
+                = l(minutes.content(:date), format: :long)
+              = link_to file_url(minutes.content(:attachment)), class: :button do
+                Download PDF
+                = "(#{number_to_human_size minutes.content(:attachment).blob.byte_size})"
 
-- if has_content? :partner_societies
-  - unless content(:partner_societies).structure_items.empty?
-    %h2 Partner societies
-    - content(:partner_societies).structure_items.each do |society|
-      %article.no-link.figure-left
-        %div
-          %h3= society.content(:name)
-          - if society.has_content? :description
-            = society.content(:description).try(:html_safe)
-          %ul{class: :buttons}
-            - if society.has_content? :website
-              %li
-                = link_to society.content(:website), class: :button do
-                  Website
-            - if society.has_content? :email_address
-              %li
-                = mail_to society.content(:email_address), encode: "javascript", class: :button do
-                  Email
+  - if has_content? :partner_societies
+    - unless content(:partner_societies).structure_items.empty?
+      %h2 Partner societies
+      - content(:partner_societies).structure_items.each do |society|
+        %article.no-link.figure-left
+          %div
+            %h3= society.content(:name)
+            - if society.has_content? :description
+              = society.content(:description).try(:html_safe)
+            %ul{class: :buttons}
+              - if society.has_content? :website
+                %li
+                  = link_to society.content(:website), class: :button do
+                    Website
+              - if society.has_content? :email_address
+                %li
+                  = mail_to society.content(:email_address), encode: "javascript", class: :button do
+                    Email
 
-        - if society.has_content? :logo
-          %figure
-            = image_tag variant(society.content(:logo).file, resize: "600x600"), draggable: false
+          - if society.has_content? :logo
+            %figure
+              = image_tag variant(society.content(:logo).file, resize: "600x600"), draggable: false
 
-- if has_content? :contact
-  %h2 Contact
-  = content(:contact).try(:html_safe)
+  - if has_content? :contact
+    %h2 Contact
+    = content(:contact).try(:html_safe)
