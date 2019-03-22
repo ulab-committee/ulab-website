@@ -1,14 +1,15 @@
-%main.sunk
-  - if Spina::Conferences::Conference.sorted.first
-    - @conference = Spina::Conferences::Conference.sorted.first
-    %h1.display
-      = current_account.name
-      = "’#{@conference.dates.min.strftime('%y')}"
-      %address
-        = @conference.institution.name
-      %time<
-        = time_tag @conference.dates.min, @conference.dates.min.strftime('%d/%m')
-        –
-        %br
-        = time_tag @conference.dates.max, @conference.dates.max.strftime('%d/%m')
-    = link_to 'More info', @conference.conference_page.materialized_path, class: [:button, :solid]
+- cache Spina::Conferences::Conference.sorted.first do
+  %main.sunk
+    - if Spina::Conferences::Conference.sorted.first
+      - @conference = Spina::Conferences::Conference.sorted.first
+      %h1.display
+        = current_account.name
+        = "’#{@conference.dates.min.strftime('%y')}"
+        %address
+          = @conference.institution.name
+        %time<
+          = time_tag @conference.dates.min, @conference.dates.min.strftime('%d/%m')
+          –
+          %br
+          = time_tag @conference.dates.max, @conference.dates.max.strftime('%d/%m')
+      = link_to 'More info', @conference.conference_page.materialized_path, class: [:button, :solid]
