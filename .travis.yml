@@ -1,12 +1,18 @@
 addons:
+  apt:
+    packages:
+      - chromium-chromedriver
+  chrome: stable
   postgresql: 9.6
+before_install:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+  - gem update --system
+  - gem install bundler
 before_script:
-- bundle exec bin/rails db:setup
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - bundle exec rails db:setup
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 language: ruby
-deploy:
-  provider: heroku
-  api_key:
-    secure: ujrNX5tPzJSL/CqDVyXEPspizN6cwqYZeJJXaYZTfpmUetXOITID1e5nCEZgKkge/ZLH0Jv1u4W+Zfq3Ic3kMboq29X0V0uP8yh5FwpvQehhU00J82scGAtY6677NxUQiAJwmtbpNMyrNdUWaSL2YMmxmVfUsZzzH1FntaG1uH/TFoXL485D2dRRqSr8FuZ/qPF3b6OSowjo+3JOweK2LTw2iobhT75kLux7NEcuzgzFxM4jYm1+zYLKJo9Vg+BmHdYGDkqwsvluaO74Xc/IBpiaNmJoe8GWdZykH5dVvzoAkHXdA0v4OGsFNuP02R+6bnZBBLXhdoJwoJ6iYTWOCwBL9A9dlZZyTS2jF9+NTdrn3cx8fSOn19F6KCBBxlCgO6/+UEnbNgsFgURM1VH+9ZdmlUjyON57+A/9JxAG/CKiPaSdA6e+ne0WGavqdgSie1+bnU/h30yld6r52VROg0uspgVnIP0gkL85yIYPUQDxTPqRUzXoCEUhanfxEnfuS8GpkmqEQJNZvjEGDwALf3OG8XbyU91/SAuIFlDLs4uvL+NFOshEASEofMieOo+rcWPCG9fVfTqvoOP5fBzE6DFnclWaUtzmS5okeNSgVMmkMZQN3bZ0VHRRUXO3QGeL+/7pUYQh3+tlmKM0OrTJSjRXqhqgNuzZ7d1D0c5jgH0=
-  app: ulab-website-staging
-  on:
-    repo: ulab-committee/ulab-website

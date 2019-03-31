@@ -39,10 +39,6 @@
     "REDIS_URL": {
       "description": "URL for Redis server",
       "required": true
-    },
-    "SECRET_KEY_BASE": {
-      "description": "Key used to verify integrity of signed cookies",
-      "required": true
     }
   },
   "addons": [

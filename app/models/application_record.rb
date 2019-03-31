@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Base record class for app
-class ApplicationRecord < ActiveRecord::Base
+class ApplicationRecord < ActiveRecord::Base #:nodoc:
   self.abstract_class = true
 end
