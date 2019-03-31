@@ -1,7 +1,19 @@
 addons:
+  apt:
+    packages:
+      - chromium-chromedriver
+  chrome: stable
   postgresql: 9.6
+  code_climate:
+    repo_token: 597297b31ccbd95a18f77f2ff015da5e1a91d2eff63f4aff39e78d80d79e8aac
+after_success:
+  - bundle exec codeclimate-test-reporter
+before_install:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+  - gem update --system
+  - gem install bundler
 before_script:
-- bundle exec bin/rails db:setup
+  - bundle exec rails db:setup
 language: ruby
 deploy:
   provider: heroku
