@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 6.0.0.beta3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -86,9 +86,5 @@ gem 'bugsnag', '~> 6.8'
 gem 'rack-timeout'
 gem 'scout_apm', '~> 2.4'
 gem 'skylight', '~> 3.1'
-
-# Temporary dependencies due to Rails 6
-gem 'coffee-rails', github: 'rails/coffee-rails'
-gem 'haml', github: 'haml/haml'
 
 gem 'dotenv-rails', '~> 2.7'
