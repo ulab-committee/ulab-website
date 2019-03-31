@@ -3,26 +3,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
-
-# dotenv
-gem 'dotenv-rails'
+ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0.0.beta3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'mini_racer', platforms: :ruby
-
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '>= 4.0.0.rc.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -63,8 +55,9 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
+  gem 'simplecov'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -76,9 +69,6 @@ gem 'spina', github: 'SpinaCMS/Spina'
 # Collect plugin
 gem 'spina-conferences', github: 'jmalcic/spina-conferences'
 
-# For Heroku
-gem 'rack-timeout'
-
 # S3
 gem 'aws-sdk-s3', require: false
 
@@ -88,14 +78,14 @@ gem 'actionview-encoded_mail_to'
 # iCal events
 gem 'icalendar'
 
-gem 'bugsnag', '~> 6.8'
-
+# Internationalisation
 gem 'rails-i18n', '~> 5.1'
 
+# Production gems
 gem 'barnes', '~> 0.0.7'
-
-gem 'webpacker', '~> 4.0'
-
+gem 'bugsnag', '~> 6.8'
+gem 'rack-timeout'
+gem 'scout_apm', '~> 2.4'
 gem 'skylight', '~> 3.1'
 
-gem 'scout_apm', '~> 2.4'
+gem 'dotenv-rails', '~> 2.7'

@@ -1,4 +1,12 @@
 plugins:
   rubocop:
     enabled: true
-    channel: rubocop-0-63
+    channel: rubocop-0-60
+  reek:
+    enabled: true
+  flog:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  brakeman:
+    enabled: true
