@@ -1,0 +1,8 @@
+Metrics/LineLength:
+  Max: 120
+
+Rails:
+  Enabled: true
+
+Style/CommandLiteral:
+  EnforcedStyle: mixed
