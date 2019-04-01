@@ -7,7 +7,7 @@
       e.url = spina.page_url id: @conference.conference_page.materialized_path.delete_prefix('/')
       e.location = @conference.institution.name
       e.categories = @conference.class.name.demodulize.upcase
-      e.summary = "#{current_account.name} #{@conference.year}"
+      e.summary = "#{current_account.name} #{@conference.start_date.year}"
     end
     @conference.presentations.each do |presentation|
       cache presentation do
