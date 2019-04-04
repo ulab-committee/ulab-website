@@ -1,0 +1,12 @@
+= link_to conference.conference_page.materialized_path do
+  %article.figure-left
+    %div
+      %h2= conference.conference_page.title
+      %div
+        = time_tag conference.dates.min, l(conference.dates.min, format: :long)
+        to
+        = time_tag conference.dates.max, l(conference.dates.max, format: :long)
+      %address<
+        = "#{conference.institution.name}"
+        = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+    %figure= image_tag variant(conference.institution.logo.file, resize: '600x600'), draggable: false if conference.institution.logo

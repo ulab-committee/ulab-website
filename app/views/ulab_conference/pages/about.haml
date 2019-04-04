@@ -9,28 +9,26 @@
       Download PDF
       = "(#{number_to_human_size content(:constitution).blob.byte_size})"
 
-  - if has_content? :minutes
-    - unless content(:minutes).structure_items.empty?
-      %h2 Minutes
-      %ul{ class: :'content-list' }
-        - content(:minutes).structure_items.each do |minutes|
-          - if minutes.has_content?(:date) && minutes.has_content?(:attachment)
-            %li
-              = time_tag minutes.content(:date) do
-                = l(minutes.content(:date), format: :long)
-              = link_to file_url(minutes.content(:attachment)), class: :button do
-                Download PDF
-                = "(#{number_to_human_size minutes.content(:attachment).blob.byte_size})"
+  - if has_content?(:minutes) && content(:minutes).structure_items.present?
+    %h2 Minutes
+    %ul{ class: :'content-list' }
+      = render content(:minutes) do |minutes|
+        - if minutes.has_content?(:date) && minutes.has_content?(:attachment)
+          %li
+            = time_tag minutes.content(:date) do
+              = l(minutes.content(:date), format: :long)
+            = link_to file_url(minutes.content(:attachment)), class: :button do
+              Download PDF
+              = "(#{number_to_human_size minutes.content(:attachment).blob.byte_size})"
 
-  - if has_content? :partner_societies
-    - unless content(:partner_societies).structure_items.empty?
-      %h2 Partner societies
-      - content(:partner_societies).structure_items.each do |society|
+  - if has_content?(:partner_societies) && content(:partner_societies).structure_items.present?
+    %h2 Partner societies
+    %div
+      = render content(:partner_societies) do |society|
         %article.no-link.figure-left
           %div
             %h3= society.content(:name)
-            - if society.has_content? :description
-              = society.content(:description).try(:html_safe)
+            = society.content(:description).try(:html_safe) if society.has_content? :description
             %ul{class: :buttons}
               - if society.has_content? :website
                 %li
@@ -38,12 +36,12 @@
                     Website
               - if society.has_content? :email_address
                 %li
-                  = mail_to society.content(:email_address), encode: "javascript", class: :button do
+                  = mail_to society.content(:email_address), encode: 'javascript', class: :button do
                     Email
 
           - if society.has_content? :logo
             %figure
-              = image_tag variant(society.content(:logo).file, resize: "600x600"), draggable: false
+              = image_tag variant(society.content(:logo).file, resize: '600x600'), draggable: false
 
   - if has_content? :contact
     %h2 Contact
