@@ -6,49 +6,17 @@ main
   @import slideshow
   @import breadcrumbs
   @import alert
-  padding: $padding
-  overflow: scroll
+  @import lists
+  @import hero
+  @import header
   flex:
     basis: 50%
     grow: 3
     shrink: 0
+  padding: $padding
+  @include grid_rows
+  overflow: scroll
   hyphens: auto
   -webkit-hyphens: auto
   -moz-hyphens: auto
   -ms-hyphens: auto
-  &.sunk
-    background-color: $primary-color
-    .display
-      color: white
-      font-stretch: expanded
-      font-weight: 900
-      margin: 0
-      margin-bottom: 30px
-      max-width: 600pt
-      address
-        font-weight: 600
-        font-style: normal
-      time
-        font-weight: 200
-  section
-    margin: 16px 0
-    position: relative
-    z-index: 0
-  h1
-    font:
-      size: calc(22pt + 3vw)
-      kerning: auto
-      stretch: semi-expanded
-    line-height: 100%
-  ul.content-list
-    list-style: none
-    padding: unset
-    li:not(:first-child)
-      margin-top: 16px
-    a:not(:first-child)
-      margin-left: 8px
-  h1, h2, h3, h4, h5, h6
-    &:first-child
-      margin-top: unset
-  header
-    margin-bottom: $row-gap

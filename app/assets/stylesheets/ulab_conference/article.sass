@@ -1,55 +1,33 @@
-article:not(.no-link)
-  &:not(:first-child)
-    margin-top: -1px
-  & > a
-    text-decoration: unset
-    border:
-      top: 1px solid #ccc
-      bottom: 1px solid #ccc
-    display: block
-    padding: 24px $padding
-    margin: 0 (-$padding)
-    position: relative
-    overflow: auto
-    h2
-      font-weight: 600
-      font-size: 180%
-    & *
-      color: black
-    &:hover
-      border-color: $primary-color
-      color: $primary-color
-      z-index: 1
-      & *
-        color: $primary-color
-article.no-link
+@import layout
+article
+  @include grid_rows
+  text-decoration: unset
   border:
     top: 1px solid #ccc
     bottom: 1px solid #ccc
-  display: block
-  padding: 24px $padding
-  margin: 0 (-$padding)
-  position: relative
+  @include inset
   overflow: auto
-  &:not(:first-child)
-    margin-top: -1px
+  position: relative
   h2
     font-weight: 600
     font-size: 180%
   & *
     color: black
-article.no-link.figure-left, article.figure-left > a
-  display: grid
-  grid:
-    template-columns: 3fr 1fr
-    column-gap: $row-gap
-    row-gap: $row-gap
-    auto-flow: row
-  & > div
-    display: grid
-    grid:
-      template-rows: min-content
-      auto-rows: min-content
-      row-gap: $row-gap
-    & > *
-      grid-row: span 1
+a:hover article
+  border-color: $primary-color
+  color: $primary-color
+  z-index: 1
+  & *
+    color: $primary-color
+a:not(:first-child) article, article:not(:first-child)
+  margin-top: -1px
+article.figure-left
+  @include flex
+  > div
+    @include grid_rows
+    flex-grow: 1
+    flex-shrink: 1
+    flex-basis: 300pt
+  > figure
+    flex-grow: 0
+    flex-basis: 150pt

@@ -12,19 +12,19 @@ $padding: 7vw
 $row-gap: 16px
 
 @import fonts
+@import grid
+@import flex
 
 #admin_bar
   position: relative
   z-index: 2
 .spina-link, #admin_bar
   font-family: $font-family
+.turbolinks-progress-bar
+  background-color: $primary-color
 
 html
   height: 100%
-  a
-    color: unset
-    &.button
-      text-decoration: unset
   body
     height: 100%
     display: flex
@@ -39,11 +39,14 @@ html
       @import sidebar
       @import main
       @import transitions
-
-.icon
-  vertical-align: text-bottom
-img
-  max-width: 100%
-  object-position: top left
-.turbolinks-progress-bar
-  background-color: $primary-color
+      a
+        color: unset
+        &:not(:empty)
+          text-decoration: unset
+      img
+        max-width: 100%
+        object-position: top left
+      .button
+        text-decoration: unset
+      .icon
+        vertical-align: text-bottom
