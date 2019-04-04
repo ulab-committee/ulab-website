@@ -1,0 +1,10 @@
+@mixin grid_rows
+  display: grid
+  grid:
+    gap: $row-gap
+    auto-rows: max-content
+
+@mixin grid
+  @include grid_rows
+  grid:
+    auto-columns: max-content

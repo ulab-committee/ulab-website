@@ -14,18 +14,16 @@
 = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
   Subscribe to conference calendar
 
-- if has_content? :sponsors
-  - unless content(:sponsors).structure_items.empty?
-    %h2 Sponsors
-    %ul.content-list
-      - content(:sponsors).structure_items.each do |sponsor|
-        %li
-          - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
-            = link_to sponsor.content(:website) do
-              = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 150, draggable: false, alt: sponsor.content(:name)
+- if has_content?(:sponsors) && content(:sponsors).structure_items.present?
+  %h2 Sponsors
+  %ul.content-list
+    = render content(:sponsors) do |sponsor|
+      %li
+        - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
+          = link_to sponsor.content(:website) do
+            = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 150, draggable: false, alt: sponsor.content(:name)
 
-- if has_content? :gallery
-  = render "#{current_theme.name}/shared/gallery"
+= render "#{current_theme.name}/shared/gallery" if has_content? :gallery
 
 = content(:text).try(:html_safe)
 
@@ -48,48 +46,41 @@
   - conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
     - unless presentation_type.presentations.empty?
       %h3= presentation_type.name.pluralize
-      - presentation_type.presentations.each do |presentation|
-        %article.no-link
-          %header
-            %h3= presentation.title
-            %address
-              - presentation.presenters.each do |presenter|
-                = "#{presenter.full_name}, #{presenter.institution.name}"
-            = time_tag presentation.start_time, l(presentation.start_time, format: :short)
-            = presentation.room_use.room_name
-          = presentation.abstract.try(:html_safe)
+      %div
+        - presentation_type.presentations.each do |presentation|
+          %article
+            %header
+              %h3= presentation.title
+              %address
+                - presentation.presenters.each do |presenter|
+                  = "#{presenter.full_name}, #{presenter.institution.name}"
+              = time_tag presentation.start_time, l(presentation.start_time, format: :short)
+              = presentation.room_use.room_name
+            = presentation.abstract.try(:html_safe)
 
   - conference.presentation_types.where.not('name LIKE ?', '%Plenary%').each do |presentation_type|
     - unless presentation_type.presentations.empty?
       - cache presentation_type do
         = render presentation_type
 
-- if has_content? :socials
-  - unless content(:socials).structure_items.empty?
-    %h2 Socials
-    - content(:socials).structure_items.each do |social|
-      %article.no-link
+- if has_content?(:socials) && content(:socials).structure_items.present?
+  %h2 Socials
+  %div
+    = render content(:socials) do |social|
+      %article
         %header
-          - if social.has_content? :name
-            %h3= social.content(:name)
-          - if social.has_content? :start_time
-            = time_tag social.content(:start_time), l(social.content(:start_time), format: :short)
-          - if social.has_content? :location
-            %address= social.content(:location)
-        - if social.has_content? :description
-          = social.content(:description).try(:html_safe)
+          %h3= social.content(:name) if social.has_content? :name
+          = time_tag social.content(:start_time), l(social.content(:start_time), format: :short) if social.has_content? :start_time
+          %address= social.content(:location) if social.has_content? :location
+        = social.content(:description).try(:html_safe) if social.has_content? :description
 
-- if has_content? :meetings
-  - unless content(:meetings).structure_items.empty?
-    %h2 Meetings
-    - content(:meetings).structure_items.each do |meeting|
-      %article.no-link
+- if has_content?(:meetings) && content(:meetings).structure_items.present?
+  %h2 Meetings
+  %div
+    = render content(:meetings) do |meeting|
+      %article
         %header
-          - if meeting.has_content? :name
-            %h3= meeting.content(:name)
-          - if meeting.has_content? :start_time
-            = time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short)
-          - if meeting.has_content? :location
-            %address= meeting.content(:location)
-        - if meeting.has_content? :description
-          = meeting.content(:description).try(:html_safe)
+          %h3= meeting.content(:name) if meeting.has_content? :name
+          = time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short) if meeting.has_content? :start_time
+          %address= meeting.content(:location) if meeting.has_content? :location
+        = meeting.content(:description).try(:html_safe) if meeting.has_content? :description

@@ -1,10 +1,12 @@
 a.button, button
-  display: inline-block
+  justify-self: start
+  align-self: start
   padding: 10px 15px
   border-radius: 23px
   font-size: 20px
   font-weight: 500
   line-height: 1
+  display: inline-flex
   & *
     color: black
   &:not(.solid):not(.hud)
@@ -38,10 +40,3 @@ a.button, button
       color: #000
       & *
         color: #000
-ul.buttons
-  list-style: none
-  padding: unset
-  margin: -10px -8px
-  li
-    display: inline-block
-    margin: 10px 8px
