@@ -1,7 +1,7 @@
 plugins:
   rubocop:
     enabled: true
-    channel: rubocop-0-60
+    channel: rubocop-0-66
   reek:
     enabled: true
   flog:
