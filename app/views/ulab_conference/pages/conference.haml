@@ -21,7 +21,7 @@
       %li
         - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
           = link_to sponsor.content(:website) do
-            = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 150, draggable: false, alt: sponsor.content(:name)
+            = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 200, draggable: false, alt: sponsor.content(:name)
 
 = render "#{current_theme.name}/shared/gallery" if has_content? :gallery
 
