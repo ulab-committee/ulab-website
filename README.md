@@ -50,6 +50,7 @@ This README documents the steps necessary to get the website up and running.
   * [Depfu](https://depfu.com), which checks for updated versions of dependencies
 
   * [Bugsnag](https://www.bugsnag.com), which logs errors which the app reports and creates corresponding issues in this repo
+    ![Bugsnag](https://raw.githubusercontent.com/gist/jmalcic/3d5ab904fa9689a7ba5a14c8c2077338/raw/8d24b03e3b8460ebab22bd0948d527d0199fa665/bugsnag-logo.svg?sanitize=true)
 
   * [Scout](https://scoutapm.com), which monitors resource usage
 
