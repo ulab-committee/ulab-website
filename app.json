@@ -44,8 +44,7 @@
   "addons": [
     "heroku-postgresql:hobby-dev",
     "logdna:quaco",
-    "librato:development",
-    "bugsnag:tauron"
+    "librato:development"
   ],
   "buildpacks": [
     {

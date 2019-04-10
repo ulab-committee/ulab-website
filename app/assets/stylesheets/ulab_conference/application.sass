@@ -41,8 +41,9 @@ html
       @import transitions
       a
         color: unset
-        &:not(:empty)
-          text-decoration: unset
+        text-decoration: unset
+      li > a, p > a, div > a
+        text-decoration: underline
       img
         max-width: 100%
         object-position: top left

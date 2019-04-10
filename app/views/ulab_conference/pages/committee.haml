@@ -5,16 +5,15 @@
   - if has_content?(:committee_bios) && content(:committee_bios).structure_items.present?
     %h2 Role-holding committee members
     %div
-      - @members = content(:committee_bios).structure_items.sort_by { |member| member.content(:name) } || content(:committee_bios).structure_items
-      - @members.each do |member|
+      = render content(:committee_bios) do |bio|
         %article.no-link.figure-left
           %div
             %header
-              %h3= member.content(:name) if member.has_content? :name
-              %h4= member.content(:role) if member.has_content? :role
-            = member.content(:bio).try(:html_safe) if member.has_content? :bio
-            - if member.has_content?(:twitter_profile) || member.has_content?(:facebook_profile)
+              %h3= bio.content(:name) if bio.has_content? :name
+              %h4= bio.content(:role) if bio.has_content? :role
+            = bio.content(:bio).try(:html_safe) if bio.has_content? :bio
+            - if bio.has_content?(:twitter_profile) || bio.has_content?(:facebook_profile)
               %ul{class: :buttons}
-                %li= link_to 'Twitter', member.content(:twitter_profile), class: :button if member.has_content? :twitter_profile
-                %li= link_to 'Facebook', member.content(:facebook_profile), class: :button if member.has_content? :facebook_profile
-          %figure= image_tag variant(member.content(:profile_picture).file, resize: '600x600'), draggable: false, class: :profile_picture if member.has_content? :profile_picture
+                %li= link_to 'Twitter', bio.content(:twitter_profile), class: :button if bio.has_content? :twitter_profile
+                %li= link_to 'Facebook', bio.content(:facebook_profile), class: :button if bio.has_content? :facebook_profile
+          %figure= image_tag variant(bio.content(:profile_picture).file, resize: '600x600'), draggable: false, class: :profile_picture if bio.has_content? :profile_picture
