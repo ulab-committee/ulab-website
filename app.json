@@ -43,8 +43,8 @@
   },
   "addons": [
     "heroku-postgresql:hobby-dev",
-    "logdna:quaco",
-    "librato:development"
+    "heroku-redis:hobby-dev",
+    "logdna:quaco"
   ],
   "buildpacks": [
     {
