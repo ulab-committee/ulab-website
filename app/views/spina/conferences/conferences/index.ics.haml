@@ -1,33 +1,6 @@
 :ruby
   cal = Icalendar::Calendar.new
-    cal.x_wr_calname = @calendar_name
-    @conferences.each do |conference|
-      cache conference do
-        cal.event do |e|
-          e.dtstart = Icalendar::Values::Date.new(conference.start_date)
-          e.dtend = Icalendar::Values::Date.new(conference.finish_date)
-          e.url = spina.page_url id: conference.conference_page.materialized_path.delete_prefix('/')
-          e.location = conference.institution.name
-          e.categories = conference.class.name.demodulize.upcase
-          e.summary = "#{current_account.name} #{conference.start_date.year}"
-        end
-        conference.presentations.each do |presentation|
-          cache presentation do
-            cal.event do |e|
-              e.dtstart = presentation.start_datetime
-              e.dtend = presentation.start_datetime + presentation.presentation_type.duration
-              e.url = spina.page_url id: presentation.conference_page.materialized_path.delete_prefix('/')
-              e.location = presentation.room_use.room_name
-              presentation.presenters.each do |presenter|
-                e.contact = presenter.full_name_and_institution
-              end
-              e.categories = presentation.class.name.demodulize.upcase
-              e.summary = presentation.name
-              e.description = strip_tags(presentation.abstract)
-            end
-          end
-        end
-      end
-    end
+  cal.x_wr_calname = @calendar_name
+  render @conferences, cached: true, cal: cal
   cal.publish
 = render plain: cal.to_ical
