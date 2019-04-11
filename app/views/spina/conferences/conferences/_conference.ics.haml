@@ -1,0 +1,10 @@
+:ruby
+  cal.event do |e|
+    e.dtstart = conference.start_date
+    e.dtend = conference.finish_date
+    e.url = spina.page_url id: conference.conference_page.materialized_path.delete_prefix('/')
+    e.location = conference.institution.name
+    e.categories = conference.class.name.demodulize.upcase
+    e.summary = "#{current_account.name} #{conference.start_date.year}"
+  end
+  render conference.presentations, cached: true, cal: cal
