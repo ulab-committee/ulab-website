@@ -3,7 +3,7 @@
   %address
     - presentation.presenters.each do |presenter|
       = "#{presenter.full_name}, #{presenter.institution.name}"
-  = time_tag presentation.start_time, l(presentation.start_time, format: :short)
+  = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
   = presentation.room_use.room_name
 
 = presentation.abstract.try(:html_safe)
