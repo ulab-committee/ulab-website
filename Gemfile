@@ -81,6 +81,9 @@ gem 'icalendar'
 # Internationalisation
 gem 'rails-i18n', '~> 5.1'
 
+# Job queueing
+gem 'resque'
+
 # Production gems
 gem 'barnes', '~> 0.0.7'
 gem 'bugsnag', '~> 6.8'
