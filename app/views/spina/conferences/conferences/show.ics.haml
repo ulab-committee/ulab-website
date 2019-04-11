@@ -19,7 +19,7 @@
           presentation.presenters.each do |presenter|
             e.contact = presenter.full_name_and_institution
           end
-          e.categories = presentation.presentation_type.upcase
+          e.categories = presentation.presentation_type.name.upcase
           e.summary = presentation.title
           e.description = strip_tags(presentation.abstract)
         end
