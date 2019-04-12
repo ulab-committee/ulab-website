@@ -11,7 +11,7 @@
     = "#{conference.institution.name}"
     = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
 
-= link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
+//= link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: :button do
   Subscribe to conference calendar
 
 - if has_content?(:sponsors) && content(:sponsors).structure_items.present?
@@ -40,7 +40,7 @@
 - if conference.presentations.any?
   %h2 Presentations
 
-  = link_to conferences_conference_presentations_url(conference, protocol: :webcal, format: :ics), class: :button do
+  //= link_to conferences_conference_presentations_url(conference, protocol: :webcal, format: :ics), class: :button do
     Subscribe to conference presentations calendar
 
   - conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
