@@ -3,4 +3,5 @@
   cal.x_wr_calname = @calendar_name
   render @conference, cached: true, cal: cal
   cal.publish
-= render plain: cal.to_ical
+- cache @conference do
+  = render plain: cal.to_ical
