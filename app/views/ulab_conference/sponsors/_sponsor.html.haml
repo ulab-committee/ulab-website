@@ -1,0 +1,4 @@
+%li.d-inline-block.m-2
+  - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
+    = link_to sponsor.content(:website) do
+      = responsive_image_tag sponsor.content(:logo).file, variant: { resize_to_limit: [300, 60] }, draggable: false, alt: sponsor.content(:name)

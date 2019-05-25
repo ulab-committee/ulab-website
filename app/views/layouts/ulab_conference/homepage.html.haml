@@ -1,4 +1,5 @@
 - content_for :content do
+  = render "#{current_theme.name}/shared/alert" if current_account.has_content? :current_conference_alert
   = yield
 
 = render template: "layouts/#{current_theme.name}/base"

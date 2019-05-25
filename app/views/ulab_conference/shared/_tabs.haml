@@ -1,0 +1,4 @@
+%div{ data: { controller: 'tabnav', action: 'hashchange@window->tabnav#toggleVisibility' } }
+  = render "#{current_theme.name}/shared/tabnav", collection: collection, method: method
+  = render "#{current_theme.name}/shared/tabcontent", collection: collection do |item|
+    = render item

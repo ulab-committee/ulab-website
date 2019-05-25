@@ -1,5 +1,5 @@
 - content_for(:header) do
-  = render "#{current_theme.name}/shared/title"
+  .pagehead.my-4
+    %h1= current_page.title
 
-%section
-  = render Spina::Conferences::Conference.sorted || 'empty_list'
+%ul= render Spina::Conferences::Conference.sorted || "#{current_theme.name}/shared/empty_list", cached: true

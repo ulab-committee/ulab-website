@@ -1,1 +1,5 @@
-= yield(structure_item)
+- if local_assigns[:box]
+  %li.Box-row{ class: local_assigns[:list_item_class] }= render partial: "#{current_theme.name}/#{structure_item.structure.page_part.name}/#{structure_item.structure.page_part.name.singularize}", object: structure_item, as: structure_item.structure.page_part.name.singularize
+
+- else
+  = render partial: "#{current_theme.name}/#{structure_item.structure.page_part.name}/#{structure_item.structure.page_part.name.singularize}", object: structure_item, as: structure_item.structure.page_part.name.singularize

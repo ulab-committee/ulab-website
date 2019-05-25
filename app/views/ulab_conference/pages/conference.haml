@@ -1,31 +1,29 @@
-- content_for(:header) do
-  = render "#{current_theme.name}/shared/title"
-  - if conference.institution.logo
-    %figure
-      = image_tag variant(conference.institution.logo.file, resize: '600x600'), width: 200, draggable: false
-  %div
-    = time_tag conference.dates.min, l(conference.dates.min, format: :long)
-    to
-    = time_tag conference.dates.max, l(conference.dates.max, format: :long)
-  %address<
-    = "#{conference.institution.name}"
-    = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+- content_for :header do
+  .pagehead.d-md-flex.flex-items-start.my-4
+    %div.flex-auto
+      %h1.mb-1= current_page.title
+      .text-gray
+        %div
+          = time_tag conference.dates.min, l(conference.dates.min, format: :long)
+          to
+          = time_tag conference.dates.max, l(conference.dates.max, format: :long)
+        %address<
+          = "#{conference.institution.name}"
+          = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+    = responsive_image_tag conference.institution.logo.file, variant: { resize_to_limit: [300, 60] }, draggable: false, class: %w[flex-shrink-0 pl-md-4 pt-4 pt-md-0] if conference.institution.logo
 
-- if has_content?(:sponsors) && content(:sponsors).structure_items.present?
-  %h2 Sponsors
-  %ul.content-list
-    = render content(:sponsors) do |sponsor|
-      %li
-        - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
-          = link_to sponsor.content(:website) do
-            = image_tag variant(sponsor.content(:logo).file, resize: "600x600"), width: 200, draggable: false, alt: sponsor.content(:name)
+- content_for :hero do
+  = render "#{current_theme.name}/shared/slideshow" if has_content? :gallery
 
-= render "#{current_theme.name}/shared/gallery" if has_content? :gallery
+.Subhead.Subhead--spacious
+  %h2.Subhead-heading Sponsors
 
-= content(:text).try(:html_safe)
+= render content(:sponsors) || "#{current_theme.name}/shared/empty_list", list_class: %w[list-style-none mb-n2 mt-n2 ml-n2 mr-n2], cached: true
 
-- if has_content?(:submission_date) && Date.today <= content(:submission_date)
-  .alert
+.markdown-body.my-4= content(:text).try(:html_safe)
+
+- if content(:submission_date)&.>= Date.today
+  .alert.my-4
     %strong
       Submit abstracts by
       = time_tag content(:submission_date), l(content(:submission_date), format: :short)
@@ -34,46 +32,18 @@
     - if has_content? :submission_url
       = link_to 'Submit an abstract', content(:submission_url), class: [:button, :solid]
 
-- if conference.presentations.any?
-  %h2 Presentations
-  - conference.presentation_types.where('name LIKE ?', '%Plenary%').each do |presentation_type|
-    - unless presentation_type.presentations.empty?
-      %h3= presentation_type.name.pluralize
-      %div
-        - presentation_type.presentations.each do |presentation|
-          %article
-            %header
-              %h3= presentation.title
-              %address
-                - presentation.presenters.each do |presenter|
-                  = "#{presenter.full_name}, #{presenter.institution.name}"
-              = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
-              = presentation.room_use.room_name
-            = presentation.abstract.try(:html_safe)
+.Subhead.Subhead--spacious
+  %h2.Subhead-heading Events
 
-  - conference.presentation_types.where.not('name LIKE ?', '%Plenary%').each do |presentation_type|
-    - unless presentation_type.presentations.empty?
-      - cache presentation_type do
-        = render presentation_type
+.clearfix.gutter.mb-n4.mt-n4.my-md-4
+  .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:socials) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
+  .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:meetings) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
 
-- if has_content?(:socials) && content(:socials).structure_items.present?
-  %h2 Socials
-  %div
-    = render content(:socials) do |social|
-      %article
-        %header
-          %h3= social.content(:name) if social.has_content? :name
-          = time_tag social.content(:start_time), l(social.content(:start_time), format: :short) if social.has_content? :start_time
-          %address= social.content(:location) if social.has_content? :location
-        = social.content(:description).try(:html_safe) if social.has_content? :description
+.Subhead.Subhead--spacious
+  %h2.Subhead-heading Presentations
+  .Subhead-actions
+    = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-sm btn-primary], role: :button do
+      = octicon 'calendar'
+      Subscribe
 
-- if has_content?(:meetings) && content(:meetings).structure_items.present?
-  %h2 Meetings
-  %div
-    = render content(:meetings) do |meeting|
-      %article
-        %header
-          %h3= meeting.content(:name) if meeting.has_content? :name
-          = time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short) if meeting.has_content? :start_time
-          %address= meeting.content(:location) if meeting.has_content? :location
-        = meeting.content(:description).try(:html_safe) if meeting.has_content? :description
+= render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name

@@ -1,17 +1,22 @@
-%details
-  %summary How we use cookies
-  %p We use cookies for security, functionality, and analytics purposes.
-  %ul
-    %li
-      We use the
-      %code _ulab_website_session
-      cookie to track sessions.
-    %li
-      Google Analytics sets the
-      = link_to 'https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage' do
-        = succeed ',' do
-          %code _ga
-        = succeed ', and' do
-          %code _gat
-        %code _gid
-      cookies for analytics purposes. We do not use Google Analytics Advertising features.
+%details.details-overlay
+  %summary.btn
+    = octicon 'info'
+    About cookies
+  .position-relative.bg-white.p-3.border{ style: 'z-index: 100' }
+    We use cookies for security, functionality, and analytics purposes.
+    %br
+    We use the
+    %code _ulab_website_session
+    cookie to track sessions.
+    %br
+    Google Analytics sets the
+    = link_to 'https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage' do
+      = succeed ',' do
+        %code _ga
+      = succeed ', and' do
+        %code _gat
+      %code _gid
+    cookies for analytics purposes.
+    %br
+    We do not use Google Analytics Advertising features.
+

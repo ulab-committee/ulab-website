@@ -14,26 +14,30 @@
     %title= "#{current_page.seo_title} — #{current_account.name}"
     = render 'spina/shared/google_site_verification'
     = render 'spina/shared/analytics'
-    = stylesheet_link_tag "#{current_theme.name}/application", media: 'all', data: {turbolinks_track: true}
+    = stylesheet_link_tag "#{current_theme.name}/application", media: 'all', data: { turbolinks_track: true }
     = javascript_pack_tag 'application'
-  %body
+    = stylesheet_pack_tag 'application'
+  %body.bg-light
     = render 'spina/shared/admin_bar'
-    .content
-      %div
-        %header
-          .lockup
-            = image_tag 'logo.svg', class: :logo, draggable: false
-            %address Undergraduate Linguistics Association of Britain
-          %details{ data: { controller: :navigation, target: :'navigation.details' } }
-            %summary{ data: { target: :'navigation.summary' }, icon: true }
-              %i{ class: [ :icon ] }
-              Navigation
-            = render "#{current_theme.name}/shared/navigation"
-        %footer
-          = render "#{current_theme.name}/shared/footer"
-          = render 'ulab_conference/shared/cookies'
-          %small
-            = "© ULAB #{Date.today.year}"
-      = content_for?(:content) ? yield(:content) :yield
-    = spina_link
+    %header.px-3.px-md-4.my-4
+      .container-md.d-flex.flex-lg-justify-between.flex-column.flex-lg-row
+        .d-flex.flex-lg-self-center.flex-lg-auto.mr-lg-2
+          = image_tag 'logo.svg', class: [:logo, 'd-inline-block', 'align-top', 'mr-3'], draggable: false, height: 80
+          %span.d-inline-block.f2-light.lh-condensed-ultra
+            Undergraduate Linguistics
+            %br
+            Association of Britain
+        .d-lg-none.mt-3
+          %details.details-reset
+            %summary.btn.btn-outline
+              = octicon 'three-bars'
+            = main_navigation %w[d-flex flex-column flex-self-stretch mt-3], %w[d-block py-2 border-top border-black-fade], %w[d-block py-2 border-top border-black-fade text-bold], request
+        .d-none.d-lg-flex.flex-justify-end
+          = main_navigation %w[flex-self-center flex-shrink-0], %w[px-md-1 px-lg-2], %w[px-md-1 px-lg-2 text-bold], request
+
+    .box-shadow-medium.px-3.px-md-4.py-2.my-4
+      .container-md= render "#{current_theme.name}/shared/breadcrumbs"
+
+    = content_for?(:content) ? yield(:content) :yield
+
     = render 'spina/shared/social'

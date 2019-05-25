@@ -1,0 +1,5 @@
+.flex-shrink-0= time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short) if meeting.has_content? :start_time
+.pl-4
+  %strong= meeting.content(:name) if meeting.has_content? :name
+  %address= meeting.content(:location) if meeting.has_content? :location
+  .text-small.text-gray-light= meeting.content(:description).try(:html_safe) if meeting.has_content? :description

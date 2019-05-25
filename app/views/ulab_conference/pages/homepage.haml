@@ -1,15 +1,17 @@
 - cache Spina::Conferences::Conference.sorted.first do
-  %main.sunk
-    - if Spina::Conferences::Conference.sorted.first
-      - @conference = Spina::Conferences::Conference.sorted.first
-      %h1.display
-        = current_account.name
-        = "’#{@conference.dates.min.strftime('%y')}"
-        %address
+  - if Spina::Conferences::Conference.sorted.first
+    - @conference = Spina::Conferences::Conference.sorted.first
+    .bg-blue.py-3.py-lg-6.px-3.px-md-4.text-white
+      .container-md
+        %p.h000-mktg
+          = current_account.name
+          = "’#{@conference.dates.min.strftime('%y')}"
+        %address.f2-light
           = @conference.institution.name
-        %time<
+        %time.f2-light<
           = time_tag @conference.dates.min, @conference.dates.min.strftime('%d/%m')
           –
-          %br
           = time_tag @conference.dates.max, @conference.dates.max.strftime('%d/%m')
-      = link_to 'More info', @conference.conference_page.materialized_path, class: [:button, :solid]
+        .d-block.mt-4= link_to 'More info', @conference.conference_page.materialized_path, class: %w(btn btn-large f3)
+%footer.my-4.px-3.px-md-4
+  .container-md= render "#{current_theme.name}/shared/footer"
