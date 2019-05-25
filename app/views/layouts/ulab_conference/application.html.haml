@@ -1,18 +1,10 @@
 - content_for :content do
-  %main
-    %header
-      - unless current_page.ancestors.blank?
-        %nav
-          %ol<
-            - current_page.ancestors.each do |ancestor|
-              %li
-                = link_to ancestor.menu_title, ancestor.materialized_path, class: 'button'
-              .divider
-            %li= current_page.menu_title
-      - if current_account.has_content? :current_conference_alert
-        = link_to_unless_current (render "#{current_theme.name}/shared/alert"), Spina::Conferences::Conference.sorted.first.conference_page.materialized_path do
-          = render "#{current_theme.name}/shared/alert"
-      = yield(:header)
-    = yield
+  = render "#{current_theme.name}/shared/alert" if current_account.has_content? :current_conference_alert
+  = yield :hero
+  .px-3.px-md-4
+    .container-md
+      .my-4= yield :header
+      .my-4= yield
+      %footer.my-4= render "#{current_theme.name}/shared/footer"
 
 = render template: "layouts/#{current_theme.name}/base"

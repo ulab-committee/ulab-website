@@ -13,6 +13,8 @@ require("activestorage").start()
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
+import "./styles/application"
+
 UJS.start()
 Turbolinks.start()
 const application = Application.start()

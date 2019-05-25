@@ -1,3 +1,7 @@
 plugins:
   postcss-import: {}
-  postcss-cssnext: {}
+  postcss-preset-env:
+    autoprefixer:
+      flexbox: 'no-2009'
+    stage: 2
+  postcss-flexbugs-fixes: {}

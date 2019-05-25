@@ -1,0 +1,11 @@
+- unless content(:gallery)&.images&.empty?
+  .my-4.overflow-hidden.position-relative{ data: { controller: :slideshow, slideshow: { incrementer: 0 } } }
+    .container-md.position-absolute.left-3.right-3.top-0.bottom-0.d-flex.flex-justify-between.flex-items-center
+      %button.btn.btn-transparent{ type: :button, data: { action: :'slideshow#previous' } }
+        = octicon 'arrow-left'
+        .d-none.d-sm-inline Previous
+      %button.btn.btn-transparent{ type: :button, data: { action: :'slideshow#next' } }
+        .d-none.d-sm-inline Next
+        = octicon 'arrow-right'
+    - content(:gallery)&.images&.each do |image|
+      = responsive_image_tag image, variant: { resize_to_fill: [1680, 600] }, data: { target: :'slideshow.slide' }, class: 'mx-auto'

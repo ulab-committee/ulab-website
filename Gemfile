@@ -90,5 +90,11 @@ gem 'bugsnag', '~> 6.8'
 gem 'rack-timeout'
 gem 'scout_apm', '~> 2.4'
 gem 'skylight', '~> 3.1'
-
 gem 'dotenv-rails', '~> 2.7'
+
+# Image processing
+gem 'image_processing', '~> 1.9'
+
+# Octicons
+
+gem 'octicons_helper', '~> 8.5'

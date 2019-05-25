@@ -1,4 +1,2 @@
-%details
-  %summary= "#{presentation_type.name} #{t('spina.conferences.website.presentations').downcase}"
-  - cache presentation_type.presentations do
-    = render presentation_type.presentations
+- return render "#{current_theme.name}/shared/empty_list" unless presentation_type.presentations.any?
+= render presentation_type.presentations || "#{current_theme.name}/shared/empty_list", cached: true

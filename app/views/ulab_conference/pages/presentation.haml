@@ -1,9 +1,11 @@
 - content_for(:header) do
-  = render "#{current_theme.name}/shared/title"
-  %address
-    - presentation.presenters.each do |presenter|
-      = "#{presenter.full_name}, #{presenter.institution.name}"
-  = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
-  = presentation.room_use.room_name
+  .pagehead.my-4
+    %h1.mb-1= current_page.title
+    .text-gray
+      %address
+        - presentation.presenters.each do |presenter|
+          = "#{presenter.full_name}, #{presenter.institution.name}"
+      = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
+      = presentation.room_use.room_name
 
-= presentation.abstract.try(:html_safe)
+.markdown-body.my-4= presentation.abstract.try(:html_safe)

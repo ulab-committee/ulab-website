@@ -1,2 +1,5 @@
-- presenter = Spina::MenuPresenter.new(Spina::Navigation.find_by(name: 'footer'))
-= presenter.to_html
+.my-4= footer_navigation %w[flex-self-center flex-shrink-0], %w[px-md-1 px-lg-2], %w[px-md-1 px-lg-2 text-bold], request
+.my-4= render 'ulab_conference/shared/cookies'
+%p.my-4
+  %small.text-small
+    = "© ULAB #{Date.today.year}"
