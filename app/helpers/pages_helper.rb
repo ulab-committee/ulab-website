@@ -28,9 +28,9 @@ module PagesHelper #:nodoc:
 
   def process_variant_options(image, factors, variant_options)
     methods = %i[resize_to_limit resize_to_fit resize_to_fill resize_and_pad]
+    unprocessed_options = variant_options.select { |key| methods.include? key }
     factors.collect do |factor|
-      processed_options = variant_options.select { |key| methods.include? key }
-      processed_options.transform_values! { |value| multiply_factor(factor, value) }
+      processed_options = unprocessed_options.transform_values { |value| multiply_factor(factor, value) }
       { main_app.url_for(image.variant(variant_options.merge(processed_options))) => "#{factor}x" }
     end
   end
