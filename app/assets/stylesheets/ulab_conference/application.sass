@@ -1,53 +1,16 @@
 // Admin editing
-@import spina/application
-@import spina_front_end
-@import spina/configuration
-@import spina/fonts
-@import spina/ics_spina
-
-$shadow_colour: $primary-color
-$shadow: 0 0 8px 0px rgba(#000, .5)
-$font-family: 'Molde', Helvetica, Arial, sans-serif
-$padding: 7vw
-$row-gap: 16px
-
-@import fonts
-@import grid
-@import flex
-
-#admin_bar
-  position: relative
-  z-index: 2
 .spina-link, #admin_bar
+  @import spina/application
+  @import spina_front_end
+  @import spina/configuration
+  @import spina/fonts
+  @import spina/ics_spina
   font-family: $font-family
+
 .turbolinks-progress-bar
+  @import spina/configuration
   background-color: $primary-color
 
-html
-  height: 100%
-  body
-    height: 100%
-    display: flex
-    flex-direction: column
-    overflow: scroll
-    .content
-      flex:
-        grow: 1
-        wrap: wrap
-      display: flex
-      font-family: $font-family
-      @import sidebar
-      @import main
-      @import transitions
-      a
-        color: unset
-        text-decoration: unset
-      li > a, p > a, div > a
-        text-decoration: underline
-      img
-        max-width: 100%
-        object-position: top left
-      .button
-        text-decoration: unset
-      .icon
-        vertical-align: text-bottom
+@import fonts
+@import slideshow
+
