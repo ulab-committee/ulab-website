@@ -20,7 +20,7 @@ module PagesHelper #:nodoc:
   def responsive_image_tag(image, options = {})
     options = options.symbolize_keys
     variant_options = options.delete(:variant)
-    factors = [2, 3, 4]
+    factors = [1, 2, 3, 4]
     variants = process_variant_options(image, factors, variant_options)
     options[:srcset] = variants.inject(&:merge)
     image_tag main_app.url_for(image.variant(variant_options)), options
@@ -29,10 +29,9 @@ module PagesHelper #:nodoc:
   def process_variant_options(image, factors, variant_options)
     methods = %i[resize_to_limit resize_to_fit resize_to_fill resize_and_pad]
     factors.collect do |factor|
-      variant_options.keys.each do |key|
-        variant_options[key] = multiply_factor(factor, variant_options[key]) if methods.include? key
-      end
-      { main_app.url_for(image.variant(variant_options)) => "#{factor}x" }
+      processed_options = variant_options.select { |key| methods.include? key }
+      processed_options.transform_values! { |value| multiply_factor(factor, value) }
+      { main_app.url_for(image.variant(variant_options.merge(processed_options))) => "#{factor}x" }
     end
   end
 
