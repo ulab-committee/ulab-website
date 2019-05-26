@@ -5,6 +5,9 @@ export default class extends Controller {
 
   connect() {
     this.showFirstSlide()
+    if (this.data.has('advance')) {
+      setInterval(() => this.next(), 10000)
+    }
   }
 
   showFirstSlide() {

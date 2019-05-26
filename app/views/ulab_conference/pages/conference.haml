@@ -13,7 +13,7 @@
     = responsive_image_tag conference.institution.logo.file, variant: { resize_to_limit: [300, 60] }, draggable: false, class: %w[flex-shrink-0 pl-md-4 pt-4 pt-md-0] if conference.institution.logo
 
 - content_for :hero do
-  = render "#{current_theme.name}/shared/slideshow" if has_content? :gallery
+  = render content(:gallery) || "#{current_theme.name}/shared/blank", controls: true
 
 .Subhead.Subhead--spacious
   %h2.Subhead-heading Sponsors
