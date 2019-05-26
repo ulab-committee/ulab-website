@@ -1,0 +1,15 @@
+- return nil unless image_collection.images.any?
+.position-relative.flex-auto{ data: { controller: :slideshow, slideshow: { incrementer: 0, advance: (true if local_assigns[:advance]) } } }
+  - image_collection.images.each do |image|
+    = responsive_image_tag image, variant: { resize_to_fill: [1680, 600] }, data: { target: :'slideshow.slide' }, class: ['mx-auto', (%w[position-absolute height-full width-full] unless local_assigns[:controls])], style: ('z-index: -1' unless local_assigns[:controls])
+  .px-3.px-md-4.width-full.height-full{ class: ('position-absolute top-0' if local_assigns[:controls]) }
+    .container-md.height-full
+      = yield
+      - if local_assigns[:controls]
+        .d-flex.flex-justify-between.flex-items-center.height-full
+          %button.btn.btn-transparent{ type: :button, data: { action: :'slideshow#previous' } }
+            = octicon 'arrow-left'
+            .d-none.d-sm-inline Previous
+          %button.btn.btn-transparent{ type: :button, data: { action: :'slideshow#next' } }
+            .d-none.d-sm-inline Next
+            = octicon 'arrow-right'
