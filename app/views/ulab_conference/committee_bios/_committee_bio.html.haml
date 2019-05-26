@@ -10,4 +10,4 @@
         .BtnGroup.flex-shrink-0.mt-1.mt-md-0.ml-md-1{ role: :group, aria: { label: 'Contact buttons' } }
           = link_to 'Twitter', committee_bio.content(:twitter_profile), class: %w[button btn BtnGroup-item], role: :button if committee_bio.has_content? :twitter_profile
           = link_to 'Facebook', committee_bio.content(:facebook_profile), class: %w[button btn BtnGroup-item], role: :button if committee_bio.has_content? :facebook_profile
-    .text-small.text-gray-light= committee_bio.content(:bio).try(:html_safe) if committee_bio.has_content? :bio
+    .text-gray-light= committee_bio.content(:bio).try(:html_safe) if committee_bio.has_content? :bio
