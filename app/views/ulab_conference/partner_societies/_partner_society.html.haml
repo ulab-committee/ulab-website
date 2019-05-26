@@ -10,5 +10,5 @@
         = link_to "mailto:#{partner_society.content(:email_address)}", class: %w[btn BtnGroup-item], role: :button do
           = octicon 'mail'
           Email
-  .text-small.text-gray-light= partner_society.content(:description).try(:html_safe) if partner_society.has_content? :description
+  .text-gray-light= partner_society.content(:description).try(:html_safe) if partner_society.has_content? :description
 = responsive_image_tag partner_society.content(:logo).file, variant: { resize_to_limit: [200, 150] }, draggable: false, class: 'flex-shrink-0' if partner_society.has_content? :logo
