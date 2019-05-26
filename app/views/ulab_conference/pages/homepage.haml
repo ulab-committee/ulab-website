@@ -12,5 +12,5 @@
               = time_tag latest_conference.dates.max, latest_conference.dates.max.strftime('%d/%m')
             .markdown-body.my-4.text-shadow-dark= content(:text).try(:html_safe)
             .d-block.mt-4= link_to 'More info', latest_conference.conference_page.materialized_path, class: %w(btn btn-large f3)
-  %footer
+  %footer.px-3.px-md-4
     .container-md= render "#{current_theme.name}/shared/footer"
