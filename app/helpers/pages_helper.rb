@@ -38,4 +38,8 @@ module PagesHelper #:nodoc:
   def multiply_factor(factor, geometry)
     [(geometry[0]&.* factor), (geometry[1]&.* factor)]
   end
+
+  def latest_conference
+    Spina::Conferences::Conference.sorted.first
+  end
 end
