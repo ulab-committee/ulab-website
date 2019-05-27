@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: fbd63ec9d8b103486be30c8a59d975b601014e17
+  revision: 0e98e182b4d7b01bd3af8149fea0c5c9f9a2fc78
   specs:
     spina-conferences (0.1.0)
       js-routes (~> 1.4)
