@@ -1,7 +1,9 @@
 :ruby
   cal.event do |e|
     e.dtstart = conference.start_date
+    e.dtstart.ical_params = { value: 'DATE' }
     e.dtend = conference.finish_date
+    e.dtend.ical_params = { value: 'DATE' }
     e.url = spina.page_url id: conference.conference_page.materialized_path.delete_prefix('/')
     e.location = conference.institution.name
     e.categories = conference.class.name.demodulize.upcase
