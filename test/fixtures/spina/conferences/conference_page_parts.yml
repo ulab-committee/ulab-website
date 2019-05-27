@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+university_of_atlantis_2017_part:
+  conference_page: university_of_atlantis_2017_page
+  conference_page_partable: university_of_atlantis_2017
+  conference_page_partable_type: Spina::Conferences::Conference
+
+university_of_shangri_la_2018_part:
+  conference_page: university_of_shangri_la_2018_page
+  conference_page_partable: university_of_shangri_la_2018
+  conference_page_partable_type: Spina::Conferences::Conference
+
+asymmetry_and_antisymmetry_part:
+  conference_page: asymmetry_and_antisymmetry_page
+  conference_page_partable: asymmetry_and_antisymmetry
+  conference_page_partable_type: Spina::Conferences::Presentation
+
+no_island_part:
+  conference_page: no_island_page
+  conference_page_partable: no_island
+  conference_page_partable_type: Spina::Conferences::Presentation

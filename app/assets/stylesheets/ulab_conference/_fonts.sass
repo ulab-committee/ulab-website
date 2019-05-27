@@ -3,10 +3,8 @@
     @each $style, $style_name in (normal: '', italic: Italic)
       @each $format in otf, woff
         @font-face
-          font:
-            family: 'Molde'
-            weight: $weight
-            style: $style
-            stretch: $stretch
-            synthesis: none
+          font-family: 'Molde'
+          font-weight: $weight
+          font-style: $style
+          font-stretch: $stretch
           src: url(asset-path('#{$format}/Molde-#{$stretch_name}-#{$weight_name}#{$style_name}.#{$format}')) format('#{$format}')
