@@ -5,6 +5,5 @@
   .flex-auto
     %h3.mb-1= link_to presentation.title, presentation.conference_page.materialized_path
     .text-gray
-      %address
-        - presentation.presenters.each do |presenter|
-          = "#{presenter.full_name}, #{presenter.institution.name}"
+      - presentation.presenters.each do |presenter|
+        %address= "#{presenter.full_name}, #{presenter.institution.name}"
