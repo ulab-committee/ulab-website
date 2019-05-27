@@ -1,6 +1,6 @@
 .flex-auto.d-flex.flex-column
-  - cache [latest_conference, latest_conference.conference_page, content(:text), content(:gallery).images] do
-    = render content(:gallery).images.any? ? content(:gallery) : "#{current_theme.name}/shared/jumbotron", advance: true do
+  - cache [latest_conference, latest_conference.conference_page, current_page] do
+    = render content(:gallery)&.images&.any? ? content(:gallery) : "#{current_theme.name}/shared/jumbotron", advance: true do
       .py-3.py-lg-6
         - cache [latest_conference, latest_conference.conference_page, content(:text)] do
           .text-white
