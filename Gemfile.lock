@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: fbd63ec9d8b103486be30c8a59d975b601014e17
+  revision: 0e98e182b4d7b01bd3af8149fea0c5c9f9a2fc78
   specs:
     spina-conferences (0.1.0)
       js-routes (~> 1.4)
@@ -324,9 +324,9 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
-    skylight (3.1.5)
-      skylight-core (= 3.1.5)
-    skylight-core (3.1.5)
+    skylight (4.0.2)
+      skylight-core (= 4.0.2)
+    skylight-core (4.0.2)
       activesupport (>= 4.2.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -401,7 +401,7 @@ DEPENDENCIES
   scout_apm (~> 2.4)
   selenium-webdriver
   simplecov
-  skylight (~> 3.1)
+  skylight (~> 4.0)
   spina!
   spina-conferences!
   spring
