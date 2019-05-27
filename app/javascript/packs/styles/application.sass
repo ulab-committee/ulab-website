@@ -1,26 +1,4 @@
-// Fonts
-$body-font: 'Molde', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
-$font-mktg: $body-font
-
-// Colours
-$blue-000: #f2fcff
-$blue-100: #dbf5ff
-$blue-200: #c9f1ff
-$blue-300: #7adcff
-$blue-400: #1ea2c7
-$blue-500: #057fab // Default: Passes AA with #fff
-$blue-600: #007399
-$blue-700: #06455c
-$blue-800: #032a38
-$blue-900: #021a21 // Passes with 1/2/300 blues
-
+@import variables
 @import ~@primer/css/index
 @import ~octicons/build/build
-
-img
-  max-width: 100%
-  object-fit: contain
-  object-position: top left
-
-h1, h2, h3, h4, h5, h6, time
-  line-height: $lh-condensed-ultra
+@import custom
