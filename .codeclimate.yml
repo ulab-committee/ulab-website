@@ -13,3 +13,5 @@ plugins:
   eslint:
     enabled: true
     channel: eslint-5
+  editorconfig:
+    enabled: true
