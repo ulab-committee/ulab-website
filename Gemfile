@@ -89,7 +89,7 @@ gem 'barnes', '~> 0.0.7'
 gem 'bugsnag', '~> 6.8'
 gem 'rack-timeout'
 gem 'scout_apm', '~> 2.4'
-gem 'skylight', '~> 3.1'
+gem 'skylight', '~> 4.0'
 gem 'dotenv-rails', '~> 2.7'
 
 # Image processing
