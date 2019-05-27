@@ -10,3 +10,6 @@ plugins:
     enabled: true
   brakeman:
     enabled: true
+  eslint:
+    enabled: true
+    channel: eslint-5
