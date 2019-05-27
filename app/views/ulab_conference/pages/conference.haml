@@ -46,4 +46,4 @@
       = octicon 'calendar'
       Subscribe
 
-= render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name
+= render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name, cached: true
