@@ -7,16 +7,17 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import UJS from "rails-ujs"
-import Turbolinks from "turbolinks"
-require("activestorage").start()
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
+import UJS from 'rails-ujs'
+import Turbolinks from 'turbolinks'
 
-import "./styles/application"
+require('activestorage').start()
+import {Application} from 'stimulus'
+import {definitionsFromContext} from 'stimulus/webpack-helpers'
+
+import './styles/application'
 
 UJS.start()
 Turbolinks.start()
 const application = Application.start()
-const context = require.context("./controllers", true, /.js$/)
+const context = require.context('./controllers', true, /.js$/)
 application.load(definitionsFromContext(context))
