@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+lecture_block_2:
+  institution: university_of_atlantis
+  building: Lecture block
+  number: 2
+
+lecture_block_3:
+  institution: university_of_atlantis
+  building: Lecture block
+  number: 3
+
+lecture_block_entrance:
+  institution: university_of_atlantis
+  building: Lecture block
+  number: entrance
+
+medical_school_g_14:
+  institution: university_of_shangri_la
+  building: Medical school
+  number: G.14
+
+medical_school_g_152:
+  institution: university_of_shangri_la
+  building: Medical school
+  number: G.152
+
+medical_school_g_16:
+  institution: university_of_shangri_la
+  building: Medical school
+  number: G.16

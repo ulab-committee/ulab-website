@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+plenary_1:
+  conference: university_of_atlantis_2017
+  name: Plenary
+  duration: !ruby/object:ActiveSupport::Duration
+    value: 4800
+    parts:
+      :minutes: 80
+
+poster_1:
+  conference: university_of_atlantis_2017
+  name: Poster
+  duration: !ruby/object:ActiveSupport::Duration
+    value: 1800
+    parts:
+      :minutes: 30
+
+oral_1:
+  conference: university_of_atlantis_2017
+  name: Oral
+  duration:  !ruby/object:ActiveSupport::Duration
+    value: 1200
+    parts:
+      :minutes: 20
+
+plenary_2:
+  conference: university_of_shangri_la_2018
+  name: Plenary
+  duration:  !ruby/object:ActiveSupport::Duration
+    value: 4800
+    parts:
+      :minutes: 80
+
+poster_2:
+  conference: university_of_shangri_la_2018
+  name: Poster
+  duration: !ruby/object:ActiveSupport::Duration
+    value: 1800
+    parts:
+      :minutes: 30
+
+oral_2:
+  conference: university_of_shangri_la_2018
+  name: Oral
+  duration: !ruby/object:ActiveSupport::Duration
+    value: 1200
+    parts:
+      :minutes: 20
