@@ -41,9 +41,9 @@
 
 .Subhead.Subhead--spacious
   %h2.Subhead-heading Presentations
-  .Subhead-actions
-    = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-sm btn-primary], role: :button do
-      = octicon 'calendar'
-      Subscribe
+  -#.Subhead-actions
+  -#  = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-sm btn-primary], role: :button do
+  -#    = octicon 'calendar'
+  -#    Subscribe
 
 = render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name, cached: true
