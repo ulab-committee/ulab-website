@@ -21,12 +21,12 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: 0e98e182b4d7b01bd3af8149fea0c5c9f9a2fc78
+  revision: 6d147ed4d0eea4b9ff4a87451842dc0dc26fce52
   specs:
     spina-conferences (0.1.0)
       js-routes (~> 1.4)
       pg (>= 0.18, < 2.0)
-      rails (~> 6.0.beta3)
+      rails (~> 6.0.0.rc1)
       spina (~> 1.0)
 
 GEM
