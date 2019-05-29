@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[ulab-website.en-gb-yml]
+file_filter = config/locales/<lang>.yml
+minimum_perc = 0
+source_file = config/locales/en-GB.yml
+source_lang = en_GB
+type = YML
