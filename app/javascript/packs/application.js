@@ -7,12 +7,15 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import UJS from 'rails-ujs'
 import Turbolinks from 'turbolinks'
 
 require('activestorage').start()
-import {Application} from 'stimulus'
-import {definitionsFromContext} from 'stimulus/webpack-helpers'
+import { Application } from 'stimulus'
+import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
 import './styles/application'
 
