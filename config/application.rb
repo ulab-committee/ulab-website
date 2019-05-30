@@ -13,6 +13,7 @@ module UlabWebsite
     config.load_defaults 6.0
 
     config.i18n.default_locale = :'en-GB'
+    config.active_storage.variant_processor = :vips
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers -- all .rb files in that directory are
