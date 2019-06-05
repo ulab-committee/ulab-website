@@ -8,6 +8,7 @@ addons:
   postgresql: 9.6
 before_install:
   - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+  - vips -v
   - gem update --system
   - gem install bundler
 before_script:
