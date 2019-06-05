@@ -3,12 +3,11 @@ addons:
     packages:
       - chromium-chromedriver
       - libvips
-      - libvips-tools
+      - libvips-dev
   chrome: stable
   postgresql: 9.6
 before_install:
   - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
-  - ln -s /usr/bin/vips ~/bin/vips
   - gem update --system
   - gem install bundler
 before_script:
