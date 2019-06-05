@@ -3,6 +3,7 @@ addons:
     packages:
       - chromium-chromedriver
       - libvips
+      - libvips-tools
   chrome: stable
   postgresql: 9.6
 before_install:
