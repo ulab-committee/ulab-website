@@ -18,6 +18,8 @@ module PagesHelper #:nodoc:
   end
 
   def responsive_image_tag(image, options = {})
+    return if image.blank?
+
     options = options.symbolize_keys
     variant_options = options.delete(:variant)
     factors = [1, 2, 3, 4]
