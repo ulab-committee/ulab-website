@@ -18,7 +18,7 @@ module Spina
     Institution.create [{ name: 'University of Atlantis', city: 'Atlantis' },
                         { name: 'University of Shangri-La', city: 'Shangri-La' }]
     Room.create [{ institution_id: 1, building: 'Lecture block', number: '2' },
-                 { institution: 1, building: 'Lecture block', number: '3' },
+                 { institution_id: 1, building: 'Lecture block', number: '3' },
                  { institution_id: 1, building: 'Lecture block', number: 'entrance' },
                  { institution_id: 2, building: 'Medical school', number: 'G.14' },
                  { institution_id: 2, building: 'Medical school', number: 'G.152' },
