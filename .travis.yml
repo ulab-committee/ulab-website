@@ -7,6 +7,8 @@ addons:
       - libvips-dev
   chrome: stable
   postgresql: 9.6
+services:
+  - redis
 before_install:
   - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
   - gem update --system
