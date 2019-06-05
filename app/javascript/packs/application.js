@@ -10,10 +10,10 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-import UJS from 'rails-ujs'
+import UJS from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 
-require('activestorage').start()
+require('@rails/activestorage').start()
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
