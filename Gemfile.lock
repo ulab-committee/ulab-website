@@ -396,6 +396,7 @@ DEPENDENCIES
   rails-i18n (~> 5.1)
   redis (~> 4.1)
   resque
+  ruby-vips (~> 2.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   simplecov

@@ -93,6 +93,7 @@ gem 'skylight', '~> 4.0'
 
 # Image processing
 gem 'image_processing', '~> 1.9'
+gem 'ruby-vips', '~> 2.0'
 
 # Octicons
 

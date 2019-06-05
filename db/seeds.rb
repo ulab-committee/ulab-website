@@ -13,8 +13,7 @@
 
 module Spina
   Account.first_or_create name: 'Conferences', theme: 'ulab_conference'
-  User.first_or_create name: 'Joe', email: Rails.application.credentials.dig(:spina, :email),
-                       password: Rails.application.credentials.dig(:spina, :password), admin: true
+  User.first_or_create name: 'Joe', email: 'someone@someaddress.com', password: 'password', admin: true
   module Conferences
     Institution.create [{ name: 'University of Atlantis', city: 'Atlantis' },
                         { name: 'University of Shangri-La', city: 'Shangri-La' }]
@@ -40,4 +39,3 @@ module Spina
   end
   Page.find_by(name: 'homepage').update_attribute(:layout_template, 'homepage')
 end
-
