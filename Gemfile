@@ -97,4 +97,4 @@ gem 'ruby-vips', '~> 2.0'
 
 # Octicons
 
-gem 'octicons_helper', '~> 8.5'
+gem 'octicons_helper', '~> 9.0'
