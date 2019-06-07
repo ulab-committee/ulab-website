@@ -12,10 +12,6 @@
     "LANG": {
       "required": true
     },
-    "LOGDNA_KEY": {
-      "description": "Key to log to LogDNA",
-      "required": true
-    },
     "RACK_ENV": {
       "description": "Rack environment",
       "required": true
