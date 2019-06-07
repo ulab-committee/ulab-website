@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'resque/tasks'
-
-task 'resque:setup' => :environment
-
 namespace :ulab_website do
   desc 'Create translations for pages'
   task create_translations: :environment do

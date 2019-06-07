@@ -82,7 +82,7 @@ gem 'icalendar'
 gem 'rails-i18n', '~> 5.1'
 
 # Job queueing
-gem 'resque'
+gem 'sidekiq'
 
 # Production gems
 gem 'barnes', '~> 0.0.7'
