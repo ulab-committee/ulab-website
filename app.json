@@ -40,7 +40,7 @@
   "addons": [
     "heroku-postgresql:hobby-dev",
     "heroku-redis:hobby-dev",
-    "logdna:quaco"
+    "papertrail:choklad"
   ],
   "buildpacks": [
     {
