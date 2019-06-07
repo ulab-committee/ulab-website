@@ -1,7 +1,7 @@
 = link_to [:admin, media_folder], class: 'item media-folder', data: {add_to_media_folder_url: add_to_media_folder_admin_images_url(media_folder)} do
   .media-folder-thumbnail{data: {badge: media_folder.images.count}}
     - if media_folder.images.any?
-      = responsive_image_tag media_folder.images.last.file, variant: { resize_to_fill: [144, 144] }
+      = responsive_image_tag media_folder.images.last.file, variant: { resize_to_fill: [144, 144] }, factors: [2]
     - else
       = image_tag 'spina/media_folder_placeholder.svg'
     .media-folder-shadow

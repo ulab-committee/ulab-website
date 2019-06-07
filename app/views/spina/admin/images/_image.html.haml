@@ -9,4 +9,4 @@
     = radio_button_tag :image_id, image.id
     = check_box_tag 'image_ids[]', image.id, image.id.to_s.try(:in?, params[:selected_ids].to_a)
 
-  = responsive_image_tag image.file, variant: { resize_to_fill: [150, 150] }
+  = responsive_image_tag image.file, variant: { resize_to_fill: [150, 150] }, factors: [2]
