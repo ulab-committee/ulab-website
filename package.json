@@ -19,7 +19,7 @@
     "sass-loader": "^7.1.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.30.0"
+    "webpack": "^4.33.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
