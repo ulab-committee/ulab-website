@@ -89,7 +89,7 @@ gem 'barnes', '~> 0.0.7'
 gem 'bugsnag', '~> 6.8'
 gem 'dotenv-rails', '~> 2.7'
 gem 'rack-timeout'
-gem 'skylight', '~> 4.0'
+gem 'skylight', '~> 4.1'
 
 # Image processing
 gem 'image_processing', '~> 1.9'
@@ -97,4 +97,4 @@ gem 'ruby-vips', '~> 2.0'
 
 # Octicons
 
-gem 'octicons_helper', '~> 8.5'
+gem 'octicons_helper', '~> 9.0'

@@ -94,8 +94,8 @@ GEM
     ancestry (3.0.6)
       activerecord (>= 3.2.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.169.0)
-    aws-sdk-core (3.54.0)
+    aws-partitions (1.172.0)
+    aws-sdk-core (3.54.2)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -103,7 +103,7 @@ GEM
     aws-sdk-kms (1.21.0)
       aws-sdk-core (~> 3, >= 3.53.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.41.0)
+    aws-sdk-s3 (1.42.0)
       aws-sdk-core (~> 3, >= 3.53.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
@@ -229,10 +229,10 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    octicons (8.5.0)
+    octicons (9.0.0)
       nokogiri (>= 1.6.3.1)
-    octicons_helper (8.5.0)
-      octicons (= 8.5.0)
+    octicons_helper (9.0.0)
+      octicons (= 9.0.0)
       rails
     pg (1.1.4)
     public_suffix (3.1.0)
@@ -314,9 +314,9 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    skylight (4.0.2)
-      skylight-core (= 4.0.2)
-    skylight-core (4.0.2)
+    skylight (4.1.0)
+      skylight-core (= 4.1.0)
+    skylight-core (4.1.0)
       activesupport (>= 4.2.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -349,7 +349,7 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (~> 3.0)
-    webpacker (4.0.6)
+    webpacker (4.0.7)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -377,7 +377,7 @@ DEPENDENCIES
   image_processing (~> 1.9)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  octicons_helper (~> 8.5)
+  octicons_helper (~> 9.0)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-timeout
@@ -389,7 +389,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   simplecov
-  skylight (~> 4.0)
+  skylight (~> 4.1)
   spina!
   spina-conferences!
   spring
