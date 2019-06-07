@@ -44,6 +44,23 @@
   ],
   "buildpacks": [
     {
+      "description": "APT support.",
+      "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/apt.tgz"
+    },
+    {
+      "description": "VIPS for ImageProcessing.",
+      "url": "https://github.com/kinfamilies/heroku-buildpack-vips"
+    },
+    {
+      "description": "Active Storage dependencies.",
+      "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview"
+    },
+    {
+      "description": "Heroku dyno metrics.",
+      "url": "heroku/metrics"
+    },
+    {
+      "description": "Base buildpack.",
       "url": "heroku/ruby"
     }
   ],
