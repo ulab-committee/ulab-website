@@ -44,6 +44,10 @@
   ],
   "buildpacks": [
     {
+      "description": "jemalloc memory allocator.",
+      "url": "https://github.com/mojodna/heroku-buildpack-jemalloc.git"
+    },
+    {
       "description": "APT support.",
       "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/heroku-community/apt.tgz"
     },
