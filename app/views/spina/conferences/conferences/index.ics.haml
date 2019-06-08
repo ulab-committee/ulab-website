@@ -1,7 +1,0 @@
-:ruby
-  cal = Icalendar::Calendar.new
-  cal.x_wr_calname = @calendar_name
-  render @conferences, cached: true, cal: cal
-  cal.publish
-- cache @conferences
-  = render plain: cal.to_ical
