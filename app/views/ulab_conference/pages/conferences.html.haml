@@ -1,5 +1,6 @@
-- content_for(:header) do
+- content_for :header do
   .pagehead.my-4
     %h1= current_page.title
 
-%ul= render Spina::Conferences::Conference.sorted || "#{current_theme.name}/shared/empty_list", cached: true
+- content_for :content do
+  %ul= render Spina::Conferences::Conference.sorted || "#{current_theme.name}/shared/empty_list", cached: true
