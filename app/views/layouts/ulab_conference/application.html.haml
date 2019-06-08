@@ -37,15 +37,11 @@
         .container-md= render "#{current_theme.name}/shared/breadcrumbs"
 
     = render "#{current_theme.name}/shared/alert" if current_account.has_content? :current_conference_alert
+    = yield
     - if content_for? :content
-      = yield
       .px-3.px-md-4
         .container-md
           .my-4= yield :header
           .my-4= yield :content
           %footer.my-4= render "#{current_theme.name}/shared/footer"
-
-    - else
-      = yield
-
     = render 'spina/shared/social'
