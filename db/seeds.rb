@@ -37,5 +37,4 @@ module Spina
     Presentation.create title: 'The Asymmetry and Antisymmetry of Syntax', room_use_id: 3, date: '2017-04-07',
                         start_time: '10:00', abstract: 'Lorem ipsum', presenter_ids: [1]
   end
-  Page.find_by(name: 'homepage').update_attribute(:layout_template, 'homepage')
 end
