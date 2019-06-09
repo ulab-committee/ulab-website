@@ -17,6 +17,18 @@
     title: 'Constitution',
     partable_type: 'Spina::Attachment'
   }, {
+    name: 'slideshow',
+    title: 'Slideshow',
+    partable_type: 'Spina::Attachment'
+  }, {
+    name: 'handout',
+    title: 'Handout',
+    partable_type: 'Spina::Attachment'
+  }, {
+    name: 'poster',
+    title: 'Poster',
+    partable_type: 'Spina::Attachment'
+  }, {
     name: 'partner_societies',
     title: 'Partner societies',
     partable_type: 'Spina::Structure'
@@ -199,7 +211,7 @@
     name: 'presentation',
     title: 'Presentation',
     description: 'Contains content for a presentation',
-    page_parts: %w[]
+    page_parts: %w[slideshow handout poster]
   }, {
     name: 'committee',
     title: 'Committee',
