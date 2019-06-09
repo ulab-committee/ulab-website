@@ -2,7 +2,7 @@
   .pagehead.my-4
     %h1.mb-1= current_page.title
     .text-gray
-      - presentation.presenters.each do |presenter|
+      - presentation.presenters.includes(:institution).each do |presenter|
         %address= "#{presenter.full_name}, #{presenter.institution.name}"
       = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
       %div= presentation.room_use.room_name
