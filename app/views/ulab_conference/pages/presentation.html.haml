@@ -6,6 +6,12 @@
         %address= "#{presenter.full_name}, #{presenter.institution.name}"
       = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
       %div= presentation.room_use.room_name
+    - if has_content?(:slideshow) || has_content?(:handout) || has_content?(:poster)
+      .BtnGroup.mt-1
+        = render content(:slideshow) || "#{current_theme.name}/shared/blank"
+        = render content(:handout) || "#{current_theme.name}/shared/blank"
+        = render content(:poster) || "#{current_theme.name}/shared/blank"
+
 
 - content_for :content do
   .markdown-body.my-4= presentation.abstract.try(:html_safe)
