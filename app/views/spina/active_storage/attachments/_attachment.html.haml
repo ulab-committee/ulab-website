@@ -4,3 +4,5 @@
     .Box-header
       %h3.Box-title= attachment.record.page_part.title
     = render partial: "#{current_theme.name}/#{attachment.record.page_part.name.pluralize}/#{attachment.record.page_part.name.singularize}", object: attachment, as: attachment.record.page_part.name.singularize, box: true
+- else
+  = render partial: "#{current_theme.name}/#{attachment.record.page_part.name.pluralize}/#{attachment.record.page_part.name.singularize}", object: attachment, as: attachment.record.page_part.name.singularize
