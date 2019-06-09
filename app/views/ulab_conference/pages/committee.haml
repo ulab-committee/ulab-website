@@ -1,8 +1,0 @@
-- content_for(:header) do
-  .pagehead.my-4
-    %h1= current_page.title
-
-- cache current_page do
-  = content(:text).try(:html_safe)
-  - if has_content?(:committee_bios) && content(:committee_bios).structure_items.present?
-    = render content(:committee_bios)

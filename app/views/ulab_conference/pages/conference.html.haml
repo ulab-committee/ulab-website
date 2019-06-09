@@ -1,0 +1,49 @@
+- content_for :header do
+  .pagehead.d-md-flex.flex-items-start.my-4
+    %div.flex-auto
+      %h1.mb-1= current_page.title
+      .text-gray
+        %div
+          = time_tag conference.dates.min, l(conference.dates.min, format: :long)
+          to
+          = time_tag conference.dates.max, l(conference.dates.max, format: :long)
+        %address<
+          = "#{conference.institution.name}"
+          = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
+    = responsive_image_tag conference.institution.logo.file, variant: { resize_to_limit: [300, 60] }, draggable: false, class: %w[flex-shrink-0 pl-md-4 pt-4 pt-md-0] if conference.institution.logo
+
+= render content(:gallery) || "#{current_theme.name}/shared/blank", controls: true
+
+- content_for :content do
+  .Subhead.Subhead--spacious
+    %h2.Subhead-heading Sponsors
+
+  = render content(:sponsors) || "#{current_theme.name}/shared/empty_list", list_class: %w[list-style-none mb-n2 mt-n2 ml-n2 mr-n2], cached: true
+
+  .markdown-body.my-4= content(:text).try(:html_safe)
+
+  - if content(:submission_date)&.>= Date.today
+    .alert.my-4
+      %strong
+        Submit abstracts by
+        = time_tag content(:submission_date), l(content(:submission_date), format: :short)
+      - if has_content? :submission_text
+        = content(:submission_text).try :html_safe
+      - if has_content? :submission_url
+        = link_to 'Submit an abstract', content(:submission_url), class: [:button, :solid]
+
+  .Subhead.Subhead--spacious
+    %h2.Subhead-heading Events
+
+  .clearfix.gutter.mb-n4.mt-n4.my-md-4
+    .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:socials) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
+    .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:meetings) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
+
+  .Subhead.Subhead--spacious
+    %h2.Subhead-heading Presentations
+    -#.Subhead-actions
+    -#  = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-sm btn-primary], role: :button do
+    -#    = octicon 'calendar'
+    -#    Subscribe
+
+  = render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name, cached: true

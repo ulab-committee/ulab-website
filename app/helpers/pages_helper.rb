@@ -22,7 +22,7 @@ module PagesHelper #:nodoc:
 
     options = options.symbolize_keys
     variant_options = options.delete(:variant)
-    factors = [1, 2, 3, 4]
+    factors = options.delete(:factors) || [1, 2, 3, 4]
     variants = process_variant_options(image, factors, variant_options)
     options[:srcset] = variants.inject(&:merge)
     image_tag main_app.url_for(image.variant(variant_options)), options

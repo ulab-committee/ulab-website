@@ -16,6 +16,6 @@
 
     - if f.object.partable.file.attached?
       .image{data: {target: 'image-form.image'}}
-        = responsive_image_tag f.object.partable.file, variant: { resize_to_fill: [150, 150] }
+        = responsive_image_tag f.object.partable.file, variant: { resize_to_fill: [150, 150] }, factors: [2]
 
     = f.hidden_field :partable_id, data: {hidden_field_id: "media_picker_#{f.object.object_id}", target: 'image-form.field'}

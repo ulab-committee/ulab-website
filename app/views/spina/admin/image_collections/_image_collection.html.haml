@@ -4,4 +4,4 @@
   %ul.sortable-grid
     - images.each do |image|
       %li.image{data: {image_id: image.id}}
-        = responsive_image_tag image.file, variant: { resize_to_fill: [150, 150] }
+        = responsive_image_tag image.file, variant: { resize_to_fill: [150, 150] }, factors: [2]

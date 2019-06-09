@@ -1,4 +1,4 @@
-- content_for(:header) do
+- content_for :header do
   .pagehead.my-4
     %h1.mb-1= current_page.title
     .text-gray
@@ -7,4 +7,5 @@
       = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short)
       %div= presentation.room_use.room_name
 
-.markdown-body.my-4= presentation.abstract.try(:html_safe)
+- content_for :content do
+  .markdown-body.my-4= presentation.abstract.try(:html_safe)
