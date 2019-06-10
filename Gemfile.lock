@@ -21,13 +21,15 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: 9342d9c20dc89bcfee33cb573fa555a4a3c79465
+  revision: c56344ae4016c323040141144f866e76827df632
   specs:
     spina-conferences (0.1.0)
+      icalendar (~> 2.5)
       js-routes (~> 1.4)
       pg (>= 0.18, < 2.0)
       rails (~> 6.0.0.rc1)
       spina (~> 1.0)
+      webpacker (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
