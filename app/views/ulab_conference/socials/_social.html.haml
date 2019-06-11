@@ -1,5 +1,0 @@
-.flex-shrink-0= time_tag social.content(:start_time), l(social.content(:start_time), format: :short) if social.has_content? :start_time
-.pl-4
-  %strong= social.content(:name) if social.has_content? :name
-  %address= social.content(:location) if social.has_content? :location
-  .text-small.text-gray-light= social.content(:description).try(:html_safe) if social.has_content? :description

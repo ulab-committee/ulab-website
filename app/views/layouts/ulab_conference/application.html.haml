@@ -33,7 +33,7 @@
           .d-none.d-lg-flex.flex-justify-end
             = main_navigation %w[flex-self-center flex-shrink-0], %w[px-md-1 px-lg-2], %w[px-md-1 px-lg-2 text-bold], request
       .box-shadow-medium.px-3.px-md-4.py-2.mt-4
-        .container-md= render "#{current_theme.name}/shared/breadcrumbs"
+        .container-md= render 'shared/breadcrumbs'
     = render "#{current_theme.name}/shared/alert" if current_account.has_content? :current_conference_alert
     = yield
     - if content_for? :content
@@ -41,5 +41,5 @@
         .container-md
           .my-4= yield :header
           .my-4= yield :content
-          %footer.my-4= render "#{current_theme.name}/shared/footer"
+          %footer.my-4= render 'shared/footer'
     = render 'spina/shared/social'

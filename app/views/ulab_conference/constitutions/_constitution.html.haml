@@ -1,7 +1,0 @@
-.Box-body.d-flex.flex-items-center
-  .flex-auto.pr-1
-    Uploaded
-    = l content(:constitution).created_at.to_date, format: :long
-  = link_to main_app.rails_blob_path(content(:constitution), disposition: :attachment), class: 'btn' do
-    = octicon 'desktop-download'
-    Download

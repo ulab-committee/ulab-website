@@ -1,0 +1,11 @@
+.Subhead.Subhead--spacious
+  %h2.Subhead-heading Minutes
+
+= render minutes, list_item_class: %w[d-flex flex-items-center], name: 'Minutes' do |minutes|
+  .flex-auto.pr-1
+    Minutes for
+    = time_tag minutes.content(:date) do
+      = l(minutes.content(:date), format: :long)
+  = link_to main_app.rails_blob_path(minutes.content(:attachment), disposition: :attachment), class: 'btn' do
+    = octicon 'desktop-download'
+    Download

@@ -1,0 +1,6 @@
+- unless local_assigns[:custom_list_item]
+  = render 'shared/list_item', class: local_assigns[:list_item_class] do
+    = yield structure_item
+- else
+  %li{ class: local_assigns[:list_item_class] }
+    = yield structure_item
