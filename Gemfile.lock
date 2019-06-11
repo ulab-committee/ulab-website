@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: c56344ae4016c323040141144f866e76827df632
+  revision: ca2c31f982a919f0b0dea18debc03bb52afa762f
   specs:
     spina-conferences (0.1.0)
       icalendar (~> 2.5)
