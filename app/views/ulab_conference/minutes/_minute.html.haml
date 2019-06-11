@@ -1,7 +1,0 @@
-.flex-auto.pr-1
-  Minutes for
-  = time_tag minute.content(:date) do
-    = l(minute.content(:date), format: :long)
-= link_to main_app.rails_blob_path(minute.content(:attachment), disposition: :attachment), class: 'btn' do
-  = octicon 'desktop-download'
-  Download

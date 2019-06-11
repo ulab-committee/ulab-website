@@ -1,5 +1,8 @@
 .my-4= footer_navigation %w[flex-self-center flex-shrink-0], %w[px-1 px-lg-2], %w[px-md-1 px-lg-2 text-bold], request
-.my-4= render 'ulab_conference/shared/cookies'
-%p.my-4
+.my-4= render 'shared/cookies'
+%p.my-4.d-flex.flex-items-center.flex-justify-between
   %small.text-small
     = "© ULAB #{Date.today.year}"
+  = link_to 'https://www.github.com/ulab-committee', class: %w[btn btn-sm btn-outline] do
+    = octicon 'mark-github'
+    Find us on GitHub

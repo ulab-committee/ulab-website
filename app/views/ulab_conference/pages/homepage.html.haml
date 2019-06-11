@@ -1,16 +1,15 @@
 .flex-auto.d-flex.flex-column{ style: 'z-index: 0' }
-  - cache [latest_conference, latest_conference.conference_page, current_page] do
-    = render content(:gallery)&.images&.any? ? content(:gallery) : "#{current_theme.name}/shared/jumbotron", advance: true do
+  - cache [latest_conference, latest_conference.conference_page, current_page, content(:text)] do
+    = render content(:gallery)&.images&.any? ? content(:gallery) : 'shared/jumbotron', advance: true do
       .py-3.py-lg-6
-        - cache [latest_conference, latest_conference.conference_page, content(:text)] do
-          .text-white
-            %p.h000-mktg.text-shadow-dark.lh-condensed-ultra= latest_conference.conference_page.title
-            %address.f2-light.text-shadow-dark= latest_conference.institution.name
-            %time.f2-light.text-shadow-dark<
-              = time_tag latest_conference.dates.min, latest_conference.dates.min.strftime('%d/%m')
-              –
-              = time_tag latest_conference.dates.max, latest_conference.dates.max.strftime('%d/%m')
-            .markdown-body.my-4.text-shadow-dark= content(:text).try(:html_safe)
-            .d-block.mt-4= link_to 'More info', latest_conference.conference_page.materialized_path, class: %w(btn btn-large f3)
+        .text-white
+          %p.h000-mktg.text-shadow-dark.lh-condensed-ultra= latest_conference.conference_page.title
+          %address.f2-light.text-shadow-dark= latest_conference.institution.name
+          %time.f2-light.text-shadow-dark<
+            = time_tag latest_conference.dates.min, latest_conference.dates.min.strftime('%d/%m')
+            –
+            = time_tag latest_conference.dates.max, latest_conference.dates.max.strftime('%d/%m')
+          .markdown-body.my-4.text-shadow-dark= content(:text).try(:html_safe)
+          .d-block.mt-4= link_to 'More info', latest_conference.conference_page.materialized_path, class: %w(btn btn-large f3)
   %footer.px-3.px-md-4
     .container-md= render "#{current_theme.name}/shared/footer"

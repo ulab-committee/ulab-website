@@ -1,3 +1,5 @@
 .blankslate
-  %h3.mb-1 No items have been added here
-  %p Contact the organiser for more information.
+  %h3
+    No
+    = (local_assigns[:name] || 'Item').downcase.pluralize
+    have been added

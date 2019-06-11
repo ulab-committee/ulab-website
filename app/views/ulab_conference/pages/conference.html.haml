@@ -12,15 +12,12 @@
           = ", #{conference.institution.city}" unless conference.institution.name.include? conference.institution.city
     = responsive_image_tag conference.institution.logo.file, variant: { resize_to_limit: [300, 60] }, draggable: false, class: %w[flex-shrink-0 pl-md-4 pt-4 pt-md-0] if conference.institution.logo
 
-= render content(:gallery) || "#{current_theme.name}/shared/blank", controls: true
+= render part(:gallery), controls: true
 
 - content_for :content do
-  .Subhead.Subhead--spacious
-    %h2.Subhead-heading Sponsors
+  = render part(:sponsors), cached: true
 
-  = render content(:sponsors) || "#{current_theme.name}/shared/empty_list", list_class: %w[list-style-none mb-n2 mt-n2 ml-n2 mr-n2], cached: true
-
-  .markdown-body.my-4= content(:text).try(:html_safe)
+  .markdown-body.my-4= render part(:text)
 
   - if content(:submission_date)&.>= Date.today
     .alert.my-4
@@ -34,16 +31,13 @@
 
   .Subhead.Subhead--spacious
     %h2.Subhead-heading Events
-
-  .clearfix.gutter.mb-n4.mt-n4.my-md-4
-    .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:socials) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
-    .col-12.col-md-6.float-md-left.my-4.my-md-0= render content(:meetings) || "#{current_theme.name}/shared/empty_list", box: true, list_item_class: 'd-flex', cached: true
+  = render 'shared/subnav', collection: [part(:socials), part(:meetings)], method: :title, cached: true
 
   .Subhead.Subhead--spacious
     %h2.Subhead-heading Presentations
-    -#.Subhead-actions
-    -#  = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-sm btn-primary], role: :button do
-    -#    = octicon 'calendar'
-    -#    Subscribe
+    .Subhead-actions
 
-  = render "#{current_theme.name}/shared/tabs", collection: conference.presentation_types.order(:name), method: :name, cached: true
+  = render 'shared/subnav', collection: conference.presentation_types.order(:name), method: :name, cached: true do
+    = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-primary float-right], role: :button do
+      = octicon 'calendar'
+      Subscribe

@@ -1,5 +1,5 @@
-.tabnav
-  %nav.tabnav-tabs{ aria: { label: '' } }
-    .UnderlineNav-body
-      - collection.each do |item|
-        = link_to item.send(method), "##{item.send(method).parameterize}", title: item.send(method), class: [('selected' if collection.first == item), 'tabnav-tab'], target: '_self', data: { target: 'tabnav.tab' }
+%div{ data: { controller: 'itemnav', 'itemnav': { 'selected-item': '0' } } }
+  - content_for :tabnav_buttons do
+    = yield
+  = render 'shared/tabnav/tabnav', collection: collection, method: method
+  = render 'shared/tabnav/item_content', collection: collection, &method(:render)

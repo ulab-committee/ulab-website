@@ -1,0 +1,7 @@
+= render socials, list_item_class: %w[d-flex flex-column flex-sm-row], name: 'Socials' do |social|
+  .flex-shrink-0.mr-sm-3.mb-3.mb-sm-0.col-sm-4
+    = time_tag social.content(:start_time), l(social.content(:start_time), format: :short), class: %w[f3-light d-block mb-1]
+    .text-gray= social.content(:location)
+  .flex-auto
+    %h3.mb-1= social.content(:name)
+    .text-gray= social.content(:description).try(:html_safe)

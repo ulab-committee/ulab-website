@@ -1,9 +1,0 @@
-%li.list-style-none.d-flex.flex-column.flex-sm-row.py-4.border-bottom
-  .flex-shrink-0.mr-sm-3.mb-3.mb-sm-0.col-sm-3
-    = time_tag presentation.start_datetime, l(presentation.start_datetime, format: :short), class: 'f3-light d-block mb-1'
-    .text-gray= presentation.room_use.room_name
-  .flex-auto
-    %h3.mb-1= link_to presentation.title, presentation.conference_page.materialized_path
-    .text-gray
-      - presentation.presenters.includes(:institution).each do |presenter|
-        %address= "#{presenter.full_name}, #{presenter.institution.name}"

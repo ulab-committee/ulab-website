@@ -44,4 +44,8 @@ module PagesHelper #:nodoc:
   def latest_conference
     Spina::Conferences::Conference.sorted.first
   end
+
+  def part(name)
+    current_page.parts.find_by(name: name)
+  end
 end

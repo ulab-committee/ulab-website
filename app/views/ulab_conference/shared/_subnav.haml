@@ -1,0 +1,5 @@
+%div{ data: { controller: 'itemnav', 'itemnav': { 'selected-item': '0' } } }
+  - content_for :subnav_buttons do
+    = yield
+  = render 'shared/subnav/subnav', collection: collection, method: method
+  = render 'shared/subnav/item_content', collection: collection, &method(:render)

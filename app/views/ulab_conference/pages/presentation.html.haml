@@ -8,10 +8,13 @@
       %div= presentation.room_use.room_name
     - if has_content?(:slideshow) || has_content?(:handout) || has_content?(:poster)
       .BtnGroup.mt-1
-        = render content(:slideshow) || "#{current_theme.name}/shared/blank"
-        = render content(:handout) || "#{current_theme.name}/shared/blank"
-        = render content(:poster) || "#{current_theme.name}/shared/blank"
+        = render part(:slideshow)
+        = render part(:handout)
+        = render part(:poster)
+    = link_to conferences_presentation_url(presentation, format: :ics), class: %w[btn btn-primary mt-1], role: :button do
+      = octicon 'calendar'
+      Download
 
 
 - content_for :content do
-  .markdown-body.my-4= presentation.abstract.try(:html_safe)
+  .markdown-body.my-4= presentation.abstract.html_safe
