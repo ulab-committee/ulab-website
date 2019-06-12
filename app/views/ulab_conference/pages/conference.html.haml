@@ -15,8 +15,6 @@
 = render part(:gallery), controls: true
 
 - content_for :content do
-  = render part(:sponsors), cached: true
-
   .markdown-body.my-4= render part(:text)
 
   - if content(:submission_date)&.>= Date.today
@@ -41,3 +39,4 @@
     = link_to conferences_conference_url(conference, protocol: :webcal, format: :ics), class: %w[btn btn-primary float-right], role: :button do
       = octicon 'calendar'
       Subscribe
+  = render part(:sponsors), cached: true
