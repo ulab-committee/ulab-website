@@ -1,5 +1,5 @@
 - content_for :header do
-  .pagehead.my-4
+  .my-4
     %h1.mb-1= current_page.title
     .text-gray
       - presentation.presenters.includes(:institution).each do |presenter|
@@ -11,9 +11,9 @@
         = render part(:slideshow)
         = render part(:handout)
         = render part(:poster)
-    = link_to conferences_presentation_url(presentation, format: :ics), class: %w[btn btn-primary mt-1], role: :button do
+    = link_to conferences_presentation_url(presentation, format: :ics), class: %w[btn mt-1], role: :button do
       = octicon 'calendar'
-      Download
+      Download event
 
 
 - content_for :content do

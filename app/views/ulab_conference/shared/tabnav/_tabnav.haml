@@ -1,6 +1,6 @@
 .tabnav
-  = content_for :tabnav_buttons
+  = yield
   %nav.tabnav-tabs{ aria: { label: '' } }
     .UnderlineNav-body
       - collection.each do |item|
-        %button{ title: item.send(method), class: 'tabnav-tab', target: '_self', data: { target: 'itemnav.item', action: 'itemnav#select' } }= item.send(method)
+        %button.tabnav-tab{ title: item.send(method), target: '_self', role: 'tab', data: { target: 'itemnav.item', action: 'itemnav#select' } }= item.send(method)

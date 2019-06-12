@@ -1,5 +1,4 @@
 %div{ data: { controller: 'itemnav', 'itemnav': { 'selected-item': '0' } } }
-  - content_for :tabnav_buttons do
+  = render 'shared/tabnav/tabnav', collection: collection, method: method do
     = yield
-  = render 'shared/tabnav/tabnav', collection: collection, method: method
   = render 'shared/tabnav/item_content', collection: collection, &method(:render)
