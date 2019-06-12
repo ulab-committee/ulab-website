@@ -8,6 +8,9 @@ export default class extends Controller {
   }
 
   set selectedTab(index) {
+    if (index === this.selectedTab) {
+      return
+    }
     this.data.set('selected-item', index.toString())
     this.showTab()
   }
