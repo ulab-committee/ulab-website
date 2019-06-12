@@ -1,5 +1,5 @@
 = render meetings, list_item_class: %w[d-flex flex-column flex-sm-row], name: 'Meetings' do |meeting|
-  .flex-shrink-0.mr-sm-3.mb-3.mb-sm-0.col-sm-4
+  .flex-shrink-0.mr-sm-3.mb-3.mb-sm-0.col-sm-3
     = time_tag meeting.content(:start_time), l(meeting.content(:start_time), format: :short), class: %w[f3-light d-block mb-1]
     .text-gray= meeting.content(:location)
   .flex-auto
