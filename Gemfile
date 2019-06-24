@@ -97,7 +97,7 @@ gem 'ruby-vips', '~> 2.0'
 
 # Octicons
 
-gem 'octicons_helper', '~> 9.0'
+gem 'octicons_helper', '~> 9.1'
 
 # Instrumentation
 gem 'tunemygc'
