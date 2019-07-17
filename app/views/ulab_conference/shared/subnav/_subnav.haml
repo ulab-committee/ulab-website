@@ -1,6 +1,0 @@
-.subnav
-  = yield
-  %nav.subnav-links{ aria: { label: '' } }
-    .UnderlineNav-body
-      - collection.each do |item|
-        %button.btn-link.subnav-item{ title: item.send(method), target: '_self', role: 'tab', data: { target: 'itemnav.item', action: 'itemnav#select' } }= item.send(method)

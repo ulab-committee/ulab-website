@@ -1,8 +1,0 @@
-- content_for :header do
-  .my-4
-    %h1= current_page.title
-
-- content_for :content do
-  - cache current_page do
-    = render part(:text)
-    = render part(:committee_bios)

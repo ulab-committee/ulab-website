@@ -1,6 +1,0 @@
-%nav{ aria: { label: 'Breadcrumb' } }
-  %ol
-    - current_page.ancestors.each do |ancestor|
-      %li.breadcrumb-item
-        %a= link_to ancestor.menu_title, ancestor.materialized_path, class: 'nav-link'
-    %li.breadcrumb-item.breadcrumb-item-selected.text-gray= current_page.menu_title

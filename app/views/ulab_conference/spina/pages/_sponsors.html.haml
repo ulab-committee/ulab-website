@@ -1,7 +1,0 @@
-.Subhead.Subhead--spacious
-  %h2.Subhead-heading Sponsors
-
-= render sponsors, list_class: %w[ml-n2 mr-n2 mb-n2 mt-n2], list_item_class: %w[d-inline-block m-2 v-align-middle], custom_list_item: true, name: 'Sponsors' do |sponsor|
-  - if sponsor.has_content?(:logo) && sponsor.has_content?(:website)
-    = link_to sponsor.content(:website) do
-      = responsive_image_tag sponsor.content(:logo).file, variant: { resize_to_limit: [200, 60] }, draggable: false, alt: sponsor.content(:name)

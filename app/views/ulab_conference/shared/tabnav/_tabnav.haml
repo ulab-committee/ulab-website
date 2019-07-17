@@ -1,6 +1,0 @@
-.tabnav
-  = yield
-  %nav.tabnav-tabs{ aria: { label: '' } }
-    .UnderlineNav-body
-      - collection.each do |item|
-        %button.tabnav-tab{ title: item.send(method), target: '_self', role: 'tab', data: { target: 'itemnav.item', action: 'itemnav#select' } }= item.send(method)

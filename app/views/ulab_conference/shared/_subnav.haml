@@ -1,5 +1,0 @@
-%div{ data: { controller: 'itemnav', 'itemnav': { 'selected-item': '0' } } }
-  .my-3
-    = render 'shared/subnav/subnav', collection: collection, method: method do
-      = yield
-  = render 'shared/subnav/item_content', collection: collection, &method(:render)

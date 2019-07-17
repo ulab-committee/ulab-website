@@ -1,9 +1,0 @@
-- content_for :header do
-  .my-4
-    %h1= current_page.title
-
-- content_for :content do
-  = link_to conferences_conferences_url(protocol: :webcal, format: :ics), class: %w[btn btn-primary], role: :button do
-    = octicon 'calendar'
-    Subscribe
-  %ul= render Spina::Conferences::Conference.sorted, cached: true
