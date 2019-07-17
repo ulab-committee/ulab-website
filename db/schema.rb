@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_152253) do
+ActiveRecord::Schema.define(version: 2019_07_17_134035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_152253) do
   end
 
   create_table "spina_conferences_conferences", force: :cascade do |t|
-    t.daterange "dates"
-    t.bigint "institution_id"
+    t.daterange "dates", null: false
+    t.bigint "institution_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["institution_id"], name: "index_spina_conferences_conferences_on_institution_id"
@@ -95,11 +95,11 @@ ActiveRecord::Schema.define(version: 2019_04_08_152253) do
   end
 
   create_table "spina_conferences_delegates", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email_address"
     t.string "url"
-    t.bigint "institution_id"
+    t.bigint "institution_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["institution_id"], name: "index_spina_conferences_delegates_on_institution_id"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2019_04_08_152253) do
   end
 
   create_table "spina_conferences_dietary_requirements", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -128,30 +128,41 @@ ActiveRecord::Schema.define(version: 2019_04_08_152253) do
   end
 
   create_table "spina_conferences_institutions", force: :cascade do |t|
-    t.string "name"
-    t.string "city"
+    t.string "name", null: false
+    t.string "city", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "logo_id"
     t.index ["logo_id"], name: "index_spina_conferences_institutions_on_logo_id"
   end
 
-  create_table "spina_conferences_presentation_types", force: :cascade do |t|
+  create_table "spina_conferences_parts", force: :cascade do |t|
+    t.string "title"
     t.string "name"
-    t.interval "duration"
-    t.bigint "conference_id"
+    t.string "partable_type"
+    t.bigint "partable_id"
+    t.string "pageable_type"
+    t.bigint "pageable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spina_conferences_presentation_types", force: :cascade do |t|
+    t.string "name", null: false
+    t.interval "duration", null: false
+    t.bigint "conference_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conference_id"], name: "index_spina_conferences_presentation_types_on_conference_id"
   end
 
   create_table "spina_conferences_presentations", force: :cascade do |t|
-    t.string "title"
-    t.text "abstract"
-    t.bigint "room_use_id"
+    t.string "title", null: false
+    t.text "abstract", null: false
+    t.bigint "room_use_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_datetime"
+    t.datetime "start_datetime", null: false
     t.index ["room_use_id"], name: "index_spina_conferences_presentations_on_room_use_id"
   end
 
@@ -170,9 +181,9 @@ ActiveRecord::Schema.define(version: 2019_04_08_152253) do
   end
 
   create_table "spina_conferences_rooms", force: :cascade do |t|
-    t.string "number"
-    t.string "building"
-    t.bigint "institution_id"
+    t.string "number", null: false
+    t.string "building", null: false
+    t.bigint "institution_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["institution_id"], name: "index_spina_conferences_rooms_on_institution_id"
