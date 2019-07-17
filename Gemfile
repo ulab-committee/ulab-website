@@ -79,7 +79,7 @@ gem 'actionview-encoded_mail_to'
 gem 'icalendar'
 
 # Internationalisation
-gem 'rails-i18n', '~> 5.1'
+gem 'rails-i18n', '~> 6.0.0.beta1'
 
 # Job queueing
 gem 'sidekiq'
