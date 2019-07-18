@@ -1,4 +1,5 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base #:nodoc:
+# Base class from which controllers inherit
+class ApplicationController < ActionController::Base
 end

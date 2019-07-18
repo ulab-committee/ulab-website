@@ -1,4 +1,5 @@
 # frozen_string_literal: true
 
-module ApplicationHelper #:nodoc:
+# Base helper included with all controllers
+module ApplicationHelper
 end

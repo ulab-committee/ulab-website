@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class ApplicationJob < ActiveJob::Base #:nodoc:
+# Base class from which jobs inherit
+class ApplicationJob < ActiveJob::Base
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked
 

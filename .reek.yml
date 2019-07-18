@@ -14,11 +14,6 @@ directories:
       enabled: false
     UtilityFunction:
       enabled: false
-  "app/jobs":
-    FeatureEnvy:
-      enabled: false
-    UtilityFunction:
-      enabled: false
   "app/mailers":
     InstanceVariableAssumption:
       enabled: false
