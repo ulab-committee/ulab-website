@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/jmalcic/spina-conferences.git
-  revision: 4fb8fe654de4ffad7220baf51f87c11d70e9a2ba
+  revision: 00d3ddb70d2e9dd76ea7780ec9f55bdcd4cd97f6
   specs:
     spina-conferences (0.1.0)
       icalendar (~> 2.5)
@@ -98,8 +98,8 @@ GEM
     ancestry (3.0.7)
       activerecord (>= 3.2.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.191.0)
-    aws-sdk-core (3.60.0)
+    aws-partitions (1.192.0)
+    aws-sdk-core (3.61.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
