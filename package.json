@@ -10,7 +10,7 @@
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.1.0",
     "webpack-dev-server": "^3.5.1"
   },
