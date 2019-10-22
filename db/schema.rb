@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_134035) do
+ActiveRecord::Schema.define(version: 2019_07_25_210256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,8 +143,6 @@ ActiveRecord::Schema.define(version: 2019_07_17_134035) do
     t.bigint "partable_id"
     t.string "pageable_type"
     t.bigint "pageable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "spina_conferences_presentation_types", force: :cascade do |t|
@@ -318,7 +316,6 @@ ActiveRecord::Schema.define(version: 2019_07_17_134035) do
     t.integer "position"
     t.boolean "active", default: true
     t.integer "resource_id"
-    t.string "type"
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
   end
 
