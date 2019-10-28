@@ -6723,7 +6723,8 @@ spdy@^4.0.1:
 
 "spina-conferences@https://github.com/jmalcic/spina-conferences":
   version "0.1.0"
-  resolved "https://github.com/jmalcic/spina-conferences#6026e7e4c90ba54ff4599c1433c239ecce18c1e9"
+  uid "98d72fbde899266eff327b2a04b8025a9e6b3ee5"
+  resolved "https://github.com/jmalcic/spina-conferences#98d72fbde899266eff327b2a04b8025a9e6b3ee5"
   dependencies:
     "@primer/css" "^12.4.1"
     "@primer/octicons" "^9.1.1"
