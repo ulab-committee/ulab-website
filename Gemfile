@@ -64,10 +64,10 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Spina CMS
-gem 'spina', github: 'SpinaCMS/Spina'
+gem 'spina', github: 'SpinaCMS/Spina', ref: '317837f'
 
 # Conferences plugin
-gem 'spina-conferences', github: 'jmalcic/spina-conferences'
+gem 'spina-conferences', github: 'jmalcic/spina-conferences', ref: '00d3ddb'
 
 # S3
 gem 'aws-sdk-s3', require: false
