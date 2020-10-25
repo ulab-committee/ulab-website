@@ -4,7 +4,7 @@
   "dependencies": {
     "@primer/css": "^15.2.0",
     "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
+    "@rails/activestorage": "^6.0.3",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.6",
     "spina-conferences": "https://github.com/jmalcic/spina-conferences",
