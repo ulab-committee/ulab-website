@@ -88,9 +88,5 @@ gem 'dotenv-rails', '~> 2.7'
 gem 'rack-timeout'
 gem 'skylight', '~> 4.3'
 
-# Image processing
-gem 'image_processing', '~> 1.9'
-gem 'ruby-vips', '~> 2.0'
-
 # Instrumentation
 gem 'tunemygc'
