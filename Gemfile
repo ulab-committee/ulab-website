@@ -82,9 +82,6 @@ gem 'rails-i18n', '~> 6.0.0.beta1'
 gem 'sidekiq'
 
 # Production gems
-
-# Instrumentation
-gem 'tunemygc'
 group :production do
   gem 'barnes', '~> 0.0.7'
   gem 'bugsnag', '~> 6.8'
