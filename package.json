@@ -2,7 +2,7 @@
   "name": "ulab_website",
   "private": true,
   "dependencies": {
-    "spina-conferences": "https://github.com/jmalcic/spina-conferences",
+    "spina-conferences-primer-theme": "https://github.com/jmalcic/spina-conferences-primer_theme"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
