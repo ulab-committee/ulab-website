@@ -82,11 +82,13 @@ gem 'rails-i18n', '~> 6.0.0.beta1'
 gem 'sidekiq'
 
 # Production gems
-gem 'barnes', '~> 0.0.7'
-gem 'bugsnag', '~> 6.8'
-gem 'dotenv-rails', '~> 2.7'
-gem 'rack-timeout'
-gem 'skylight', '~> 4.3'
 
 # Instrumentation
 gem 'tunemygc'
+group :production do
+  gem 'barnes', '~> 0.0.7'
+  gem 'bugsnag', '~> 6.8'
+  gem 'dotenv-rails', '~> 2.7'
+  gem 'rack-timeout'
+  gem 'skylight', '~> 4.3'
+end
