@@ -12,5 +12,3 @@
             = time_tag latest_conference.finish_date, latest_conference.finish_date.strftime('%d/%m')
           .markdown-body.my-4.text-shadow-dark= content(:text).try(:html_safe)
 
-  %footer.px-3.px-md-4
-    .container-md= render 'shared/footer'
