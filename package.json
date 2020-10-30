@@ -7,7 +7,6 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "spina-conferences": "https://github.com/jmalcic/spina-conferences",
-    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
