@@ -2,7 +2,6 @@
   "name": "ulab_website",
   "private": true,
   "dependencies": {
-    "@primer/css": "^15.2.0",
     "spina-conferences": "https://github.com/jmalcic/spina-conferences",
   },
   "devDependencies": {
