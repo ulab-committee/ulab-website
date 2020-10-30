@@ -1,9 +1,18 @@
 ---
-Metrics/LineLength:
-  Max: 120
+require:
+  - rubocop-performance
+  - rubocop-rails
 
-Rails:
-  Enabled: true
+AllCops:
+  NewCops: enable
 
 Style/CommandLiteral:
   EnforcedStyle: mixed
+
+Layout/LineLength:
+  Max: 140
+  AutoCorrect: true
+
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
