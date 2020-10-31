@@ -1,0 +1,88 @@
+name: Rails tests
+
+on: [push, pull_request]
+
+env:
+  LANG: en_GB.UTF-8
+  TZ: Europe/London
+
+jobs:
+  test:
+    name: All tests
+    env:
+      RACK_ENV: test
+      RAILS_ENV: test
+      RAILS_SERVE_STATIC_FILES: enabled
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: postgres
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Add Chrome repo to APT sources
+      run: |
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    - name: Update package lists
+      run: sudo apt-get update
+    - name: Update Chrome
+      run: sudo apt-get install google-chrome-stable
+    - name: Install Chromedriver
+      run: sudo apt-get install chromium-chromedriver
+    - name: Install Postgres library
+      run: sudo apt-get -yqq install libpq-dev
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+    - name: Cache Bundler dependencies
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+    - name: Install Bundler dependencies
+      run: |
+        gem install bundler
+        bundle config path vendor/bundle
+        bundle install --jobs 4 --retry 3
+    - name: Setup Node.js
+      uses: actions/setup-node@v1.1.0
+    - name: Get Yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Cache Yarn dependencies
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Install Yarn dependencies
+      run: bundle exec yarn
+    - name: Prepare database
+      run: bundle exec rails db:setup
+    - name: Test with Rake
+      run: bundle exec rake
