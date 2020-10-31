@@ -60,6 +60,10 @@
       "url": "heroku/metrics"
     },
     {
+      "description": "Node buildpack.",
+      "url": "heroku/nodejs"
+    },
+    {
       "description": "Base buildpack.",
       "url": "heroku/ruby"
     }
