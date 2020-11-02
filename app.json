@@ -31,10 +31,6 @@
     "RAILS_SERVE_STATIC_FILES": {
       "description": "Whether the app should serve static files (as opposed to leaving it to S3 etc.)",
       "required": true
-    },
-    "REDIS_URL": {
-      "description": "URL for Redis server",
-      "required": true
     }
   },
   "addons": [
@@ -62,6 +58,10 @@
     {
       "description": "Heroku dyno metrics.",
       "url": "heroku/metrics"
+    },
+    {
+      "description": "Node buildpack.",
+      "url": "heroku/nodejs"
     },
     {
       "description": "Base buildpack.",

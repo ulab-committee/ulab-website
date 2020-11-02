@@ -3,20 +3,20 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 2.6.3'
+ruby '~> 2.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0.beta3'
+gem 'rails', '~> 6.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.0'
+gem 'puma', '~> 5.0.2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '>= 4.0.0.rc.3'
+# gem 'webpacker', '>= 4.0.0.rc.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -49,6 +49,9 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop', '~> 1.0'
+  gem 'rubocop-performance', '~> 1.8'
+  gem 'rubocop-rails', '~> 2.8'
 end
 
 group :test do
@@ -63,11 +66,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Spina CMS
-gem 'spina', github: 'SpinaCMS/Spina', ref: '317837f'
-
 # Conferences plugin
-gem 'spina-conferences', github: 'jmalcic/spina-conferences', ref: '00d3ddb'
+gem 'spina-conferences-primer_theme', '~> 0.1'
 
 # S3
 gem 'aws-sdk-s3', require: false
@@ -85,15 +85,10 @@ gem 'rails-i18n', '~> 6.0.0.beta1'
 gem 'sidekiq'
 
 # Production gems
-gem 'barnes', '~> 0.0.7'
-gem 'bugsnag', '~> 6.8'
-gem 'dotenv-rails', '~> 2.7'
-gem 'rack-timeout'
-gem 'skylight', '~> 4.3'
-
-# Image processing
-gem 'image_processing', '~> 1.9'
-gem 'ruby-vips', '~> 2.0'
-
-# Instrumentation
-gem 'tunemygc'
+group :production do
+  gem 'barnes', '~> 0.0.7'
+  gem 'bugsnag', '~> 6.8'
+  gem 'dotenv-rails', '~> 2.7'
+  gem 'rack-timeout'
+  gem 'skylight', '~> 4.3'
+end

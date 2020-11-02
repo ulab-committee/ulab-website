@@ -7,9 +7,6 @@ class TranslateBritishEnglishPages < ActiveRecord::Migration[5.2] # :nodoc:
   end
 
   def down
-    Spina::Page.find_each do |page|
-      @translation = page.translations.find_by locale: :'en-GB'
-      @translation&.destroy
-    end
+    Spina::Page.extract_associated(:translations).destroy_by(locale: :'en-GB')
   end
 end
