@@ -14,9 +14,9 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
           descriptions.content AS description,
           names.locale AS locale,
           start_times.id AS start_time_id,
-          names.id AS title_translation_id,
-          locations.id AS location_translation_id,
-          descriptions.id AS description_translation_id
+          names.translation_id AS title_translation_id,
+          locations.translation_id AS location_translation_id,
+          descriptions.translation_id AS description_translation_id
           FROM spina_conferences_parts
             INNER JOIN spina_structure_items ON partable_id = structure_id AND partable_type = 'Spina::Structure'
             LEFT JOIN (
@@ -29,7 +29,7 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
             ) AS start_times ON start_times.structure_item_id = spina_structure_items.id
             LEFT JOIN (
               SELECT
-                spina_lines.id AS id, content, locale, structure_item_id
+                spina_line_translations.id AS translation_id, content, locale, structure_item_id
                 FROM spina_structure_parts
                   INNER JOIN spina_lines
                     ON structure_partable_id = spina_lines.id
@@ -40,7 +40,7 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
                 WHERE content IS NOT NULL
             ) AS names ON names.structure_item_id = spina_structure_items.id
             LEFT JOIN (
-              SELECT spina_lines.id AS id, content, locale, structure_item_id
+              SELECT spina_line_translations.id AS translation_id, content, locale, structure_item_id
                 FROM spina_structure_parts
                   INNER JOIN spina_lines
                     ON structure_partable_id = spina_lines.id
@@ -51,7 +51,7 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
                 WHERE content IS NOT NULL
             ) AS locations ON locations.structure_item_id = spina_structure_items.id
             LEFT JOIN (
-              SELECT spina_texts.id AS id, content, locale, structure_item_id
+              SELECT spina_text_translations.id AS translation_id, content, locale, structure_item_id
                 FROM spina_structure_parts
                   INNER JOIN spina_texts
                     ON structure_partable_id = spina_texts.id
@@ -130,7 +130,8 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
         ), parts AS (
           INSERT INTO spina_conferences_parts (title, name, partable_type, partable_id, pageable_type, pageable_id)
             SELECT
-              'Events', 'events', 'Spina::Structure', structures_with_indices.id, 'Spina::Admin::Conferences::Conference', conferences.id
+              'Events', 'events', 'Spina::Structure', structures_with_indices.id, 'Spina::Admin::Conferences::Conference',
+              conferences_with_indices.id
               FROM (SELECT id, row_number() OVER (ORDER BY id) AS index FROM structures) AS structures_with_indices
                 INNER JOIN (SELECT id, row_number() OVER (ORDER BY id) AS index FROM conferences) AS conferences_with_indices USING (index)
       ), events AS (
@@ -207,7 +208,8 @@ class MoveConferenceParts < ActiveRecord::Migration[6.0] # rubocop:disable Metri
             structure_items_with_indices.id, partable_id, type, replace(lower(title), '\W', '_'), title, current_timestamp,
             current_timestamp
             FROM structure_parts_to_insert
-              INNER JOIN (SELECT id, row_number() OVER (ORDER BY id) AS index FROM events) AS events_with_indices ON event_id = events.id
+              INNER JOIN (SELECT id, row_number() OVER (ORDER BY id) AS index FROM events) AS events_with_indices
+                ON event_id = events_with_indices.id
               INNER JOIN (SELECT id, row_number() OVER (ORDER BY id) AS index FROM structure_items) AS structure_items_with_indices
                 USING (index)
       ), deleted_events AS (
