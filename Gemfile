@@ -50,7 +50,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', '~> 1.3'
-  gem 'rubocop-performance', '~> 1.8'
+  gem 'rubocop-performance', '~> 1.9'
   gem 'rubocop-rails', '~> 2.8'
 end
 
