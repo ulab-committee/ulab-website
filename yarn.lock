@@ -29,10 +29,10 @@
   dependencies:
     "@primer/octicons" "^9.1.1"
 
-"@primer/octicons@^11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-11.0.0.tgz#a37c93f08fb669004f89455e5507efd12d93bf2e"
-  integrity sha512-aMM2n7dl4ToEqQH9ZWQ8M8alGCoGsRk2k5hT5h3KXd54YFKte1twhJDvyQjIjjxqggNh5NUfyuqTOv6MPCVSKQ==
+"@primer/octicons@^11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-11.1.0.tgz#a95dd14e4956365a09a2d8b80bf2fe655c307fea"
+  integrity sha512-qeW4Hu82V0eTKza54nIqud572lrZicy2R6PBX2SVfWlrfRUotpsRi6m/Dvxz/YKL/8xdwBSWgJl8hJXM4V5woA==
   dependencies:
     object-assign "^4.1.1"
 
@@ -70,15 +70,15 @@ object-assign@^4.1.1:
 
 "spina-conferences-primer-theme@https://github.com/jmalcic/spina-conferences-primer_theme":
   version "0.1.8"
-  uid "54ea92fc78e1cf8b83082c0f465df449243377f4"
-  resolved "https://github.com/jmalcic/spina-conferences-primer_theme#54ea92fc78e1cf8b83082c0f465df449243377f4"
+  uid ceb77bd4deb23e8a1b57fdac016e4c0b940c2370
+  resolved "https://github.com/jmalcic/spina-conferences-primer_theme#ceb77bd4deb23e8a1b57fdac016e4c0b940c2370"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
     "@github/filter-input-element" "^0.1.1"
     "@github/include-fragment-element" "^5.1.0"
     "@github/tab-container-element" "^3.0.7"
     "@primer/css" "^15.0.0"
-    "@primer/octicons" "^11.0.0"
+    "@primer/octicons" "^11.1.0"
     stimulus "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz"
     trix "^1.2.1"
     turbolinks "^5.2.0"
