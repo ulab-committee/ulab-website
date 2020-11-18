@@ -21,7 +21,7 @@ gem 'sass-rails', '~> 6.0'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'hiredis', '~> 0.6.3'
-gem 'redis', '~> 4.1'
+gem 'redis', '~> 4.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
