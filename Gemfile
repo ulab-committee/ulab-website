@@ -49,7 +49,7 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop', '~> 1.4'
+  gem 'rubocop', '~> 1.6'
   gem 'rubocop-performance', '~> 1.8'
   gem 'rubocop-rails', '~> 2.8'
 end
