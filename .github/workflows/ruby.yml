@@ -54,7 +54,7 @@ jobs:
     - name: Install Postgres library
       run: sudo apt-get -yqq install libpq-dev
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
     - name: Cache Bundler dependencies
       uses: actions/cache@v2
       with:
