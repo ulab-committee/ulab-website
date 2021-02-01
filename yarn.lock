@@ -75,8 +75,8 @@ object-assign@^4.1.1:
 
 "spina-conferences-primer-theme@https://github.com/jmalcic/spina-conferences-primer_theme":
   version "0.1.11"
-  uid "33974111db10a80bc3f902fd85d463fc9bb4ffe3"
-  resolved "https://github.com/jmalcic/spina-conferences-primer_theme#33974111db10a80bc3f902fd85d463fc9bb4ffe3"
+  uid c6898a8c5c3735e32aa19425397bc26f06bd0713
+  resolved "https://github.com/jmalcic/spina-conferences-primer_theme#c6898a8c5c3735e32aa19425397bc26f06bd0713"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
     "@github/details-menu-element" "^1.0.9"
