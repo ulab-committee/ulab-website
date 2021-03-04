@@ -83,7 +83,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    barnes (0.0.8)
+    barnes (0.0.9)
       multi_json (~> 1)
       statsd-ruby (~> 1.1)
     bcrypt (3.1.16)
@@ -352,7 +352,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    statsd-ruby (1.4.0)
+    statsd-ruby (1.5.0)
     temple (0.8.2)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -387,7 +387,7 @@ PLATFORMS
 DEPENDENCIES
   actionview-encoded_mail_to
   aws-sdk-s3
-  barnes (~> 0.0.7)
+  barnes (~> 0.0.9)
   bootsnap (>= 1.1.0)
   bugsnag (~> 6.19)
   byebug

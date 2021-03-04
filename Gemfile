@@ -86,7 +86,7 @@ gem 'sidekiq'
 
 # Production gems
 group :production do
-  gem 'barnes', '~> 0.0.7'
+  gem 'barnes', '~> 0.0.9'
   gem 'bugsnag', '~> 6.19'
   gem 'dotenv-rails', '~> 2.7'
   gem 'rack-timeout'
