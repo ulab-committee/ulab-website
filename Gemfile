@@ -90,5 +90,5 @@ group :production do
   gem 'bugsnag', '~> 6.19'
   gem 'dotenv-rails', '~> 2.7'
   gem 'rack-timeout'
-  gem 'skylight', '~> 4.3'
+  gem 'skylight', '~> 5.0'
 end
