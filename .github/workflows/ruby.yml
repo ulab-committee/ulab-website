@@ -53,6 +53,8 @@ jobs:
       run: sudo apt-get install chromium-chromedriver
     - name: Install Postgres library
       run: sudo apt-get -yqq install libpq-dev
+    - name: Install FFI 6
+      run: sudo apt-get install libffi6
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
     - name: Cache Bundler dependencies
