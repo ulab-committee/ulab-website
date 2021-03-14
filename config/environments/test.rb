@@ -43,8 +43,5 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
 
   # Raises error for missing translations.
-  config.action_view.raise_on_missing_translations = true
-
-  # Prevent expensive template finalization at end of test suite runs.
-  config.action_view.finalize_compiled_template_methods = false
+  config.i18n.raise_on_missing_translations = true
 end
