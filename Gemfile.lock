@@ -334,7 +334,7 @@ GEM
       spina (~> 1.1)
       stimulus-rails (~> 0.2.2)
       turbo-rails (~> 0.5.9)
-    spina-conferences-primer_theme (0.1.16)
+    spina-conferences-primer_theme (0.1.17)
       babel-transpiler (~> 0.7)
       icalendar (~> 2.5)
       image_processing (~> 1.9)
