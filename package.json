@@ -2,7 +2,6 @@
   "name": "ulab_website",
   "private": true,
   "dependencies": {
-    "spina-conferences-primer-theme": "https://github.com/jmalcic/spina-conferences-primer_theme"
-  },
-  "version": "0.1.0"
+    "spina-conferences-primer-theme": "jmalcic/spina-conferences-primer_theme#semver:^0.2"
+  }
 }

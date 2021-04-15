@@ -17,36 +17,37 @@
   resolved "https://registry.yarnpkg.com/@github/filter-input-element/-/filter-input-element-0.1.1.tgz#9b8caff8fa35e037b6f270795b5bae1d6d34a631"
   integrity sha512-YTAF9gmLfdYvK+BaVOYBwawtdchxgov9ZmLJ3HCyZ7ALyCKEbHhNRRX7GD3KsoPWUedxiH0X3v/loB2njLbjwg==
 
-"@github/include-fragment-element@^5.1.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.2.0.tgz#46397245ee779e010d6abe027cc44e9cffeefb40"
-  integrity sha512-a+tXHC4cZmRO15GsmslHvLQzq2xBEj7uOaP7Tqd9nVyQDipipfHjZ8rbazqymHrJr9M2oa7OrmyGEnvX2uf4Jg==
+"@github/include-fragment-element@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.3.1.tgz#eecaa03e3b939fdf5287354bc239768552229820"
+  integrity sha512-Dq7gpmrOuDqmelI6fCUGiAGwYjxsA5br6G9oXNqKfU473aobDB9NP4WYebkpNJpHZbpKaQ8aZOipHMBEnK+iGA==
 
-"@github/tab-container-element@^3.0.7":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@github/tab-container-element/-/tab-container-element-3.1.0.tgz#1725966b33d3ee7390cc7e7d313b50581fdbc6dd"
-  integrity sha512-C/HmAxRieqQK1MR58cT3M+GuuuqGIZdCzWd8UiOayLixpnOMSkiWDrGVJe1LpFWWOHKAcwA0LGilcIb+SJ5ZWw==
-
-"@primer/css@^15.0.0":
-  version "15.2.0"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-15.2.0.tgz#ddf9651a9db2b9be03e7dfccfa612284ba1325ae"
-  integrity sha512-/vNDchWrxlXqd6E+SWQcChPHJVzGia9aCaTYoz8O9sJTnUSiTKOgSNCQuOXyUInPruTRSqj+z3MZxayKcTsWhA==
+"@primer/css@^16.2.0":
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-16.2.0.tgz#c858b8328aa554281541b0b0a8dc2683610c6ffe"
+  integrity sha512-nELaaTJAuDBfyoHuz9c5P3ALDVavt/BSyAAa7KEpyi9S3BupYSitCwGkcJE+U6LtCUzHoqv31N9R2eJJxTgCyQ==
   dependencies:
-    "@primer/octicons" "^9.1.1"
+    "@primer/octicons" "12.1.0"
+    "@primer/primitives" "4.2.0"
 
-"@primer/octicons@^12.0.0":
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-12.0.0.tgz#cbd41af86f381bdf8303201da0d01835ecb97969"
-  integrity sha512-R3HgUaKpQQnDS1aYN0R+e3ADawsyBuvOHjzYj4ds1AJMwvV18u+Zf2/C1+kQcnWDEM5ZizANU6iQbhYrgPUcPg==
+"@primer/octicons@12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-12.1.0.tgz#770c8395dc54604637c56ccb261707f9e9d59ddb"
+  integrity sha512-jayKLMTCx/0zh4fjYmkxdlEgQ8STwevn5S48fkvi/03asITmBkaYAMPrUgO8VNSQkSPHIEuc3oTLXgh+JwH0UQ==
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/octicons@^9.1.1":
-  version "9.6.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-9.6.0.tgz#e195f2dd5f30b6918ad5d8ff224c12f778d02408"
-  integrity sha512-B5Wzk5izRXXz0JqEXJkVUtqhCXSpUKgqYkVwegMkp5sziBW+ksd9LPbONlCWyyLODwf9GsI2sBXekR7m+JJDBw==
+"@primer/octicons@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-13.0.0.tgz#dab1f156ac601d2cb7c83eab9242a1739429cf2e"
+  integrity sha512-kMNu3Ny3eocOTl2hxRC0YX0na7zJwpSIQNiZqmyqbLMKp2YwNAwk5Tan4RLGe35f30st+EbNq15dEjiMzslAcw==
   dependencies:
     object-assign "^4.1.1"
+
+"@primer/primitives@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-4.2.0.tgz#a54d052bd8b8fcc0a2f5029f44a192939f87f09f"
+  integrity sha512-/2/9ueCWWzqaLRSJ3TNGthMVX8DBn/oa+ZY9eB/TmxUPglXd8AQMxV2wz+pAoy8SpXXwe84JuEgHTAghzAOh0w==
 
 "@stimulus/core@https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/@stimulus/core.tar.gz":
   version "1.1.1"
@@ -73,18 +74,16 @@ object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-"spina-conferences-primer-theme@https://github.com/jmalcic/spina-conferences-primer_theme":
-  version "0.1.14"
-  uid e1aac7acf1a2f67b71df31e2dc2397d6905df462
-  resolved "https://github.com/jmalcic/spina-conferences-primer_theme#e1aac7acf1a2f67b71df31e2dc2397d6905df462"
+"spina-conferences-primer-theme@jmalcic/spina-conferences-primer_theme#semver:^0.2":
+  version "0.2.1"
+  resolved "https://codeload.github.com/jmalcic/spina-conferences-primer_theme/tar.gz/fea66b72c30db0f34950f5e7ac9e4c6e3162a178"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
     "@github/details-menu-element" "^1.0.9"
     "@github/filter-input-element" "^0.1.1"
-    "@github/include-fragment-element" "^5.1.0"
-    "@github/tab-container-element" "^3.0.7"
-    "@primer/css" "^15.0.0"
-    "@primer/octicons" "^12.0.0"
+    "@github/include-fragment-element" "^5.3.1"
+    "@primer/css" "^16.2.0"
+    "@primer/octicons" "^13.0.0"
     stimulus "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz"
     trix "^1.3.1"
     turbolinks "^5.2.0"
