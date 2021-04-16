@@ -70,8 +70,8 @@ GEM
     attr_json (1.3.0)
       activerecord (>= 5.0.0, < 6.2)
     aws-eventstream (1.1.1)
-    aws-partitions (1.444.0)
-    aws-sdk-core (3.113.1)
+    aws-partitions (1.445.0)
+    aws-sdk-core (3.114.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
@@ -119,7 +119,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.8)
-    connection_pool (2.2.3)
+    connection_pool (2.2.5)
     crass (1.0.6)
     docile (1.3.5)
     dotenv (2.7.6)
@@ -208,7 +208,7 @@ GEM
       octicons (= 13.0.0)
       railties
     parallel (1.20.1)
-    parser (3.0.0.0)
+    parser (3.0.1.0)
       ast (~> 2.4.1)
     pg (1.2.3)
     primer_view_components (0.0.35)
@@ -331,7 +331,7 @@ GEM
       rails (>= 6.0)
       sass-rails
       turbolinks (~> 5)
-    spina-admin-conferences (2.0.0)
+    spina-admin-conferences (2.0.1)
       icalendar (~> 2.5)
       rails (~> 6.0)
       rails-i18n (~> 6.0)
