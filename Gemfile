@@ -81,11 +81,12 @@ gem 'rails-i18n', '~> 6.0.0.beta1'
 # Job queueing
 gem 'sidekiq'
 
+gem 'skylight', '~> 5.0'
+
 # Production gems
 group :production, :staging do
   gem 'barnes', '~> 0.0.9'
   gem 'bugsnag', '~> 6.20'
   gem 'dotenv-rails', '~> 2.7'
   gem 'rack-timeout'
-  gem 'skylight', '~> 5.0'
 end
