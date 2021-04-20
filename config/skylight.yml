@@ -1,3 +1,4 @@
 ---
 # The authentication token for the application.
 authentication: <%= Rails.application.credentials.dig(:skylight, :authentication) %>
+enable_sidekiq: true
