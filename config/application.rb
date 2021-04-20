@@ -13,6 +13,8 @@ module UlabWebsite
     config.load_defaults 6.0
 
     config.time_zone = 'London'
+    
+    config.skylight.probes += %w[redis active_job]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers -- all .rb files in that directory are
