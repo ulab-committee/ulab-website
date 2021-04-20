@@ -5,10 +5,6 @@
     "postdeploy": "bundle exec rake db:seed"
   },
   "env": {
-    "BUGSNAG_API_KEY": {
-      "description": "API key for Bugsnag",
-      "required": true
-    },
     "LANG": {
       "required": true
     },
