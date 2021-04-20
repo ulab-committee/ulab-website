@@ -31,7 +31,14 @@
   },
   "addons": [
     "heroku-postgresql:hobby-dev",
-    "heroku-redis:hobby-dev",
+    {
+      "plan": "heroku-redis:hobby-dev",
+      "as": "REDIS"
+    },
+    {
+      "plan": "heroku-redis:hobby-dev",
+      "as": "REDIS_QUEUE"
+    },
     "papertrail:choklad"
   ],
   "buildpacks": [
