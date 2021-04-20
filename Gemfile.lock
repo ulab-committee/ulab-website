@@ -407,7 +407,6 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   dotenv-rails (~> 2.7)
   hiredis (~> 0.6.3)
-  icalendar
   jbuilder (~> 2.11)
   listen (>= 3.0.5, < 3.6)
   pg (>= 0.18, < 2.0)
