@@ -75,9 +75,6 @@ gem 'aws-sdk-s3', require: false
 # Email obfuscation
 gem 'actionview-encoded_mail_to'
 
-# iCal events
-gem 'icalendar'
-
 # Internationalisation
 gem 'rails-i18n', '~> 6.0.0.beta1'
 
