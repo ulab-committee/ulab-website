@@ -14,6 +14,7 @@ module UlabWebsite
 
     config.time_zone = 'London'
     
+    config.skylight.environments << 'staging'
     config.skylight.probes += %w[redis active_job]
 
     # Settings in config/environments/* take precedence over those specified here.

@@ -81,3 +81,7 @@ test:
 production:
   <<: *default
   database: ulab_website_production
+
+staging:
+  <<: *default
+  database: ulab_website_production
