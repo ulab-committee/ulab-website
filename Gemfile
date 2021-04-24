@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Conferences plugin
-gem 'spina-conferences-primer_theme', '~> 0.3'
+gem 'spina-conferences-primer_theme', '~> 0.4'
 
 # S3
 gem 'aws-sdk-s3', require: false
