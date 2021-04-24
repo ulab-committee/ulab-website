@@ -343,7 +343,7 @@ GEM
       spina (~> 2.0)
       stimulus-rails (~> 0.2.2)
       turbo-rails (~> 0.5.9)
-    spina-conferences-primer_theme (0.3.4)
+    spina-conferences-primer_theme (0.4.0)
       babel-transpiler (~> 0.7)
       icalendar (~> 2.5)
       image_processing (~> 1.9)
@@ -423,7 +423,7 @@ DEPENDENCIES
   sidekiq
   simplecov
   skylight (~> 5.0)
-  spina-conferences-primer_theme (~> 0.3)
+  spina-conferences-primer_theme (~> 0.4)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
