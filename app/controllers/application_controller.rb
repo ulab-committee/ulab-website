@@ -3,6 +3,6 @@
 # Base class from which controllers inherit
 class ApplicationController < ActionController::Base
   def default_url_options
-    { host: 'ulab.org.uk' }
+    { host: 'www.ulab.org.uk' }
   end
 end
