@@ -18,10 +18,6 @@ module UlabWebsite
     config.skylight.probes += %w[redis active_job]
     
     config.active_storage.resolve_model_to_route = :rails_storage_proxy
-    
-    def default_url_options
-      { host: 'ulab.org.uk' }
-    end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers -- all .rb files in that directory are

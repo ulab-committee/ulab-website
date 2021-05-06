@@ -20,4 +20,6 @@ Spina.configure do |config|
 
   # Base css color for Spina
   config.primary_color = '#16779d'
+  
+  config.frontend_parent_controller = 'ApplicationController'
 end
