@@ -14,7 +14,7 @@ phases:
       - bundle install
       # Install Yarn dependencies from package.json.
       - bundle exec yarn
-      # Se up database
+      # Set up database
       - bundle exec rails db:setup
 
   pre_build:
