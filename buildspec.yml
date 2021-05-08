@@ -26,6 +26,7 @@ phases:
       # Run Postgres
       - >-
         docker run
+        -d
         --health-cmd pg_isready
         --health-interval 10s
         --health-timeout 5s
@@ -36,6 +37,7 @@ phases:
       # Run Redis
       - >-
         docker run
+        -d
         --health-cmd "redis-cli ping"
         --health-interval 10s
         --health-timeout 5s
