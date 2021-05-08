@@ -25,21 +25,23 @@ phases:
       - bundle exec yarn
       # Run Postgres
       - >-
-        docker run postgres
+        docker run
         --health-cmd pg_isready
         --health-interval 10s
         --health-timeout 5s
         --health-retries 5
         -p 5432:5432
         -e POSTGRES_PASSWORD=postgres
+        postgres
       # Run Redis
       - >-
-        docker run redis
+        docker run
         --health-cmd "redis-cli ping"
         --health-interval 10s
         --health-timeout 5s
         --health-retries 5
         -p 6379:6379
+        redis
       # Set up database
       - bundle exec rails db:setup
 
