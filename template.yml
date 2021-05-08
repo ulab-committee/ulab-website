@@ -9,9 +9,6 @@ Parameters:
   ProjectId:
     Type: String
     Description: AWS CodeStar project ID used to name project resources and create roles.
-  InstanceType:
-    Type: String
-    Description: The type of Amazon EC2 Linux instances that will be launched for this project.
   KeyPairName:
     Type: String
     Description: The name of an existing Amazon EC2 key pair in the region where the project is created, which you can use to SSH into the new Amazon EC2 Linux instances.
@@ -43,7 +40,7 @@ Resources:
     Description: The AWS Elastic Beanstalk application, which is a container used to deploy the correct application configuration.
     Type: AWS::ElasticBeanstalk::Application
     Properties:
-      ApplicationName: !Sub '${ProjectId}app${Stage}'
+      ApplicationName: !Sub '${ProjectId}-${Stage}'
       Description: The name of the AWS Elastic Beanstalk application to be created for this project.
   EBApplicationVersion:
     Description: The version of the AWS Elastic Beanstalk application to be created for this project.
@@ -62,6 +59,12 @@ Resources:
       - Namespace: aws:elasticbeanstalk:environment
         OptionName: EnvironmentType
         Value: SingleInstance
+      - Namespace: aws:ec2:instances
+        OptionName: EnableSpot
+        Value: 'true'
+      - Namespace: aws:ec2:instances
+        OptionName: SpotMaxPrice
+        Value: '0.011'
       - Namespace: aws:elasticbeanstalk:environment
         OptionName: ServiceRole
         Value: !Ref 'EBTrustRole'
@@ -71,6 +74,9 @@ Resources:
       - Namespace: aws:elasticbeanstalk:application:environment
         OptionName: SECRET_KEY_BASE
         Value: !Ref 'EnvSecretKey'
+      - Namespace: aws:rds:dbinstance
+        OptionName: DBEngine
+        Value: postgres
       SolutionStackName: !Ref 'SolutionStackName'
   EBEnvironment:
     Description: The AWS Elastic Beanstalk deployment group where the application is deployed, which is made up of the Amazon EC2 Linux instances launched for this project.
@@ -82,12 +88,27 @@ Resources:
       TemplateName: !Ref 'EBConfigurationTemplate'
       VersionLabel: !Ref 'EBApplicationVersion'
       OptionSettings:
+      - Namespace: aws:elasticbeanstalk:environment
+        OptionName: EnvironmentType
+        Value: LoadBalanced
+      - Namespace: aws:autoscaling:asg
+        OptionName: MinSize
+        Value: '2'
+      - Namespace: aws:autoscaling:asg
+        OptionName: MaxSize
+        Value: '4'
+      - Namespace: aws:ec2:instances
+        OptionName: EnableSpot
+        Value: 'true'
+      - Namespace: aws:ec2:instances
+        OptionName: SpotMaxPrice
+        Value: '0.011'
+      - Namespace: aws:rds:dbinstance
+        OptionName: DBDeletionPolicy
+        Value: Snapshot
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: IamInstanceProfile
         Value: !Ref 'EBInstanceProfile'
-      - Namespace: aws:autoscaling:launchconfiguration
-        OptionName: InstanceType
-        Value: !Ref 'InstanceType'
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: EC2KeyName
         Value: !Ref 'KeyPairName'
