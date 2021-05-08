@@ -4,6 +4,7 @@ phases:
   install:
     runtime-versions:
       ruby: 2.7
+      nodejs: 12
     commands:
       # Upgrade AWS CLI to the latest version
       - pip3 install --upgrade awscli
@@ -11,6 +12,10 @@ phases:
       # Install Ruby dependencies from the Gemfile.
       - gem install bundler
       - bundle install
+      # Install Yarn dependencies from package.json.
+      - bundle exec yarn
+      # Se up database
+      - bundle exec rails db:setup
 
   pre_build:
     commands:
