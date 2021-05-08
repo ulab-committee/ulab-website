@@ -1,5 +1,15 @@
 version: 0.2
 
+env:
+  variables:
+    RACK_ENV: test
+    RAILS_ENV: test
+    RAILS_SERVE_STATIC_FILES: enabled
+    PGHOST: 127.0.0.1
+    PGUSER: postgres
+    PGPASSWORD: postgres
+    POSTGRES_PASSWORD: postgres
+
 phases:
   install:
     runtime-versions:
@@ -14,6 +24,10 @@ phases:
       - bundle install
       # Install Yarn dependencies from package.json.
       - bundle exec yarn
+      # Run Postgres
+      - docker run postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5 -p 5432:5432
+      # Run Redis
+      - docker run redis --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5 -p 6379:6379
       # Set up database
       - bundle exec rails db:setup
 
