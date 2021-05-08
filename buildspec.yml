@@ -24,9 +24,22 @@ phases:
       # Install Yarn dependencies from package.json.
       - bundle exec yarn
       # Run Postgres
-      - docker run postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      - >-
+        docker run postgres
+        --health-cmd pg_isready
+        --health-interval 10s
+        --health-timeout 5s
+        --health-retries 5
+        -p 5432:5432
+        -e POSTGRES_PASSWORD=postgres
       # Run Redis
-      - docker run redis --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5 -p 6379:6379
+      - >-
+        docker run redis
+        --health-cmd "redis-cli ping"
+        --health-interval 10s
+        --health-timeout 5s
+        --health-retries 5
+        -p 6379:6379
       # Set up database
       - bundle exec rails db:setup
 
