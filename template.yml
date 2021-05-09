@@ -103,9 +103,6 @@ Resources:
       - Namespace: aws:ec2:instances
         OptionName: SpotMaxPrice
         Value: '0.011'
-      - Namespace: aws:rds:dbinstance
-        OptionName: DBDeletionPolicy
-        Value: Snapshot
       - Namespace: aws:autoscaling:launchconfiguration
         OptionName: IamInstanceProfile
         Value: !Ref 'EBInstanceProfile'
