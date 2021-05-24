@@ -67,10 +67,10 @@ object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-"spina-conferences-primer-theme@jmalcic/spina-conferences-primer_theme#semver:^0.4":
-  version "0.4.2"
-  uid "8c431377caab6e137cc470f9aa4d14170c637767"
-  resolved "https://codeload.github.com/jmalcic/spina-conferences-primer_theme/tar.gz/8c431377caab6e137cc470f9aa4d14170c637767"
+"spina-conferences-primer-theme@jmalcic/spina-conferences-primer_theme#semver:^0.5":
+  version "0.5.0"
+  uid b99fbb9465dd2b413adde98c7b704caabfe8deb0
+  resolved "https://codeload.github.com/jmalcic/spina-conferences-primer_theme/tar.gz/b99fbb9465dd2b413adde98c7b704caabfe8deb0"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
     "@github/details-menu-element" "^1.0.9"
