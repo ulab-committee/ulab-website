@@ -81,7 +81,7 @@ gem 'rails-i18n', '~> 6.0.0.beta1'
 # Job queueing
 gem 'sidekiq'
 
-gem 'skylight', '~> 5.0'
+gem 'skylight', '~> 5.1'
 gem 'bugsnag', '~> 6.20'
 
 # Production gems
