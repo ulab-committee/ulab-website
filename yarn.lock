@@ -68,9 +68,9 @@ object-assign@^4.1.1:
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 "spina-conferences-primer-theme@jmalcic/spina-conferences-primer_theme#semver:^0.5":
-  version "0.5.1"
-  uid db648665a636bb764e1d48731d070eb23f4ab7f8
-  resolved "https://codeload.github.com/jmalcic/spina-conferences-primer_theme/tar.gz/db648665a636bb764e1d48731d070eb23f4ab7f8"
+  version "0.5.2"
+  uid "5d524e3d6312ad3fc5acd511ee91d2e435573b4f"
+  resolved "https://codeload.github.com/jmalcic/spina-conferences-primer_theme/tar.gz/5d524e3d6312ad3fc5acd511ee91d2e435573b4f"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
     "@github/details-menu-element" "^1.0.9"
