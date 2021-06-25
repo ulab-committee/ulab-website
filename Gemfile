@@ -51,7 +51,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', '~> 1.16'
   gem 'rubocop-performance', '~> 1.11'
-  gem 'rubocop-rails', '~> 2.10'
+  gem 'rubocop-rails', '~> 2.11'
 end
 
 group :test do
