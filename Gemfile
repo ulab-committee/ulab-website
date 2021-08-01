@@ -21,7 +21,7 @@ gem 'sass-rails', '~> 6.0'
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
 gem 'hiredis', '~> 0.6.3'
-gem 'redis', '~> 4.2'
+gem 'redis', '~> 4.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,15 +43,15 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console'
   # anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.6'
+  gem 'listen', '>= 3.0.5', '< 3.7'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop', '~> 1.16'
+  gem 'rubocop', '~> 1.18'
   gem 'rubocop-performance', '~> 1.11'
-  gem 'rubocop-rails', '~> 2.10'
+  gem 'rubocop-rails', '~> 2.11'
 end
 
 group :test do
@@ -82,7 +82,7 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'sidekiq'
 
 gem 'skylight', '~> 5.1'
-gem 'bugsnag', '~> 6.20'
+gem 'bugsnag', '~> 6.21'
 
 # Production gems
 group :production, :staging do
