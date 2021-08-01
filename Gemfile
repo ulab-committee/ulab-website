@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Conferences plugin
-gem 'spina-conferences-primer_theme', '~> 0.5'
+gem 'spina-conferences-primer_theme-fork', '~> 0.6', require: 'spina/conferences/primer_theme'
 
 # S3
 gem 'aws-sdk-s3', require: false
@@ -76,7 +76,7 @@ gem 'aws-sdk-s3', require: false
 gem 'actionview-encoded_mail_to'
 
 # Internationalisation
-gem 'rails-i18n', '~> 6.0.0.beta1'
+gem 'rails-i18n', '~> 6.0.0'
 
 # Job queueing
 gem 'sidekiq'
