@@ -69,6 +69,7 @@ object-assign@^4.1.1:
 
 "spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork#semver:^0.6":
   version "0.5.2"
+  uid c98503832d1bbcdeed03bc3332a9fbb99209b6e0
   resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/c98503832d1bbcdeed03bc3332a9fbb99209b6e0"
   dependencies:
     "@github/details-dialog-element" "^3.0.12"
