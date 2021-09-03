@@ -31,7 +31,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle install --jobs 5 --retry 5 --without development test
+RUN bundle config set without 'development test' \
+  && bundle check \
+  || bundle install --jobs 5 --retry 5
 
 COPY package.json yarn.lock ./
 RUN yarn install --check-files
