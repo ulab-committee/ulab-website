@@ -13,6 +13,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.3.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6.0'
+# PIN SASSC VERSION to avoid insane compile times
+gem 'sassc', '2.4.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # gem 'webpacker', '>= 4.0.0.rc.3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

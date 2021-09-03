@@ -425,6 +425,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.11)
   rubocop-rails (~> 2.11)
   sass-rails (~> 6.0)
+  sassc (= 2.4.0)
   selenium-webdriver
   sidekiq
   simplecov
