@@ -29,4 +29,5 @@ jobs:
           git config --global user.email "deploy@ssh.ulab.org.uk"
           git config --global user.name "Deploy"
           git checkout ${{ github.ref }}
+          git pull production master
           git push production ${{ github.ref }}:master
