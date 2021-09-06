@@ -13,6 +13,7 @@ RUN apk add --update --no-cache \
       libstdc++ \
       libffi-dev \
       libc-dev \
+      libc6-compat \
       linux-headers \
       libxml2-dev \
       libxslt-dev \
