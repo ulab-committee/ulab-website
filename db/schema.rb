@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_142552) do
+ActiveRecord::Schema.define(version: 2021_09_03_201427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,9 @@ ActiveRecord::Schema.define(version: 2021_05_24_142552) do
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "json_attributes"
     t.integer "status", default: 0, null: false
+    t.bigint "licence_id"
     t.index ["issue_id"], name: "index_spina_admin_journal_articles_on_issue_id"
+    t.index ["licence_id"], name: "index_spina_admin_journal_articles_on_licence_id"
   end
 
   create_table "spina_admin_journal_authors", force: :cascade do |t|
@@ -142,6 +144,14 @@ ActiveRecord::Schema.define(version: 2021_05_24_142552) do
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "json_attributes"
     t.index ["singleton_guard"], name: "index_spina_admin_journal_journals_on_singleton_guard", unique: true
+  end
+
+  create_table "spina_admin_journal_licences", force: :cascade do |t|
+    t.string "name", default: "Unnamed Licence", null: false
+    t.string "abbreviated_name", default: "", null: false
+    t.jsonb "json_attributes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "spina_admin_journal_parts", force: :cascade do |t|
@@ -614,6 +624,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_142552) do
   add_foreign_key "spina_admin_journal_affiliations", "spina_admin_journal_authors", column: "author_id"
   add_foreign_key "spina_admin_journal_affiliations", "spina_admin_journal_institutions", column: "institution_id"
   add_foreign_key "spina_admin_journal_articles", "spina_admin_journal_issues", column: "issue_id"
+  add_foreign_key "spina_admin_journal_articles", "spina_admin_journal_licences", column: "licence_id"
   add_foreign_key "spina_admin_journal_authorships", "spina_admin_journal_affiliations", column: "affiliation_id"
   add_foreign_key "spina_admin_journal_authorships", "spina_admin_journal_articles", column: "article_id"
   add_foreign_key "spina_admin_journal_issues", "spina_admin_journal_volumes", column: "volume_id"
