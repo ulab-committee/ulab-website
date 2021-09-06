@@ -1,17 +1,13 @@
-name: Create and publish a Docker image
+name: Deploy to DigitalOcean droplet using git
 
 on:
   push:
     branches:
       - master
-      - docker-deploy
 
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - name: Checkout repository
