@@ -28,4 +28,5 @@ jobs:
           git remote add production deploy@ssh.ulab.org.uk:ulab-website-production
           git config --global user.email "deploy@ssh.ulab.org.uk"
           git config --global user.name "Deploy"
-          git push production ${{ github.ref }}:master --force
+          git checkout ${{ github.ref }}
+          git push production ${{ github.ref }}:master
