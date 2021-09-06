@@ -1,0 +1,30 @@
+name: Deploy to DigitalOcean droplet using git
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Deploy to production
+        run: |
+          git remote add production deploy@ssh.ulab.org.uk:ulab-website-production
+          git config --global user.email "deploy@ssh.ulab.org.uk"
+          git config --global user.name "Deploy"
+          git pull production master
+          git push production ${{ github.ref }}:master
