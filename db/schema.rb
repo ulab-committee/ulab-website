@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_201427) do
+ActiveRecord::Schema.define(version: 2021_09_07_202530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -539,6 +539,16 @@ ActiveRecord::Schema.define(version: 2021_09_03_201427) do
     t.integer "resource_id"
     t.jsonb "json_attributes"
     t.index ["resource_id"], name: "index_spina_pages_on_resource_id"
+  end
+
+  create_table "spina_parts_admin_journal_page_ranges", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spina_parts_conferences_primer_theme_checkboxes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "spina_resources", force: :cascade do |t|
