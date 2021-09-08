@@ -304,7 +304,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     sexp_processor (4.15.3)
-    sidekiq (6.2.1)
+    sidekiq (6.2.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
