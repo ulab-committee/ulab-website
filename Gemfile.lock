@@ -261,7 +261,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.4.0)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     request_store (1.5.0)
       rack (>= 1.4)
@@ -420,7 +420,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 6.1)
   rails-i18n (~> 6.0.0)
-  redis (~> 4.4)
+  redis (~> 4.5)
   rubocop (~> 1.20)
   rubocop-performance (~> 1.11)
   rubocop-rails (~> 2.12)
