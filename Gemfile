@@ -84,7 +84,7 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'sidekiq'
 
 gem 'skylight', '~> 5.1'
-gem 'bugsnag', '~> 6.22'
+gem 'bugsnag', '~> 6.24'
 
 # Production gems
 group :production, :staging do
