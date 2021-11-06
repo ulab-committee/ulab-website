@@ -349,7 +349,7 @@ GEM
       rails (~> 6.1)
       rails-i18n (~> 6.0)
       spina (~> 2.0.0)
-    spina-conferences-primer_theme-fork (0.8.0)
+    spina-conferences-primer_theme-fork (0.8.1)
       babel-transpiler (~> 0.7)
       icalendar (~> 2.5)
       image_processing (~> 1.9)
