@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_202530) do
+ActiveRecord::Schema.define(version: 2021_11_08_130623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 2021_09_07_202530) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "mobility_string_translations", force: :cascade do |t|
@@ -186,6 +198,35 @@ ActiveRecord::Schema.define(version: 2021_09_07_202530) do
     t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "spina_blog_categories", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_spina_blog_categories_on_slug"
+  end
+
+  create_table "spina_blog_posts", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.text "excerpt"
+    t.text "content"
+    t.integer "image_id"
+    t.boolean "draft"
+    t.datetime "published_at"
+    t.string "slug"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.boolean "featured", default: false
+    t.string "seo_title"
+    t.text "description"
+    t.index ["category_id"], name: "index_spina_blog_posts_on_category_id"
+    t.index ["image_id"], name: "index_spina_blog_posts_on_image_id"
+    t.index ["slug"], name: "index_spina_blog_posts_on_slug"
+    t.index ["user_id"], name: "index_spina_blog_posts_on_user_id"
   end
 
   create_table "spina_conferences_conference_translations", force: :cascade do |t|
@@ -639,6 +680,8 @@ ActiveRecord::Schema.define(version: 2021_09_07_202530) do
   add_foreign_key "spina_admin_journal_authorships", "spina_admin_journal_articles", column: "article_id"
   add_foreign_key "spina_admin_journal_issues", "spina_admin_journal_volumes", column: "volume_id"
   add_foreign_key "spina_admin_journal_volumes", "spina_admin_journal_journals", column: "journal_id"
+  add_foreign_key "spina_blog_posts", "spina_images", column: "image_id"
+  add_foreign_key "spina_blog_posts", "spina_users", column: "user_id"
   add_foreign_key "spina_conferences_conference_translations", "spina_conferences_conferences"
   add_foreign_key "spina_conferences_delegates", "spina_conferences_institutions", column: "institution_id", on_delete: :cascade
   add_foreign_key "spina_conferences_dietary_requirement_translations", "spina_conferences_dietary_requirements", on_delete: :cascade
