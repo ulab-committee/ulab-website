@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@github/details-dialog-element@^3.0.12":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@github/details-dialog-element/-/details-dialog-element-3.1.2.tgz#61f6595c71d786b1a77fbbe79db4c0b9a224fc80"
-  integrity sha512-kUz7VYKmgOtlAo96TVeXSq5bKDS/3Wm0SZt4UetJK2CcG0/wsx/Eif/fHx1HYEwVsa7FnrB/kCzby0JE8R88zQ==
+"@github/details-dialog-element@^3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@github/details-dialog-element/-/details-dialog-element-3.1.3.tgz#898c21836c3412d675dbbc6092cbf4f8dece48d2"
+  integrity sha512-NWTiMK7jnQllsEtzkZ0S4+4NneXsGn+JU0YFum1GyVfVBIfHXue+Ev7qOJxwGoOyBzfeSNz1uxuRWUvX+lavaw==
 
-"@github/details-menu-element@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-1.0.9.tgz#3b40ff5e928131d3049a0a23b2d6df66eaad2cff"
-  integrity sha512-wa6hgqbUH/3BJIrhGZNZN3o7a4Pxw87Ba4QypZs350ww9H0l4qCc4tcJdlIVRzwxsxb4rVo0kXDMRqDPJsSgNg==
+"@github/details-menu-element@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@github/details-menu-element/-/details-menu-element-1.0.12.tgz#baf9cd5bcf8e40621a085380364090921eb3fae4"
+  integrity sha512-Icbq+xw7Qjb6byfRtC5cjk/eAxb+Wc4F/WS+L6VTHLYEfi8q/akDtHgViGeu854IMiJ/qDosfOGXGgSrleud2w==
 
 "@github/filter-input-element@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@github/filter-input-element/-/filter-input-element-0.1.1.tgz#9b8caff8fa35e037b6f270795b5bae1d6d34a631"
   integrity sha512-YTAF9gmLfdYvK+BaVOYBwawtdchxgov9ZmLJ3HCyZ7ALyCKEbHhNRRX7GD3KsoPWUedxiH0X3v/loB2njLbjwg==
 
-"@github/include-fragment-element@^5.3.1":
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.3.1.tgz#eecaa03e3b939fdf5287354bc239768552229820"
-  integrity sha512-Dq7gpmrOuDqmelI6fCUGiAGwYjxsA5br6G9oXNqKfU473aobDB9NP4WYebkpNJpHZbpKaQ8aZOipHMBEnK+iGA==
+"@github/include-fragment-element@^5.3.2":
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.3.2.tgz#551e1cdaaab66613c58a5b3c27391f299b4a32be"
+  integrity sha512-pz+GkHAGyUQk/nG3bU426EW8Fxo0hH/nvd8ImjxkoWDj0HlKvfBNAaKQaZs5MlpEKaamGxMIYox9XjclIqMb4Q==
 
 "@primer/css@^16.3.0":
   version "16.3.0"
@@ -30,10 +30,17 @@
     "@primer/octicons" "13.0.0"
     "@primer/primitives" "4.2.1"
 
-"@primer/octicons@13.0.0", "@primer/octicons@^13.0.0":
+"@primer/octicons@13.0.0":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-13.0.0.tgz#dab1f156ac601d2cb7c83eab9242a1739429cf2e"
   integrity sha512-kMNu3Ny3eocOTl2hxRC0YX0na7zJwpSIQNiZqmyqbLMKp2YwNAwk5Tan4RLGe35f30st+EbNq15dEjiMzslAcw==
+  dependencies:
+    object-assign "^4.1.1"
+
+"@primer/octicons@^16.2.0":
+  version "16.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-16.2.0.tgz#70d9a275f076171794ebdf652cb1b351811dcfbf"
+  integrity sha512-GMwiKSRuYOCPJpRBtiY+Myfp2DWSjnjaettrl9y4TsWfMk42osYhxEOFZkU2QZT2hAULaVvCqH2zFd+3Ybg4cg==
   dependencies:
     object-assign "^4.1.1"
 
@@ -67,17 +74,17 @@ object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
-"spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork#semver:^0.9":
+"spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork#semver:^0.10":
   version "0.8.1"
-  uid e85a824bab8b39165b1f369daf90d6d7c3db6777
-  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/e85a824bab8b39165b1f369daf90d6d7c3db6777"
+  uid a40e820b64b1f70e6365ce6a2e1e4f1773026271
+  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/a40e820b64b1f70e6365ce6a2e1e4f1773026271"
   dependencies:
-    "@github/details-dialog-element" "^3.0.12"
-    "@github/details-menu-element" "^1.0.9"
+    "@github/details-dialog-element" "^3.1.3"
+    "@github/details-menu-element" "^1.0.12"
     "@github/filter-input-element" "^0.1.1"
-    "@github/include-fragment-element" "^5.3.1"
+    "@github/include-fragment-element" "^5.3.2"
     "@primer/css" "^16.3.0"
-    "@primer/octicons" "^13.0.0"
+    "@primer/octicons" "^16.2.0"
     stimulus "https://github.com/stimulusjs/dev-builds/archive/b8cc8c4/stimulus.tar.gz"
     trix "^1.3.1"
     turbolinks "^5.2.0"
