@@ -4,7 +4,13 @@ require:
   - rubocop-rails
 
 AllCops:
+  TargetRubyVersion: 2.7
   NewCops: enable
+  Exclude:
+    - db/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
 
 Style/CommandLiteral:
   EnforcedStyle: mixed
@@ -12,7 +18,3 @@ Style/CommandLiteral:
 Layout/LineLength:
   Max: 140
   AutoCorrect: true
-
-Metrics/BlockLength:
-  Exclude:
-    - db/schema.rb

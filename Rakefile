@@ -7,3 +7,11 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+unless Rails.env.production?
+  require 'rubocop/rake_task'
+
+  RuboCop::RakeTask.new do |t|
+    t.options << '--parallel' if ENV['CI']
+  end
+end
