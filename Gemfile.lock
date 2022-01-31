@@ -387,10 +387,7 @@ GEM
       spina-admin-conferences-blog (= 0.3.1)
       spina-admin-conferences-fork (= 3.0.0.rc2)
       spina-admin-journal (= 1.0.0.rc2)
-    spring (2.1.1)
-    spring-watcher-listen (2.0.1)
-      listen (>= 2.7, < 4.0)
-      spring (>= 1.2, < 3.0)
+    spring (4.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -463,7 +460,6 @@ DEPENDENCIES
   skylight (~> 5.1)
   spina-conferences-primer_theme-fork (= 1.0.0.rc2)
   spring
-  spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
