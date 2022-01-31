@@ -6,32 +6,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~> 2.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 5.5.2'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 6.0'
-# PIN SASSC VERSION to avoid insane compile times
-gem 'sassc', '2.1.0'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-# gem 'webpacker', '>= 4.0.0.rc.3'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# gem 'turbolinks', '~> 5'
+gem 'puma', '~> 5.5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
 gem 'hiredis', '~> 0.6.3'
 gem 'redis', '~> 4.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -68,8 +52,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Conferences plugin
-gem 'spina-conferences-primer_theme-fork', '~> 0.10', require: 'spina/conferences/primer_theme'
+# Primer Theme plugin
+gem 'spina-conferences-primer_theme-fork', '1.0.0.rc2', require: 'spina/conferences/primer_theme'
 
 # S3
 gem 'aws-sdk-s3', require: false
@@ -78,7 +62,7 @@ gem 'aws-sdk-s3', require: false
 gem 'actionview-encoded_mail_to'
 
 # Internationalisation
-gem 'rails-i18n', '~> 6.0.0'
+gem 'rails-i18n', '~> 7.0'
 
 # Job queueing
 gem 'sidekiq'

@@ -2,6 +2,6 @@
   "name": "ulab_website",
   "private": true,
   "dependencies": {
-    "spina-conferences-primer-theme-fork": "louis-vs/spina-conferences-primer_theme-fork#semver:^0.9"
+    "spina-conferences-primer-theme-fork": "louis-vs/spina-conferences-primer_theme-fork"
   }
 }
