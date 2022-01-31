@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_08_130623) do
+ActiveRecord::Schema.define(version: 2022_01_31_170730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 2021_11_08_130623) do
   create_table "spina_admin_journal_authors", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "orcid", default: "", null: false
   end
 
   create_table "spina_admin_journal_authorships", force: :cascade do |t|
@@ -206,6 +207,30 @@ ActiveRecord::Schema.define(version: 2021_11_08_130623) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_spina_blog_categories_on_slug"
+  end
+
+  create_table "spina_blog_category_translations", force: :cascade do |t|
+    t.string "name"
+    t.string "locale", null: false
+    t.bigint "spina_blog_category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["locale"], name: "spina_blog_category_translations_on_locale"
+    t.index ["spina_blog_category_id", "locale"], name: "spina_blog_category_translations_on_locale_and_id", unique: true
+  end
+
+  create_table "spina_blog_post_translations", force: :cascade do |t|
+    t.string "title"
+    t.text "excerpt"
+    t.text "content"
+    t.string "seo_title"
+    t.text "description"
+    t.string "locale", null: false
+    t.bigint "spina_blog_post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["locale"], name: "spina_blog_post_translations_on_locale"
+    t.index ["spina_blog_post_id", "locale"], name: "spina_blog_post_translations_on_locale_and_id", unique: true
   end
 
   create_table "spina_blog_posts", id: :serial, force: :cascade do |t|
@@ -680,6 +705,8 @@ ActiveRecord::Schema.define(version: 2021_11_08_130623) do
   add_foreign_key "spina_admin_journal_authorships", "spina_admin_journal_articles", column: "article_id"
   add_foreign_key "spina_admin_journal_issues", "spina_admin_journal_volumes", column: "volume_id"
   add_foreign_key "spina_admin_journal_volumes", "spina_admin_journal_journals", column: "journal_id"
+  add_foreign_key "spina_blog_category_translations", "spina_blog_categories"
+  add_foreign_key "spina_blog_post_translations", "spina_blog_posts"
   add_foreign_key "spina_blog_posts", "spina_images", column: "image_id"
   add_foreign_key "spina_blog_posts", "spina_users", column: "user_id"
   add_foreign_key "spina_conferences_conference_translations", "spina_conferences_conferences"
