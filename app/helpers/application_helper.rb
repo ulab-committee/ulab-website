@@ -6,6 +6,12 @@ module ApplicationHelper
     super(image, process_options(options))
   end
 
+  def svg(name)
+    file_path = "#{Rails.root}/app/assets/images/#{name}.svg"
+    return File.read(file_path).html_safe if File.exists?(file_path)
+    '(not found)'
+  end
+
   private
 
   def process_options(options)
