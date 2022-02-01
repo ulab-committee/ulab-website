@@ -376,7 +376,7 @@ GEM
       rails (>= 6.0, < 8)
       rails-i18n (>= 6.0, < 8)
       spina (~> 2.8)
-    spina-conferences-primer_theme-fork (1.0.0.rc2)
+    spina-conferences-primer_theme-fork (1.0.0.rc3)
       babel-transpiler (~> 0.7)
       cssbundling-rails (~> 1.0)
       icalendar (~> 2.5)
@@ -458,7 +458,7 @@ DEPENDENCIES
   sidekiq
   simplecov
   skylight (~> 5.1)
-  spina-conferences-primer_theme-fork (= 1.0.0.rc2)
+  spina-conferences-primer_theme-fork (= 1.0.0.rc3)
   spring
   tzinfo-data
   web-console (>= 3.3.0)
