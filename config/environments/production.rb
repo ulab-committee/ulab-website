@@ -40,6 +40,9 @@ Rails.application.configure do
   # Store files on Amazon S3.
   config.active_storage.service = :amazon
 
+  # Use proxying to enhance CDN performance
+  config.active_storage.resolve_model_to_route = :rails_storage_proxy
+
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
