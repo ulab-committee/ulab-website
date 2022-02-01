@@ -7,21 +7,20 @@ module ApplicationHelper
   end
 
   def svg(name)
-    file_path = "#{Rails.root}/app/assets/images/#{name}.svg"
-    return File.read(file_path).html_safe if File.exists?(file_path)
-    '(not found)'
+    File.open("app/assets/images/#{name}.svg", 'rb') do |file|
+      raw file.read # rubocop:disable Rails/OutputSafety
+    end
   end
 
   private
 
   def process_options(options)
-    options.inject({}) do |processed_options, option|
+    options.each_with_object({}) do |option, processed_options|
       option_key, option_value = option
       case option_key
       when :resize then processed_options[:thumbnail] = option_value
       else processed_options[option_key] = option_value
       end
-      processed_options
     end
   end
 end

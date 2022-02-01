@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Spina.configure do |config|
   # Set locales
   config.locales = [:'en-GB']
@@ -20,6 +22,6 @@ Spina.configure do |config|
 
   # Base css color for Spina
   config.primary_color = '#16779d'
-  
+
   config.frontend_parent_controller = 'ApplicationController'
 end
