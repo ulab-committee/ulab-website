@@ -1,0 +1,118 @@
+name: Verify
+
+on: [push, pull_request]
+
+env:
+  LANG: en_GB.UTF-8
+  TZ: Europe/London
+
+jobs:
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run RuboCop
+        run: bin/rails rubocop
+
+  tests:
+    name: Rails tests
+    runs-on: ubuntu-latest
+    env:
+      RACK_ENV: test
+      RAILS_ENV: test
+      RAILS_SERVE_STATIC_FILES: enabled
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: postgres
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Prepare test db
+        run: bin/rails db:setup
+      - name: Run tests
+        run: bin/rails test
+
+  system_tests:
+    name: System tests
+    runs-on: ubuntu-latest
+    env:
+      RACK_ENV: test
+      RAILS_ENV: test
+      RAILS_SERVE_STATIC_FILES: enabled
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: postgres
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Chromedriver
+        uses: nanasess/setup-chromedriver@master
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Prepare test db
+        run: bin/rails db:setup
+      - name: Run tests
+        run: bin/rails test:system
