@@ -162,7 +162,8 @@ sass@^1.49.0:
 
 spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork:
   version "0.11.0"
-  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/26a7777111636e2774a05e2b02dd91808aedc03f"
+  uid "9930585e97dbd330f36e77f3335a8df8ba300d76"
+  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/9930585e97dbd330f36e77f3335a8df8ba300d76"
   dependencies:
     "@github/details-dialog-element" "^3.1.3"
     "@github/details-menu-element" "^1.0.12"
