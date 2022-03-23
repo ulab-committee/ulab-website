@@ -17,29 +17,29 @@
   resolved "https://registry.yarnpkg.com/@github/filter-input-element/-/filter-input-element-0.1.1.tgz#9b8caff8fa35e037b6f270795b5bae1d6d34a631"
   integrity sha512-YTAF9gmLfdYvK+BaVOYBwawtdchxgov9ZmLJ3HCyZ7ALyCKEbHhNRRX7GD3KsoPWUedxiH0X3v/loB2njLbjwg==
 
-"@github/include-fragment-element@^5.3.2":
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.3.2.tgz#551e1cdaaab66613c58a5b3c27391f299b4a32be"
-  integrity sha512-pz+GkHAGyUQk/nG3bU426EW8Fxo0hH/nvd8ImjxkoWDj0HlKvfBNAaKQaZs5MlpEKaamGxMIYox9XjclIqMb4Q==
+"@github/include-fragment-element@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.0.0.tgz#d374e7c89916276df358b634e2e88fb6f7ca25ef"
+  integrity sha512-Z51I/vLZwx8vu+YhzMJ9M37//3G1uAc9Uf60GxHMBgx3bH+Rly6DxjB8QcqmmDstmmpTL6Uv5ynbMgYYDuQl5Q==
 
-"@primer/css@^19.2.0":
-  version "19.2.0"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-19.2.0.tgz#afd1821c46da5a1c675f8e74a38fa566434c868b"
-  integrity sha512-20fJIGZy/s+LqDfqR1qqGS34LZTg3co4XbeL+Lv45LBqsVQ+ULwURNU6y3JBb78THLbish9V4TccPw59dj1YOQ==
+"@primer/css@^19.6.0":
+  version "19.6.0"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-19.6.0.tgz#a7a29d5ce677ac0e9ff90f72dc9dda976554730f"
+  integrity sha512-6EO/t3z3kfE7epY5xaq1QMTmGCFu2+f2CtHncNFsiJDcYrrvGDRPekcN09Hr8OcqhNVxP6xiqKwR0Vi8u4vdQQ==
   dependencies:
-    "@primer/primitives" "^7.4.0"
+    "@primer/primitives" "^7.5.1"
 
-"@primer/octicons@^16.3.0":
-  version "16.3.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-16.3.0.tgz#355483478ad86871045e41a8f3dc79fca5e6f213"
-  integrity sha512-kOVIGDkd7s2hx0E4FHyJblzGSTiOX+a//eu9CPSM0hYr26Sr+m0bIiTYHNPVLDh9apF9WdK8ub/eqgrE8U4iEA==
+"@primer/octicons@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-17.0.0.tgz#9dc752aeb3d2269f7c7827f04148ef5e55555374"
+  integrity sha512-DiIjtous4XPuR2deTctD3/RVZy/vRzVYBgYYvHV313MmTfkbVP60qLH5txrT3/bYNvnb0poNDelLS6U0kqlvHA==
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/primitives@^7.4.0":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.4.1.tgz#5ab1af3b078bb6b7b158ac84a1ae8a07fbdd3f95"
-  integrity sha512-cos7zQ6tgTtbQzF1gymiuQPcccqkHpccQCaahMRdqHqJP7kiG9/lbq+u13UdrAFJ8iJEyORfHXKd+bwhQf4svw==
+"@primer/primitives@^7.5.1":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.6.0.tgz#942efe38b6e09bf6d0351c045436e628e32c3ddb"
+  integrity sha512-cu28QLjectVf2rT4P7m6zS9v4g4yHtErRuPfsgEWEJhbXVIII6vDBm6elJzYixGpTNxpVtSUNezxUXv16l1ejQ==
 
 anymatch@~3.1.2:
   version "3.1.2"
@@ -146,7 +146,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-sass@^1.49.7, sass@^1.49.9:
+sass@^1.49.9:
   version "1.49.9"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.9.tgz#b15a189ecb0ca9e24634bae5d1ebc191809712f9"
   integrity sha512-YlYWkkHP9fbwaFRZQRXgDi3mXZShslVmmo+FVK3kHLUELHHEYrCmL1x6IUjC7wLS6VuJSAFXRQS/DxdsC4xL1A==
@@ -161,17 +161,17 @@ sass@^1.49.7, sass@^1.49.9:
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork:
-  version "1.0.0-rc6"
-  uid "0cb2c3cf2ee588410eb7efb7120805da813f4179"
-  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/0cb2c3cf2ee588410eb7efb7120805da813f4179"
+  version "1.0.0"
+  uid "112f059a9399eb523c598c203728c0c4f68720c6"
+  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/112f059a9399eb523c598c203728c0c4f68720c6"
   dependencies:
     "@github/details-dialog-element" "^3.1.3"
     "@github/details-menu-element" "^1.0.12"
     "@github/filter-input-element" "^0.1.1"
-    "@github/include-fragment-element" "^5.3.2"
-    "@primer/css" "^19.2.0"
-    "@primer/octicons" "^16.3.0"
-    sass "^1.49.7"
+    "@github/include-fragment-element" "^6.0.0"
+    "@primer/css" "^19.6.0"
+    "@primer/octicons" "^17.0.0"
+    sass "^1.49.9"
 
 to-regex-range@^5.0.1:
   version "5.0.1"
