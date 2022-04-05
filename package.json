@@ -3,6 +3,6 @@
   "private": true,
   "dependencies": {
     "spina-conferences-primer-theme-fork": "louis-vs/spina-conferences-primer_theme-fork",
-    "sass": "^1.49.9"
+    "sass": "^1.49.11"
   }
 }
