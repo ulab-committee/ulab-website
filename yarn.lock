@@ -22,12 +22,12 @@
   resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.0.0.tgz#d374e7c89916276df358b634e2e88fb6f7ca25ef"
   integrity sha512-Z51I/vLZwx8vu+YhzMJ9M37//3G1uAc9Uf60GxHMBgx3bH+Rly6DxjB8QcqmmDstmmpTL6Uv5ynbMgYYDuQl5Q==
 
-"@primer/css@^19.6.0":
-  version "19.6.0"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-19.6.0.tgz#a7a29d5ce677ac0e9ff90f72dc9dda976554730f"
-  integrity sha512-6EO/t3z3kfE7epY5xaq1QMTmGCFu2+f2CtHncNFsiJDcYrrvGDRPekcN09Hr8OcqhNVxP6xiqKwR0Vi8u4vdQQ==
+"@primer/css@^19.7.0":
+  version "19.8.2"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-19.8.2.tgz#4bdac86e9a11894a53e39c62ddfe0db0282fb367"
+  integrity sha512-Zjgk0asxDVj+QY8Ej3DLeJHEMzxlW4ejwmtUk3QzwUJG6R1FzCuGzrTuEN2hFugsvlPDVd1geeKfiskLEjkfOQ==
   dependencies:
-    "@primer/primitives" "^7.5.1"
+    "@primer/primitives" "^7.7.0"
 
 "@primer/octicons@^17.0.0":
   version "17.0.0"
@@ -36,10 +36,10 @@
   dependencies:
     object-assign "^4.1.1"
 
-"@primer/primitives@^7.5.1":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.6.0.tgz#942efe38b6e09bf6d0351c045436e628e32c3ddb"
-  integrity sha512-cu28QLjectVf2rT4P7m6zS9v4g4yHtErRuPfsgEWEJhbXVIII6vDBm6elJzYixGpTNxpVtSUNezxUXv16l1ejQ==
+"@primer/primitives@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.7.0.tgz#4e838afaf997036720a43ebab0211d2de77b1606"
+  integrity sha512-LSd96U2/A70obilbdYiEKI8D/wXUtZnKmUI/ScLOlGDju4iuwd3pJsmFoBwM1Us6vV23V6mapIG+lh27RzauaA==
 
 anymatch@~3.1.2:
   version "3.1.2"
@@ -161,15 +161,15 @@ sass@^1.49.9:
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork:
-  version "1.0.0"
-  uid "112f059a9399eb523c598c203728c0c4f68720c6"
-  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/112f059a9399eb523c598c203728c0c4f68720c6"
+  version "1.0.2"
+  uid b172c5dce9ca9e7d16fe42e30dbcca3e0f547eec
+  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/b172c5dce9ca9e7d16fe42e30dbcca3e0f547eec"
   dependencies:
     "@github/details-dialog-element" "^3.1.3"
     "@github/details-menu-element" "^1.0.12"
     "@github/filter-input-element" "^0.1.1"
     "@github/include-fragment-element" "^6.0.0"
-    "@primer/css" "^19.6.0"
+    "@primer/css" "^19.7.0"
     "@primer/octicons" "^17.0.0"
     sass "^1.49.9"
 
