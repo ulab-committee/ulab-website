@@ -75,3 +75,6 @@ group :production, :staging do
   gem 'dotenv-rails', '~> 2.7'
   gem 'rack-timeout'
 end
+
+# Show maintenance mode screen
+gem 'turnout'
