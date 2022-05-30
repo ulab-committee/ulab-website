@@ -77,4 +77,4 @@ group :production, :staging do
 end
 
 # Show maintenance mode screen
-gem 'turnout'
+gem 'turnout', '~> 2.4'
