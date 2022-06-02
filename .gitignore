@@ -17,24 +17,26 @@
 /storage/*
 !/storage/.keep
 
+# Ignore caches and logs
 /node_modules
 /yarn-error.log
-
-/public/assets
+/public/packs
+/public/packs-test
+yarn-debug.log*
+.yarn-integrity
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-
 # Ignore RubyMine project files.
 /.idea/
 
+# Ignore test coverage files
 /coverage/
+
+# Ignore local environment
 /.env
+
+# Ignore OSX metadata
+.DS_Store
