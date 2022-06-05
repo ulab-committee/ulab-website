@@ -2,7 +2,7 @@
 
 This README documents the steps necessary to get the website up and running.
 
-* The website is a Rails app running on Ruby 2.7.4 (check `.ruby-version` to confirm)
+* The website is a Rails app running on Ruby 2.7.6 (check `.ruby-version` to confirm)
 
 * Dependencies not installed by Bundler include:
 
