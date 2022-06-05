@@ -304,9 +304,9 @@ GEM
       rubocop-ast (>= 1.16.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.17.0)
+    rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
-    rubocop-performance (1.13.3)
+    rubocop-performance (1.14.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rails (2.14.2)
@@ -459,7 +459,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0)
   redis (~> 4.6)
   rubocop (~> 1.27)
-  rubocop-performance (~> 1.13)
+  rubocop-performance (~> 1.14)
   rubocop-rails (~> 2.14)
   selenium-webdriver
   sidekiq
