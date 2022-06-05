@@ -17,10 +17,10 @@
   resolved "https://registry.yarnpkg.com/@github/filter-input-element/-/filter-input-element-0.1.1.tgz#9b8caff8fa35e037b6f270795b5bae1d6d34a631"
   integrity sha512-YTAF9gmLfdYvK+BaVOYBwawtdchxgov9ZmLJ3HCyZ7ALyCKEbHhNRRX7GD3KsoPWUedxiH0X3v/loB2njLbjwg==
 
-"@github/include-fragment-element@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.0.0.tgz#d374e7c89916276df358b634e2e88fb6f7ca25ef"
-  integrity sha512-Z51I/vLZwx8vu+YhzMJ9M37//3G1uAc9Uf60GxHMBgx3bH+Rly6DxjB8QcqmmDstmmpTL6Uv5ynbMgYYDuQl5Q==
+"@github/include-fragment-element@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-6.0.1.tgz#6527fcb678cbe17ea27545f06bdf939ab24c962d"
+  integrity sha512-UPeg64u9rnCQdtC7jKd+970+GIwlJXjDllphANr9p7OMbw7qdWbW9/b2Uqbsnk0CF9x+4LYvSwm1PVPtao02+Q==
 
 "@primer/css@^19.7.0":
   version "19.8.2"
@@ -29,10 +29,10 @@
   dependencies:
     "@primer/primitives" "^7.7.0"
 
-"@primer/octicons@^17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-17.0.0.tgz#9dc752aeb3d2269f7c7827f04148ef5e55555374"
-  integrity sha512-DiIjtous4XPuR2deTctD3/RVZy/vRzVYBgYYvHV313MmTfkbVP60qLH5txrT3/bYNvnb0poNDelLS6U0kqlvHA==
+"@primer/octicons@^17.1.0":
+  version "17.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-17.2.0.tgz#6e9be44484100e069006958f28dc75eaba55b1ed"
+  integrity sha512-A3YetVbJX5J4JGa2AfVrEl1lE3FtT+7HdSzphFRs1QF5OgsUpkNbyjvVxeCxVZaG6zXYbbbPWsPF06PtsIyUWQ==
   dependencies:
     object-assign "^4.1.1"
 
@@ -146,7 +146,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-sass@^1.49.9, sass@^1.52.2:
+sass@^1.51.0, sass@^1.52.2:
   version "1.52.2"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.52.2.tgz#cd1f03e0e7be5bb2cebcf1c34d735f087d790936"
   integrity sha512-mfHB2VSeFS7sZlPv9YohB9GB7yWIgQNTGniQwfQ04EoQN0wsQEv7SwpCwy/x48Af+Z3vDeFXz+iuXM3HK/phZQ==
@@ -161,17 +161,17 @@ sass@^1.49.9, sass@^1.52.2:
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 spina-conferences-primer-theme-fork@louis-vs/spina-conferences-primer_theme-fork:
-  version "1.0.2"
-  uid b172c5dce9ca9e7d16fe42e30dbcca3e0f547eec
-  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/b172c5dce9ca9e7d16fe42e30dbcca3e0f547eec"
+  version "1.0.3"
+  uid ab391c09d74d5ad0c3fab550a61c8440bbd82de9
+  resolved "https://codeload.github.com/louis-vs/spina-conferences-primer_theme-fork/tar.gz/ab391c09d74d5ad0c3fab550a61c8440bbd82de9"
   dependencies:
     "@github/details-dialog-element" "^3.1.3"
     "@github/details-menu-element" "^1.0.12"
     "@github/filter-input-element" "^0.1.1"
-    "@github/include-fragment-element" "^6.0.0"
+    "@github/include-fragment-element" "^6.0.1"
     "@primer/css" "^19.7.0"
-    "@primer/octicons" "^17.0.0"
-    sass "^1.49.9"
+    "@primer/octicons" "^17.1.0"
+    sass "^1.51.0"
 
 to-regex-range@^5.0.1:
   version "5.0.1"
