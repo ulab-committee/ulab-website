@@ -35,7 +35,7 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'rubocop', '~> 1.30'
   gem 'rubocop-performance', '~> 1.14'
-  gem 'rubocop-rails', '~> 2.14'
+  gem 'rubocop-rails', '~> 2.15'
   gem 'spring'
 end
 
