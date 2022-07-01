@@ -15,7 +15,7 @@ gem 'puma', '~> 5.6'
 gem 'jbuilder', '~> 2.11'
 # Use Redis adapter to run Action Cable in production
 gem 'hiredis', '~> 0.6.3'
-gem 'redis', '~> 4.6'
+gem 'redis', '~> 4.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
