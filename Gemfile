@@ -33,7 +33,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the
   # background. Read more: https://github.com/rails/spring
-  gem 'rubocop', '~> 1.30'
+  gem 'rubocop', '~> 1.47'
   gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.14'
   gem 'spring'
